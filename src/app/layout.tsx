@@ -27,27 +27,27 @@ export const metadata: Metadata = {
     "React",
   ],
   authors: [{ name: "김민수" }],
-  openGraph: {
-    type: "website",
-    url: "",
-    title: "민수의 웹 포트폴리오",
-    description:
-      "최신 웹기술을 활용한 반응형 디자인과 SEO, 웹 접근성을 고려한 프로젝트로 구성된 김민수의 전문 웹 개발 포트폴리오입니다.",
-    siteName: "민수의 웹 포트폴리오",
-    images: [
-      {
-        url: "",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "민수의 웹 포트폴리오",
-    description:
-      "최신 웹기술을 활용한 반응형 디자인과 SEO, 웹 접근성을 고려한 프로젝트로 구성된 김민수의 전문 웹 개발 포트폴리오입니다.",
-    images: "",
-    site: "",
-  },
+  // openGraph: {
+  //   type: "website",
+  //   url: "",
+  //   title: "민수의 웹 포트폴리오",
+  //   description:
+  //     "최신 웹기술을 활용한 반응형 디자인과 SEO, 웹 접근성을 고려한 프로젝트로 구성된 김민수의 전문 웹 개발 포트폴리오입니다.",
+  //   siteName: "민수의 웹 포트폴리오",
+  //   images: [
+  //     {
+  //       url: "",
+  //     },
+  //   ],
+  // },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   title: "민수의 웹 포트폴리오",
+  //   description:
+  //     "최신 웹기술을 활용한 반응형 디자인과 SEO, 웹 접근성을 고려한 프로젝트로 구성된 김민수의 전문 웹 개발 포트폴리오입니다.",
+  //   images: [""],
+  //   site: "",
+  // },
 };
 
 export default function RootLayout({
