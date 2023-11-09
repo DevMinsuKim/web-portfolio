@@ -58,7 +58,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={notoSansKr.className} suppressHydrationWarning>
-      <body className="text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-900">
+      <body className="bg-background">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
