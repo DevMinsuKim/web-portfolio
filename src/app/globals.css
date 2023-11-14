@@ -4,11 +4,13 @@
 
 :root {
   --color-background: #fefeff;
-  --color-primary: #7070ff;
+  --color-background1: #f5f6f7;
+  --color-primary: #5454ff;
 }
 .dark {
   --color-background: #1e1f21;
-  --color-primary: #7070ff;
+  --color-background1: #292b2e;
+  --color-primary: #8383fc;
 }
 
 *,

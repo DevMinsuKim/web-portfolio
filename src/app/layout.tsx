@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-
-const notoSansKr = Noto_Sans_KR({ subsets: ["latin"] });
+import { notoSansKr } from "@/font/font";
 
 // Favicons 추가, openGraph url 및 images의 url 수정 필요함
 export const metadata: Metadata = {
