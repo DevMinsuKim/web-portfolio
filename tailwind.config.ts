@@ -7,7 +7,9 @@ const config: Config = {
       colors: {
         background: "var(--color-background)",
         background1: "var(--color-background1)",
+        foreground: "var(--color-foreground)",
         primary: "var(--color-primary)",
+        gray: "var(--color-gray)",
       },
     },
   },

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
-import { notoSansKr } from "@/font/font";
+import { notoSansKr } from "@/font/Font";
 
 // Favicons 추가, openGraph url 및 images의 url 수정 필요함
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={notoSansKr.className} suppressHydrationWarning>
-      <body className="bg-background">
+      <body className="text-foreground bg-background">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
