@@ -9,7 +9,24 @@ const config: Config = {
         background1: "var(--color-background1)",
         foreground: "var(--color-foreground)",
         primary: "var(--color-primary)",
+        sky: "var(--color-sky)",
+        indigo: "var(--color-indigo)",
         gray: "var(--color-gray)",
+      },
+      animation: {
+        textGradient: "textGradient 2.5s ease infinite",
+      },
+      keyframes: {
+        textGradient: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
       },
     },
   },
