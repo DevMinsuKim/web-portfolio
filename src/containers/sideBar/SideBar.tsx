@@ -8,6 +8,7 @@ import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { IoIosCall } from "react-icons/io";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function SideBar() {
   const t = useTranslations("sideBar");
@@ -19,38 +20,25 @@ export default function SideBar() {
     },
     {
       href: "#skills",
-      title: "Skills",
+      title: t("skills"),
       icon: <FaCode className="h-5 w-5" />,
     },
-    // {
-    //   href: "#archiving",
-    //   title: "Archiving",
-    //   icon: "",
-    // },
     {
       href: "#projects",
-      title: "Projects",
+      title: t("projects"),
       icon: <FaLightbulb className="h-4 w-4" />,
     },
     {
       href: "#career",
-      title: "Career",
+      title: t("career"),
       icon: <HiOutlineOfficeBuilding className="h-5 w-5" />,
     },
     {
       href: "#contact",
-      title: "Contact",
+      title: t("contact"),
       icon: <IoIosCall className="h-5 w-5" />,
     },
   ];
-
-  // const [language, setLanguage] = useState("한국어");
-
-  // const toggleLanguage = () => {
-  //   setLanguage((prevLanguage) =>
-  //     prevLanguage === "한국어" ? "English" : "한국어",
-  //   );
-  // };
 
   return (
     <aside className="fixed my-4 ml-4 flex h-full max-h-[calc(100vh-32px)] min-w-[240px] max-w-[240px] flex-col overflow-y-auto rounded-3xl bg-background1 shadow-2xl">
@@ -84,14 +72,8 @@ export default function SideBar() {
           </Link>
         ))}
       </ul>
-      <footer className="">
-        {/* <div>
-          <button onClick={toggleLanguage}>
-            {language === "한국어" ? "Switch to English" : "한국어로 전환"}
-          </button>
-        </div> */}
-        <div>asdlfjsalkfdjsalkfjlk</div>
-        <div>sadfhjjksahdfjk</div>
+      <footer>
+        <LanguageSwitcher />
       </footer>
     </aside>
   );

@@ -1,5 +1,9 @@
 {
   "sideBar": {
-    "about": "About"
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "career": "Career",
+    "contact": "Contact"
   }
 }

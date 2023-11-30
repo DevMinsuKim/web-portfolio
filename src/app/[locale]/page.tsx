@@ -1,10 +1,9 @@
-import SideBar from "@/components/sideBar/SideBar";
+import SideBar from "@/containers/sideBar/SideBar";
 
 export default function Home() {
   return (
-    <main className="flex">
+    <main>
       <SideBar />
-      <div className="ml-[240px]"></div>
     </main>
   );
 }
