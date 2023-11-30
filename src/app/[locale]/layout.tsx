@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { notoSansKr } from "@/font/Font";
+import { notFound } from "next/navigation";
 
 // Favicons 추가, openGraph url 및 images의 url 수정 필요함
 export const metadata: Metadata = {
@@ -49,14 +50,22 @@ export const metadata: Metadata = {
   // },
 };
 
-export default function RootLayout({
+const locales = ["en", "ko"];
+
+export default function LocaleLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: any;
 }) {
   return (
-    <html lang="ko" className={notoSansKr.className} suppressHydrationWarning>
-      <body className="text-foreground bg-background">
+    <html
+      lang={locale}
+      className={notoSansKr.className}
+      suppressHydrationWarning
+    >
+      <body className="bg-background text-foreground">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -1,4 +1,3 @@
-"use client";
 import { sacramento } from "@/font/Font";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,12 +7,14 @@ import { FaLightbulb } from "react-icons/fa";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { IoIosCall } from "react-icons/io";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function SideBar() {
+  const t = useTranslations("sideBar");
   const menu = [
     {
       href: "#about",
-      title: "About",
+      title: t("about"),
       icon: <PiPersonArmsSpreadFill className="h-5 w-5" />,
     },
     {
@@ -43,17 +44,17 @@ export default function SideBar() {
     },
   ];
 
-  const [language, setLanguage] = useState("한국어");
+  // const [language, setLanguage] = useState("한국어");
 
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) =>
-      prevLanguage === "한국어" ? "English" : "한국어",
-    );
-  };
+  // const toggleLanguage = () => {
+  //   setLanguage((prevLanguage) =>
+  //     prevLanguage === "한국어" ? "English" : "한국어",
+  //   );
+  // };
 
   return (
-    <aside className="fixed left-0 top-0 flex h-screen min-w-[240px] max-w-[240px] flex-col overflow-y-auto rounded-r-3xl bg-gradient-to-r from-background to-background1">
-      <header className="mt-12 flex min-h-[90px] items-center justify-center border-b border-gray pb-6">
+    <aside className="fixed my-4 ml-4 flex h-full max-h-[calc(100vh-32px)] min-w-[240px] max-w-[240px] flex-col overflow-y-auto rounded-3xl bg-background1 shadow-2xl">
+      <header className="mt-12 flex items-center justify-center">
         <Link href={""}>
           <Image
             className="rounded-full bg-primary"
@@ -70,7 +71,7 @@ export default function SideBar() {
           </h1>
         </Link>
       </header>
-      <ul className="mt-4 flex-grow">
+      <ul className="mt-10 flex-grow">
         {menu.map(({ href, title, icon }) => (
           <Link key={href} href={href}>
             <li
@@ -84,11 +85,11 @@ export default function SideBar() {
         ))}
       </ul>
       <footer className="">
-        <div>
+        {/* <div>
           <button onClick={toggleLanguage}>
             {language === "한국어" ? "Switch to English" : "한국어로 전환"}
           </button>
-        </div>
+        </div> */}
         <div>asdlfjsalkfdjsalkfjlk</div>
         <div>sadfhjjksahdfjk</div>
       </footer>

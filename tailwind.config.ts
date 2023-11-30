@@ -11,7 +11,6 @@ const config: Config = {
         primary: "var(--color-primary)",
         sky: "var(--color-sky)",
         indigo: "var(--color-indigo)",
-        gray: "var(--color-gray)",
       },
       animation: {
         textGradient: "textGradient 2.5s ease infinite",
