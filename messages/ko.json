@@ -1,9 +1,5 @@
 {
-  "sideBar": {
-    "about": "내 정보",
-    "skills": "기술 스택",
-    "projects": "프로젝트",
-    "career": "경력",
-    "contact": "연락처"
+  "Index": {
+    "title": "안녕"
   }
 }
