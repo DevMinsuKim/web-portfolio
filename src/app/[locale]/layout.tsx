@@ -64,9 +64,7 @@ export default function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body
-        className={`${notoSansKr.className} transition duration-300 bg-background`}
-      >
+      <body className={`${notoSansKr.className} bg-background text-foreground`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
