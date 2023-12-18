@@ -9,9 +9,10 @@ const config: Config = {
         primary: "var(--color-primary)",
         background: "var(--color-background)",
         foreground: "var(--color-foreground)",
+        surface: "var(--color-surface)",
       },
       boxShadow: {
-        shadow: "4px 12px 30px 6px rgba(0,0,0,0.1)",
+        shadow: "2px 8px 30px 8px rgba(0,0,0,0.1)",
       },
     },
   },

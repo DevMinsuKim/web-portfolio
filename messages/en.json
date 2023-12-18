@@ -1,5 +1,9 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "sideBar": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "career": "Career",
+    "contact": "Contact"
   }
 }
