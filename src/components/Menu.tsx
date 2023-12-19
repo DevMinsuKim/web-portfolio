@@ -1,8 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-
-import Link from "next/link";
+import { Link, usePathname } from "@/navigation";
 
 type MenuItem = {
   href: string;
@@ -16,6 +14,8 @@ type MenuProps = {
 
 export default function Menu({ menuData }: MenuProps) {
   const currentPath = usePathname();
+
+  console.log(currentPath);
 
   return (
     <nav>
