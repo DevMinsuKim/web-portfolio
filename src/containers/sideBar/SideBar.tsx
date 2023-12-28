@@ -44,7 +44,7 @@ export default function SideBar() {
     <aside className="flex items-center max-w-[8rem] h-screen">
       <div className="flex flex-col justify-between min-w-full rounded-3xl bg-surface h-[calc(100vh-2rem)] ml-4">
         <div>
-          <h1 className="flex justify-center">
+          <h1 className="flex justify-center mt-4">
             <Link href="/">
               <Image
                 className="rounded-3xl bg-primary"

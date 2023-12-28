@@ -4,15 +4,15 @@
 
 :root {
   --color-primary: #5b58e6;
-  --color-background: #ffffff;
-  --color-foreground: #1f1f1f;
+  --color-background: #fffbff;
+  --color-foreground: #1c1b1f;
   --color-surface: #f3f6fc;
 }
 
 .dark {
   --color-primary: #5b58e6;
-  --color-background: #1f1f1f;
-  --color-foreground: #e3e3e3;
+  --color-background: #1c1b1f;
+  --color-foreground: #e5e1e6;
   --color-surface: #2d2f31;
 }
 
