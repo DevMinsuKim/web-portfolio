@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavBar from "@/components/common/NavBar";
+import I18nProvider from "@/providers/I18nProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,18 +13,22 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  params,
   children,
 }: Readonly<{
+  params: { locale: string };
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
-          <header>
-            <NavBar />
-          </header>
-          {children}
+          <I18nProvider params={params}>
+            <header>
+              <NavBar />
+            </header>
+            {children}
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>
