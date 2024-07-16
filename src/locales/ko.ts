@@ -1,6 +1,7 @@
 export default {
-  hello: "안녕",
-  "hello.world": "안녕하세요 월드",
-  "hello.world.welcome": "안녕 {name}!",
-  welcome: "안녕 {name}!",
+  ThmeSwitcher: {
+    light: "밝은 테마",
+    dark: "어두운 테마",
+    system: "기기 테마 사용",
+  },
 } as const;

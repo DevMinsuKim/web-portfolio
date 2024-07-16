@@ -1,6 +1,7 @@
 export default {
-  hello: "Hello",
-  "hello.world": "Hello world!",
-  "hello.world.welcome": "Hello {name}!",
-  welcome: "Hello {name}!",
+  ThmeSwitcher: {
+    light: "Light",
+    dark: "Dark",
+    system: "System",
+  },
 } as const;

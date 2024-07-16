@@ -24,11 +24,13 @@ const config: Config = {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
           primary: "4f46e5",
-          "base-100": "#121213",
+          "base-100": "#0F0F0F",
         },
       },
     ],
   },
   plugins: [require("daisyui")],
+
+  darkMode: ["class", '[data-theme="dark"]'],
 };
 export default config;

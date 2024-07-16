@@ -26,12 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={params.locale} suppressHydrationWarning>
-      <body className={`${pretendard.variable} font-pretendard`}>
+      <body
+        className={`${pretendard.variable} min-w-[320px] break-keep font-pretendard`}
+      >
         <ThemeProvider>
           <I18nProvider params={params}>
-            <header>
-              <NavBar />
-            </header>
+            <NavBar />
+
             {children}
           </I18nProvider>
         </ThemeProvider>
