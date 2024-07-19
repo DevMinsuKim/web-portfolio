@@ -6,8 +6,21 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
 import MobileNavBar from "./MobileNavBar";
 import { motion, useAnimation, useScroll, useSpring } from "framer-motion";
+import useCursorStore from "@/store/cursorStore";
+import CursorArrowIcon from "../ui/icons/CursorArrowIcon";
+import { Tooltip } from "react-tooltip";
+import { useScopedI18n } from "@/locales/client";
+import useDeviceStore from "@/store/deviceStore";
 
 export default function NavBar() {
+  const isMobile = useDeviceStore((state) => state.isMobile);
+  const isCustomCursor = useCursorStore((state) => state.isCustomCursor);
+  const toggleCustomCursor = useCursorStore(
+    (state) => state.toggleCustomCursor,
+  );
+
+  const scopedT = useScopedI18n("customCursorButton");
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   const controls = useAnimation();
@@ -57,12 +70,31 @@ export default function NavBar() {
             <div className="navbar-start">
               <LanguageSwitcher />
             </div>
+
             <div className="navbar-center">
               <Link className="btn btn-ghost text-xl" href={"/"}>
                 Dev Minsu
               </Link>
             </div>
+
             <div className="navbar-end">
+              {!isMobile && (
+                <>
+                  <button
+                    onClick={() => toggleCustomCursor()}
+                    className="btn btn-ghost px-2"
+                    data-tooltip-id="tooltip"
+                    data-tooltip-content={
+                      isCustomCursor ? scopedT("on") : scopedT("off")
+                    }
+                  >
+                    <CursorArrowIcon className="h-6 w-6" />
+                  </button>
+                  <Tooltip id="tooltip" className="custom-tooltip" />
+                  <p className="mx-1">|</p>
+                </>
+              )}
+
               <ThemeSwitcher />
             </div>
           </div>

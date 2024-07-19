@@ -7,8 +7,19 @@ import MenuIcon from "../ui/icons/MenuIcon";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import CloseIcon from "../ui/icons/CloseIcon";
+import useCursorStore from "@/store/cursorStore";
+import { useScopedI18n } from "@/locales/client";
+import useDeviceStore from "@/store/deviceStore";
 
 export default function MobileNavBar() {
+  const isMobile = useDeviceStore((state) => state.isMobile);
+  const isCustomCursor = useCursorStore((state) => state.isCustomCursor);
+  const toggleCustomCursor = useCursorStore(
+    (state) => state.toggleCustomCursor,
+  );
+
+  const scopedT = useScopedI18n("customCursorToogle");
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = useCallback(() => {
@@ -99,6 +110,19 @@ export default function MobileNavBar() {
             <div className="mt-6 rounded-xl bg-base-200/50 p-2 dark:bg-black/40">
               <ThemeSwitcher />
             </div>
+            {!isMobile && (
+              <div className="mt-6 rounded-xl bg-base-200/50 p-2 dark:bg-black/40">
+                <div className="flex flex-col gap-y-2 p-2">
+                  {isCustomCursor ? scopedT("off") : scopedT("on")}
+                  <input
+                    type="checkbox"
+                    className="toggle toggle-primary"
+                    checked={!isCustomCursor}
+                    onChange={() => toggleCustomCursor()}
+                  />
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
