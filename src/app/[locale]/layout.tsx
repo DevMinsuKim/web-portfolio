@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavBar from "@/components/common/NavBar";
 import I18nProvider from "@/providers/I18nProvider";
+import AnimatedCursor from "@/components/common/AnimatedCursor";
 
 const pretendard = localFont({
   src: "../../fonts/PretendardVariable.woff2",
@@ -34,6 +35,7 @@ export default function RootLayout({
             <NavBar />
 
             {children}
+            <AnimatedCursor />
           </I18nProvider>
         </ThemeProvider>
       </body>

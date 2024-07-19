@@ -5,10 +5,18 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
 import MobileNavBar from "./MobileNavBar";
-import { animated, useSpring } from "@react-spring/web";
+import { motion, useAnimation, useScroll, useSpring } from "framer-motion";
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const controls = useAnimation();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -25,35 +33,43 @@ export default function NavBar() {
     };
   }, []);
 
-  const headerSpring = useSpring({
-    top: isScrolled ? "12px" : "0px",
-    config: { tension: 220, friction: 20 },
-  });
+  useEffect(() => {
+    controls.start({
+      top: isScrolled ? "12px" : "0px",
+      transition: { tension: 220, friction: 20 },
+    });
+  }, [isScrolled, controls]);
 
   return (
-    <animated.header
-      style={headerSpring}
-      className={`${isScrolled && "top-3"} sticky top-0 z-20 w-full px-4`}
-    >
-      <div
-        className={`mx-auto max-w-screen-xl ${isScrolled && "rounded-xl border bg-base-100/95 px-3 shadow-md dark:border-none dark:bg-black/90"}`}
+    <>
+      <motion.div
+        className="fixed left-0 right-0 top-0 h-1 origin-left bg-primary"
+        style={{ scaleX }}
+      />
+      <motion.header
+        animate={controls}
+        className={`${isScrolled && "top-3"} sticky top-0 z-20 w-full px-4`}
       >
-        <div className="navbar hidden p-0 md:flex">
-          <div className="navbar-start">
-            <LanguageSwitcher />
+        <div
+          className={`mx-auto max-w-screen-xl ${isScrolled && "rounded-xl border bg-base-100/90 px-3 shadow-md dark:border-none dark:bg-base-200/90"}`}
+        >
+          <div className="navbar hidden p-0 md:flex">
+            <div className="navbar-start">
+              <LanguageSwitcher />
+            </div>
+            <div className="navbar-center">
+              <Link className="btn btn-ghost text-xl" href={"/"}>
+                Dev Minsu
+              </Link>
+            </div>
+            <div className="navbar-end">
+              <ThemeSwitcher />
+            </div>
           </div>
-          <div className="navbar-center">
-            <Link className="btn btn-ghost text-xl" href={"/"}>
-              Dev Minsu
-            </Link>
-          </div>
-          <div className="navbar-end">
-            <ThemeSwitcher />
-          </div>
-        </div>
 
-        <MobileNavBar />
-      </div>
-    </animated.header>
+          <MobileNavBar />
+        </div>
+      </motion.header>
+    </>
   );
 }

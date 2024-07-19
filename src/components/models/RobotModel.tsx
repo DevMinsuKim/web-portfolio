@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
+import { useSpring } from "@react-spring/three";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -63,6 +64,13 @@ export function RobotModel(props: JSX.IntrinsicElements["group"]) {
     }
   }, [actions]);
 
+  const [spring, setSpring] = useSpring(() => ({
+    lookAtX: 0,
+    lookAtY: 0,
+    lookAtZ: 1,
+    config: { mass: 1, tension: 170, friction: 26 },
+  }));
+
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       setMousePos({ x: event.clientX, y: event.clientY });
@@ -75,21 +83,26 @@ export function RobotModel(props: JSX.IntrinsicElements["group"]) {
   }, []);
 
   useFrame(({ viewport }) => {
-    // 마우스 위치를 3D 공간 좌표로 변환
     const x =
       (mousePos.x / window.innerWidth) * viewport.width - viewport.width / 2;
-
-    // y 값을 화면 중앙을 기준으로 -1.3에서 -2.1 사이로 매핑
     const normalizedY = (mousePos.y / window.innerHeight) * 2 - 1;
-    const clampedY = THREE.MathUtils.lerp(-1.3, -2.5, (normalizedY + 1) / 2);
-
-    // 최대 x 값 설정
-    const maxX = viewport.width / 4; // 예시로 설정한 값, 필요에 따라 조정
-    // x 값을 최대 값으로 클램핑
+    const clampedY = THREE.MathUtils.lerp(-0.2, -2.5, (normalizedY + 1) / 2);
+    const maxX = viewport.width / 4;
     const clampedX = THREE.MathUtils.clamp(x, -maxX, maxX);
 
+    setSpring({ lookAtX: clampedX, lookAtY: clampedY, lookAtZ: 1 });
+
     if (group.current) {
-      group.current.lookAt(clampedX, clampedY, 1);
+      const scale = 0.5;
+
+      group.current.scale.set(scale, scale, scale);
+      group.current.position.y = 1.5 - scale;
+
+      group.current.lookAt(
+        spring.lookAtX.get(),
+        spring.lookAtY.get(),
+        spring.lookAtZ.get(),
+      );
     }
   });
 
