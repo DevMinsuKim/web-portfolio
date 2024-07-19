@@ -1,7 +1,8 @@
 import * as THREE from "three";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { useFrame } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -38,14 +39,60 @@ type ActionName =
   | "Wave.002|Scene"
   | "Wave.003|Scene";
 
-type GLTFActions = Record<ActionName, THREE.AnimationAction>;
-
 export function RobotModel(props: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>(null);
   const { nodes, materials, animations } = useGLTF(
-    "/models/robot.glb"
+    "/models/robot.glb",
   ) as GLTFResult;
   const { actions } = useAnimations<THREE.AnimationClip>(animations, group);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (actions) {
+      actions["Robot Origin|Scene"]?.play();
+      actions["Ears|Scene"]?.play();
+      actions["Empty|Scene"]?.play();
+      actions["Eyes|Scene"]?.play();
+      actions["Hand origin|Scene"]?.play();
+      actions["Hand origin.002|Scene"]?.play();
+      actions["Mouth|Scene"]?.play();
+      actions["Wave|Scene"]?.play();
+      actions["Wave.001|Scene"]?.play();
+      actions["Wave.002|Scene"]?.play();
+      actions["Wave.003|Scene"]?.play();
+    }
+  }, [actions]);
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  useFrame(({ viewport }) => {
+    // 마우스 위치를 3D 공간 좌표로 변환
+    const x =
+      (mousePos.x / window.innerWidth) * viewport.width - viewport.width / 2;
+
+    // y 값을 화면 중앙을 기준으로 -1.3에서 -2.1 사이로 매핑
+    const normalizedY = (mousePos.y / window.innerHeight) * 2 - 1;
+    const clampedY = THREE.MathUtils.lerp(-1.3, -2.5, (normalizedY + 1) / 2);
+
+    // 최대 x 값 설정
+    const maxX = viewport.width / 4; // 예시로 설정한 값, 필요에 따라 조정
+    // x 값을 최대 값으로 클램핑
+    const clampedX = THREE.MathUtils.clamp(x, -maxX, maxX);
+
+    if (group.current) {
+      group.current.lookAt(clampedX, clampedY, 1);
+    }
+  });
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
