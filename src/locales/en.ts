@@ -13,8 +13,8 @@ export default {
     off: "Custom Cursor Disabled",
   },
   Hero: {
-    introduction1: "3rd Year Frontend",
-    introduction2: "Started from a Middle Schooler's Dream",
+    introduction1: "3rd Year Frontend Developer",
+    introduction2: "Started from a Middle School Dream",
     introduction3: "Developer Minsu Kim",
   },
 } as const;

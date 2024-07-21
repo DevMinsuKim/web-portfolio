@@ -14,7 +14,7 @@ export default {
   },
   Hero: {
     introduction1: "3년 차 프론트엔드",
-    introduction2: "중학생의 꿈에서 시작된",
-    introduction3: "개발자 김민수 입니다.",
+    introduction2: "중학생 때부터 꿈꿔온",
+    introduction3: "개발자 김민수 입니다",
   },
 } as const;
