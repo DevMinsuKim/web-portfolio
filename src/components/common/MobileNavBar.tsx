@@ -10,6 +10,7 @@ import CloseIcon from "../ui/icons/CloseIcon";
 import useCursorStore from "@/store/cursorStore";
 import { useScopedI18n } from "@/locales/client";
 import useDeviceStore from "@/store/deviceStore";
+import LogoIcon from "../ui/icons/LogoIcon";
 
 export default function MobileNavBar() {
   const isMobile = useDeviceStore((state) => state.isMobile);
@@ -59,8 +60,8 @@ export default function MobileNavBar() {
     <div>
       <div className="navbar flex p-0 md:hidden">
         <div className="flex-1">
-          <Link className="btn btn-ghost px-1 text-xl" href={"/"}>
-            Dev Minsu
+          <Link className="btn btn-ghost w-40 px-1" href={"/"}>
+            <LogoIcon />
           </Link>
         </div>
         <div className="flex-none">

@@ -12,4 +12,9 @@ export default {
     on: "커서 스타일 켜짐",
     off: "커서 스타일 꺼짐",
   },
+  Hero: {
+    introduction1: "3년 차 프론트엔드",
+    introduction2: "중학생의 꿈에서 시작된",
+    introduction3: "개발자 김민수 입니다.",
+  },
 } as const;

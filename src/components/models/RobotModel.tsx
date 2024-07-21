@@ -4,6 +4,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
 import { useSpring } from "@react-spring/three";
+import { throttle } from "lodash";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -64,7 +65,7 @@ export function RobotModel(props: JSX.IntrinsicElements["group"]) {
     }
   }, [actions]);
 
-  const [spring, setSpring] = useSpring(() => ({
+  const [{ lookAtX, lookAtY, lookAtZ }, setSpring] = useSpring(() => ({
     lookAtX: 0,
     lookAtY: 0,
     lookAtZ: 1,
@@ -72,9 +73,9 @@ export function RobotModel(props: JSX.IntrinsicElements["group"]) {
   }));
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
+    const handleMouseMove = throttle((event: MouseEvent) => {
       setMousePos({ x: event.clientX, y: event.clientY });
-    };
+    }, 16);
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
@@ -90,7 +91,7 @@ export function RobotModel(props: JSX.IntrinsicElements["group"]) {
     const maxX = viewport.width / 4;
     const clampedX = THREE.MathUtils.clamp(x, -maxX, maxX);
 
-    setSpring({ lookAtX: clampedX, lookAtY: clampedY, lookAtZ: 1 });
+    setSpring.start({ lookAtX: clampedX, lookAtY: clampedY, lookAtZ: 1 });
 
     if (group.current) {
       const scale = 0.5;
@@ -98,11 +99,7 @@ export function RobotModel(props: JSX.IntrinsicElements["group"]) {
       group.current.scale.set(scale, scale, scale);
       group.current.position.y = 1.5 - scale;
 
-      group.current.lookAt(
-        spring.lookAtX.get(),
-        spring.lookAtY.get(),
-        spring.lookAtZ.get(),
-      );
+      group.current.lookAt(lookAtX.get(), lookAtY.get(), lookAtZ.get());
     }
   });
 

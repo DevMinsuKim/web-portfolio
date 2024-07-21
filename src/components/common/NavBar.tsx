@@ -11,6 +11,7 @@ import CursorArrowIcon from "../ui/icons/CursorArrowIcon";
 import { Tooltip } from "react-tooltip";
 import { useScopedI18n } from "@/locales/client";
 import useDeviceStore from "@/store/deviceStore";
+import LogoIcon from "../ui/icons/LogoIcon";
 
 export default function NavBar() {
   const isMobile = useDeviceStore((state) => state.isMobile);
@@ -72,8 +73,8 @@ export default function NavBar() {
             </div>
 
             <div className="navbar-center">
-              <Link className="btn btn-ghost text-xl" href={"/"}>
-                Dev Minsu
+              <Link className="btn btn-ghost w-60" href={"/"}>
+                <LogoIcon />
               </Link>
             </div>
 
