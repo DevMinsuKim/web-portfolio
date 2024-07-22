@@ -8,8 +8,16 @@ interface DeviceState {
 const useDeviceStore = create<DeviceState>((set) => ({
   isMobile: false,
   checkIfMobile: () => {
-    const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    set({ isMobile });
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+    const userAgent = navigator.userAgent;
+    const isMobileDevice =
+      /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+        userAgent,
+      );
+
+    set({ isMobile: isTouchDevice || isMobileDevice });
   },
 }));
 
