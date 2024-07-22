@@ -3,7 +3,8 @@
 import AnimatedCursor from "@/components/common/AnimatedCursor";
 import NavBar from "@/components/common/NavBar";
 import I18nProvider from "@/providers/I18nProvider";
-import { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
+import * as ChannelService from "@channel.io/channel-web-sdk-loader";
 
 export default function SubLayout({
   children,
@@ -12,6 +13,14 @@ export default function SubLayout({
   children: ReactElement;
   params: { locale: string };
 }) {
+  useEffect(() => {
+    ChannelService.loadScript();
+
+    ChannelService.boot({
+      pluginKey: "***REMOVED***", // fill your plugin key
+    });
+  }, []);
+
   return (
     <I18nProvider params={params}>
       <NavBar />

@@ -13,8 +13,10 @@ export default {
     off: "Custom Cursor Disabled",
   },
   Hero: {
-    introduction1: "3rd Year Frontend Developer",
-    introduction2: "Started from a Middle School Dream",
-    introduction3: "Developer Minsu Kim",
+    introHeader: "3rd Year Frontend Developer",
+    name: "Minsu Kim",
+    introFooter: "",
+    introDescription:
+      "Since middle school, I have dreamed of becoming a developer. Now, as a 3rd year developer, I have achieved that dream, but I will not settle for my current state. I will continue to grow and develop, striving towards greater goals.",
   },
 } as const;

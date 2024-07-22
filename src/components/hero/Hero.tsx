@@ -13,10 +13,10 @@ import {
   useScopedI18n,
 } from "@/locales/client";
 import TypingAnimation, { TypingAnimationRef } from "../common/TypingAnimation";
-import OneResetIcon from "../ui/icons/OneResetIcon";
 import MacModel from "../models/MacModel";
 import { useSpring } from "@react-spring/three";
 import Image from "next/image";
+import ReplayIcon from "../ui/icons/ReplayIcon";
 
 export default function Hero() {
   const locale = useCurrentLocale();
@@ -58,42 +58,43 @@ export default function Hero() {
   return (
     <section className="relative h-[2000px]">
       <div className="relative z-10 flex items-center justify-center pt-36 sm:pt-60">
-        <div className="text-center">
-          <p className="text-5xl font-extralight">
-            3년 차 프론트엔드 개발자{" "}
-            <strong className="text-5xl font-extrabold"> 김민수</strong> 입니다.
-          </p>
-          <p className="mt-14 text-3xl">
-            중학생 때부터 꿈꿔온 개발자 후회없이 할 수 있도록 노력하고있습니다.
+        <div className="flex flex-col items-center text-center">
+          <div className="text-3xl md:text-4xl lg:text-5xl">
+            {scopedT("introHeader")}{" "}
+            {isPageLoaded ? (
+              <span className="relative">
+                <TypingAnimation
+                  text={scopedT("name")}
+                  className="my-2 inline-block rounded-3xl bg-base-content p-2 text-3xl font-extrabold text-base-100 md:text-4xl lg:text-5xl"
+                  ref={typingAnimationRef}
+                />
+                <button
+                  className={`${!isPageLoaded ? "hidden" : ""} absolute right-[-5px] top-[-10px] rounded-full bg-base-content p-1 text-base-100`}
+                  onClick={handleReset}
+                >
+                  <ReplayIcon className="h-4 w-4" />
+                </button>
+              </span>
+            ) : (
+              <strong className="my-2 inline-block rounded-3xl bg-base-content p-2 text-3xl font-extrabold text-base-100 md:text-4xl lg:text-5xl">
+                {scopedT("name")}
+              </strong>
+            )}{" "}
+            {locale === "ko" && scopedT("introFooter")}
+          </div>
+          <p className="mt-14 max-w-[780px] text-base md:text-base lg:text-2xl">
+            {scopedT("introDescription")}
           </p>
         </div>
-        {/* <div>
-          <p
-            className={`${locale === "en" && "text-2xl"} text-end text-sm sm:text-2xl md:text-3xl`}
-          >
-            {scopedT("introduction1")}
-          </p>
-          <p className="my-2 h-[2px] bg-base-content" />
-          <p
-            className={`${locale === "en" && "text-xl"} text-end text-sm sm:text-2xl md:text-3xl`}
-          >
-            {scopedT("introduction2")}
-          </p>
-        </div>
+      </div>
 
-        <div className="ml-2 flex flex-wrap items-end">
-          <TypingAnimation
-            text={scopedT("introduction3")}
-            className={`${locale === "en" ? "text-4xl" : ""} text-base font-bold sm:text-4xl md:text-5xl`}
-            ref={typingAnimationRef}
-          />
-          <button
-            className={`${!isPageLoaded ? "hidden" : ""} `}
-            onClick={handleReset}
-          >
-            <OneResetIcon className="h-5 w-5" />
-          </button>
-        </div> */}
+      <div className="h-[2px] w-full bg-base-200" />
+      <div>
+        <button>이메일</button>
+        <button>챗</button>
+        <button>깃허브</button>
+        <button>링크드인</button>
+        <button>유튜브</button>
       </div>
 
       {/* <div className="absolute bottom-0 left-1/2 h-[700px] w-[700px] -translate-x-1/2">
