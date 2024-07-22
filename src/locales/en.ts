@@ -18,5 +18,8 @@ export default {
     introFooter: "",
     introDescription:
       "Since middle school, I have dreamed of becoming a developer. Now, as a 3rd year developer, I have achieved that dream, but I will not settle for my current state. I will continue to grow and develop, striving towards greater goals.",
+    contactMe: "Contact Me",
+    channelTalk:
+      "You can also contact us via ChannelTalk at the bottom right corner!",
   },
 } as const;

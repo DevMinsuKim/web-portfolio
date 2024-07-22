@@ -1,9 +1,31 @@
+"use client";
+
 import Hero from "@/components/hero/Hero";
+import ArrowDownIcon from "@/components/ui/icons/ArrowDownIcon";
+import ArrowUpIcon from "@/components/ui/icons/ArrowUpIcon";
+import { useScrollStore } from "@/store/scrollStore";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
+  const { isScrolled } = useScrollStore();
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <main className="mx-auto max-w-screen-xl px-4">
-      <div className="absolute inset-0 z-0 min-w-[320px] bg-gradient-to-t from-primary/50 to-base-200 dark:from-indigo-900 dark:to-base-100"></div>
+      {/* <div className="absolute inset-0 z-0 min-w-[320px] bg-gradient-to-t from-primary/50 to-base-200 dark:from-indigo-900 dark:to-base-100"></div> */}
 
       <div
         style={{
@@ -45,6 +67,23 @@ export default function Home() {
           ></path>
         </svg>
       </div>
+
+      <AnimatePresence>
+        <motion.button
+          className="btn fixed bottom-24 right-6 z-10 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl"
+          onClick={() => (isScrolled ? scrollToTop() : scrollToBottom())}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {isScrolled ? (
+            <ArrowUpIcon className="h-6 w-6" />
+          ) : (
+            <ArrowDownIcon className="h-6 w-6" />
+          )}
+        </motion.button>
+      </AnimatePresence>
 
       <Hero />
     </main>

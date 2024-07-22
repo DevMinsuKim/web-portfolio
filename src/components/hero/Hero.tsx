@@ -17,6 +17,11 @@ import MacModel from "../models/MacModel";
 import { useSpring } from "@react-spring/three";
 import Image from "next/image";
 import ReplayIcon from "../ui/icons/ReplayIcon";
+import EmailIcon from "../ui/icons/EmailIcon";
+import GithubIcon from "../ui/icons/GithubIcon";
+import LinkdeinIcon from "../ui/icons/LinkdeinIcon";
+import YouTubeIcon from "../ui/icons/YouTubeIcon";
+import InfoIcon from "../ui/icons/InfoIcon";
 
 export default function Hero() {
   const locale = useCurrentLocale();
@@ -88,13 +93,32 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="h-[2px] w-full bg-base-200" />
-      <div>
-        <button>이메일</button>
-        <button>챗</button>
-        <button>깃허브</button>
-        <button>링크드인</button>
-        <button>유튜브</button>
+      {/* <div className="my-8 h-[1px] w-full bg-base-200" /> */}
+
+      <div className="mt-20 flex w-full items-center justify-center">
+        <div className="flex flex-col items-center gap-y-4 rounded-3xl border p-6 shadow dark:border-none dark:bg-base-200">
+          <button className="btn btn-ghost w-full bg-primary text-white hover:bg-primary/80">
+            <EmailIcon className="h-7 w-7" />
+            <p>{scopedT("contactMe")}</p>
+          </button>
+
+          <div className="flex items-center justify-center rounded-2xl border p-2 shadow dark:border-none dark:bg-base-100">
+            <InfoIcon className="mr-2 h-7 w-7 flex-shrink-0 rounded-full border shadow dark:border-none dark:bg-base-200" />
+            <p className="mr-1 text-sm font-bold">{scopedT("channelTalk")}</p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4">
+            <button className="btn flex items-center justify-center bg-base-100">
+              <GithubIcon className="h-7 w-7" />
+            </button>
+            <button className="btn flex items-center justify-center bg-base-100">
+              <LinkdeinIcon className="h-7 w-7" />
+            </button>
+            <button className="btn flex items-center justify-center bg-base-100">
+              <YouTubeIcon className="h-7 w-7" />
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* <div className="absolute bottom-0 left-1/2 h-[700px] w-[700px] -translate-x-1/2">

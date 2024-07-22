@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
@@ -12,8 +12,10 @@ import { Tooltip } from "react-tooltip";
 import { useScopedI18n } from "@/locales/client";
 import useDeviceStore from "@/store/deviceStore";
 import LogoIcon from "../ui/icons/LogoIcon";
+import { useScrollStore } from "@/store/scrollStore";
 
 export default function NavBar() {
+  const { isScrolled } = useScrollStore();
   const isMobile = useDeviceStore((state) => state.isMobile);
   const isCustomCursor = useCursorStore((state) => state.isCustomCursor);
   const toggleCustomCursor = useCursorStore(
@@ -22,8 +24,6 @@ export default function NavBar() {
 
   const scopedT = useScopedI18n("customCursorButton");
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
   const controls = useAnimation();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -31,21 +31,6 @@ export default function NavBar() {
     damping: 30,
     restDelta: 0.001,
   });
-
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     controls.start({
