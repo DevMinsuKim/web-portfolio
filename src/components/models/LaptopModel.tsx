@@ -67,13 +67,14 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
             geometry={nodes["Cube008_1"].geometry}
           />
           <mesh
-            material={materials["screen.001"]}
+            // material={materials["screen.001"]}
             geometry={nodes["Cube008_2"].geometry}
           >
-            {/* <Html
-              className="z-10 h-[216px] w-[334px]"
+            <Html
+              className="h-[216px] w-[334px]"
+              zIndexRange={[10, 0]}
               rotation-x={-Math.PI / 2}
-              position={[0, 0.05, -0.09]}
+              position={[0, 0.04, -0.09]}
               transform
               occlude
             >
@@ -86,7 +87,7 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
-            </Html> */}
+            </Html>
           </mesh>
         </group>
       </three.group>

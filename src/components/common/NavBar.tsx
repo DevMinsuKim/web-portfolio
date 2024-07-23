@@ -33,7 +33,7 @@ export default function NavBar() {
   return (
     <motion.header
       animate={controls}
-      className={`${isScrolled && "top-3"} fixed z-30 w-full px-4`}
+      className={`${isScrolled && "top-3"} fixed z-40 w-full px-4`}
     >
       <div
         className={`mx-auto max-w-screen-xl ${isScrolled && "rounded-xl border bg-base-100/90 px-3 shadow-md dark:border-none dark:bg-base-200/90"}`}

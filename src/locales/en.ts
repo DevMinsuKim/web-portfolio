@@ -17,13 +17,15 @@ export default {
     name: "Minsu Kim",
     introFooter: "",
     introDescription:
-      "Since middle school, I have dreamed of becoming a developer. Now, as a 3rd year developer, I have achieved that dream, but I will not settle for my current state. I will continue to grow and develop, striving towards greater goals.",
+      "I have dreamed of becoming a developer since I was a middle school student, and now I have achieved that dream as a third-year developer. However, I strive to continuously grow and develop, always moving toward greater goals without settling for my current state.",
     contactMe: "Contact Me",
     channelTalk:
       "You can also contact us via ChannelTalk at the bottom right corner!",
   },
-  Mac: {
-    Motion:
-      "You can interact with the internal content of the notebook screen, and it also supports motions such as rotating left and right or opening and closing the screen.",
+  Laptop: {
+    pc: "You can interact with the content on the laptop screen,\n rotate it left and right, and open or close the screen.",
+    mobile:
+      "You can interact with the content on the laptop screen and open or close the screen.",
+    info: "The rotation feature is available on PC!",
   },
 } as const;

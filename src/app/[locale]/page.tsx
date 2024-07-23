@@ -30,7 +30,7 @@ export default function Home() {
     <main>
       <AnimatePresence>
         <motion.button
-          className={`${isMobile && !isTablet && "bottom-[4.4rem] right-[0.95rem] h-11 min-h-0 w-11 rounded-[1.1rem] p-0"} btn fixed bottom-24 right-6 z-20 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl`}
+          className={`${isMobile && !isTablet && "bottom-[4.4rem] right-[0.95rem] h-[2.75rem] min-h-0 w-[2.75rem] rounded-[1.1rem] p-0"} btn fixed bottom-24 right-6 z-20 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl`}
           onClick={() => (isScrolled ? scrollToTop() : scrollToBottom())}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -50,7 +50,9 @@ export default function Home() {
       </AnimatePresence>
 
       <Hero />
-      <Laptop />
+      <div className="mx-auto max-w-screen-xl px-4">
+        <Laptop />
+      </div>
 
       <div className="h-[1000px]"></div>
     </main>

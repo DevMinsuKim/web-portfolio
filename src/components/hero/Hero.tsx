@@ -110,9 +110,13 @@ export default function Hero() {
               )}{" "}
               {locale === "ko" && scopedT("introFooter")}
             </div>
-            <p className="mt-10 max-w-[600px] text-base md:max-w-[720px] md:text-lg">
-              {scopedT("introDescription")}
-            </p>
+            <div className="mt-10 max-w-[600px] text-base md:max-w-[720px] md:text-lg">
+              {scopedT("introDescription")
+                .split("\n")
+                .map((line, idx) => (
+                  <p key={idx}>{line}</p>
+                ))}
+            </div>
           </div>
         </div>
 
