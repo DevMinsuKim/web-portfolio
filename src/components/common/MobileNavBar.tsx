@@ -13,11 +13,8 @@ import useDeviceStore from "@/store/deviceStore";
 import LogoIcon from "../ui/icons/LogoIcon";
 
 export default function MobileNavBar() {
-  const isMobile = useDeviceStore((state) => state.isMobile);
-  const isCustomCursor = useCursorStore((state) => state.isCustomCursor);
-  const toggleCustomCursor = useCursorStore(
-    (state) => state.toggleCustomCursor,
-  );
+  const { isMobile } = useDeviceStore();
+  const { isCustomCursor, toggleCustomCursor } = useCursorStore();
 
   const scopedT = useScopedI18n("customCursorToogle");
 

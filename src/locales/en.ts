@@ -22,4 +22,8 @@ export default {
     channelTalk:
       "You can also contact us via ChannelTalk at the bottom right corner!",
   },
+  Mac: {
+    Motion:
+      "You can interact with the internal content of the notebook screen, and it also supports motions such as rotating left and right or opening and closing the screen.",
+  },
 } as const;

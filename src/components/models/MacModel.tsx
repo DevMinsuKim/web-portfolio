@@ -67,10 +67,10 @@ export default function MacModel({ open, hinge, ...props }: Props) {
             geometry={nodes["Cube008_1"].geometry}
           />
           <mesh
-            // material={materials["screen.001"]}
+            material={materials["screen.001"]}
             geometry={nodes["Cube008_2"].geometry}
           >
-            <Html
+            {/* <Html
               className="z-10 h-[216px] w-[334px]"
               rotation-x={-Math.PI / 2}
               position={[0, 0.05, -0.09]}
@@ -86,7 +86,7 @@ export default function MacModel({ open, hinge, ...props }: Props) {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
-            </Html>
+            </Html> */}
           </mesh>
         </group>
       </three.group>

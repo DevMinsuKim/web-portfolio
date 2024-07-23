@@ -6,9 +6,8 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 export default function AnimatedCursor() {
-  const isMobile = useDeviceStore((state) => state.isMobile);
-  const checkIfMobile = useDeviceStore((state) => state.checkIfMobile);
-  const isCustomCursor = useCursorStore((state) => state.isCustomCursor);
+  const { isMobile, checkDevice } = useDeviceStore();
+  const { isCustomCursor } = useCursorStore();
 
   const [isCursorInside, setIsCursorInside] = useState(true);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -29,7 +28,7 @@ export default function AnimatedCursor() {
   };
 
   useEffect(() => {
-    checkIfMobile();
+    checkDevice();
 
     const handleMouseMove = (event: MouseEvent) => {
       setPosition({ x: event.clientX - 16, y: event.clientY });
@@ -48,7 +47,7 @@ export default function AnimatedCursor() {
       document.body.addEventListener("mouseenter", handleMouseEnter);
       document.body.removeEventListener("mouseleave", handleMouseOut);
     };
-  }, [isMobile, checkIfMobile, cursorX, cursorY, isCursorInside]);
+  }, [isMobile, checkDevice, cursorX, cursorY, isCursorInside]);
 
   if (isMobile) {
     return null;

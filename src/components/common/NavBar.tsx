@@ -16,11 +16,8 @@ import { useScrollStore } from "@/store/scrollStore";
 
 export default function NavBar() {
   const { isScrolled } = useScrollStore();
-  const isMobile = useDeviceStore((state) => state.isMobile);
-  const isCustomCursor = useCursorStore((state) => state.isCustomCursor);
-  const toggleCustomCursor = useCursorStore(
-    (state) => state.toggleCustomCursor,
-  );
+  const { isMobile } = useDeviceStore();
+  const { isCustomCursor, toggleCustomCursor } = useCursorStore();
 
   const scopedT = useScopedI18n("customCursorButton");
 

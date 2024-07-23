@@ -21,4 +21,8 @@ export default {
     contactMe: "메일 문의하기",
     channelTalk: "우측 하단의 채널톡을 통해서도 문의 가능합니다!",
   },
+  Mac: {
+    Motion:
+      " 노트북 화면의 내부 콘텐츠와 상호작용 할 수 있으며, 좌우로 회전하거나 화면을 열고 닫는 모션도 가능합니다.",
+  },
 } as const;

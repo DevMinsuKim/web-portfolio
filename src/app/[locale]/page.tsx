@@ -1,12 +1,15 @@
 "use client";
 
 import Hero from "@/components/hero/Hero";
+import Mac from "@/components/mac/Mac";
 import ArrowDownIcon from "@/components/ui/icons/ArrowDownIcon";
 import ArrowUpIcon from "@/components/ui/icons/ArrowUpIcon";
+import useDeviceStore from "@/store/deviceStore";
 import { useScrollStore } from "@/store/scrollStore";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
+  const { isMobile, isTablet } = useDeviceStore();
   const { isScrolled } = useScrollStore();
 
   const scrollToBottom = () => {
@@ -25,7 +28,7 @@ export default function Home() {
 
   return (
     <main className="mx-auto max-w-screen-xl px-4">
-      {/* <div className="absolute inset-0 z-0 min-w-[320px] bg-gradient-to-t from-primary/50 to-base-200 dark:from-indigo-900 dark:to-base-100"></div> */}
+      <div className="absolute inset-0 z-0 min-w-[320px] bg-gradient-to-t from-primary/20 to-base-200 dark:from-indigo-950 dark:to-base-100"></div>
 
       <div
         style={{
@@ -40,11 +43,11 @@ export default function Home() {
         }}
       >
         <svg
+          className="h-[40px] sm:h-[250px]"
           style={{
             position: "relative",
             display: "block",
             width: "calc(170% + 1.3px)",
-            height: "70px",
           }}
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +73,7 @@ export default function Home() {
 
       <AnimatePresence>
         <motion.button
-          className="btn fixed bottom-24 right-6 z-10 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl"
+          className={`${isMobile && !isTablet && "bottom-[4.4rem] right-[0.8rem] h-12 w-12 rounded-[1.2rem] p-0"} btn fixed bottom-24 right-6 z-20 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl`}
           onClick={() => (isScrolled ? scrollToTop() : scrollToBottom())}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -78,14 +81,21 @@ export default function Home() {
           transition={{ duration: 0.2 }}
         >
           {isScrolled ? (
-            <ArrowUpIcon className="h-6 w-6" />
+            <ArrowUpIcon
+              className={`${isMobile && !isTablet && "h-[1.2rem] w-[1.2rem]"} h-6 w-6`}
+            />
           ) : (
-            <ArrowDownIcon className="h-6 w-6" />
+            <ArrowDownIcon
+              className={`${isMobile && !isTablet && "h-[1.2rem] w-[1.2rem]"} h-6 w-6`}
+            />
           )}
         </motion.button>
       </AnimatePresence>
 
       <Hero />
+      <Mac />
+
+      <div className="h-[1000px]"></div>
     </main>
   );
 }
