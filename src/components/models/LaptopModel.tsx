@@ -9,7 +9,7 @@ type Props = {
   hinge: Interpolation<number, number>;
 };
 
-export default function MacModel({ open, hinge, ...props }: Props) {
+export default function LaptopModel({ open, hinge, ...props }: Props) {
   const group = useRef<THREE.Group>(null);
 
   const { nodes, materials } = useGLTF("/models/mac.glb") as any;

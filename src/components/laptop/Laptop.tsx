@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import MacModel from "../models/MacModel";
+import LaptopModel from "../models/LaptopModel";
 import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { useSpring } from "@react-spring/three";
 import { motion, useInView } from "framer-motion";
@@ -10,7 +10,7 @@ import Rotate3DIncon from "../ui/icons/Rotate3DIncon";
 import { useScopedI18n } from "@/locales/client";
 import useDeviceStore from "@/store/deviceStore";
 
-export default function Mac() {
+export default function Laptop() {
   const { isMobile } = useDeviceStore();
 
   const scopedT = useScopedI18n("Mac");
@@ -40,7 +40,7 @@ export default function Mac() {
               rotation={[0, Math.PI, 0]}
               onClick={(e) => (e.stopPropagation(), setMacOpen(!macOpen))}
             >
-              <MacModel
+              <LaptopModel
                 open={macOpen}
                 hinge={props.open.to([0, 1], [1.575, -0.425])}
               />
