@@ -1,5 +1,5 @@
 export default {
-  ThmeSwitcher: {
+  thmeSwitcher: {
     light: "밝은 테마",
     dark: "어두운 테마",
     system: "기기 테마 사용",
@@ -12,7 +12,7 @@ export default {
     on: "커서 스타일 켜짐",
     off: "커서 스타일 꺼짐",
   },
-  Hero: {
+  hero: {
     introHeader: "3년 차 프론트엔드 개발자",
     name: "김민수",
     introFooter: "입니다.",
@@ -21,10 +21,13 @@ export default {
     contactMe: "메일 문의하기",
     channelTalk: "우측 하단의 채널톡을 통해서도 문의 가능합니다!",
   },
-  Laptop: {
+  laptop: {
     pc: "노트북 화면의 내부 콘텐츠와 상호작용 할 수 있으며,\n좌우로 회전하거나 화면을 열고 닫는 모션도 가능합니다.",
     mobile:
       "노트북 화면의 내부 콘텐츠와 상호작용 할 수 있으며,\n화면을 열고 닫는 모션도 가능합니다.",
     info: "회전 기능은 PC에서 사용 가능합니다!",
+  },
+  aboutMe: {
+    aboutMe: "소개",
   },
 } as const;

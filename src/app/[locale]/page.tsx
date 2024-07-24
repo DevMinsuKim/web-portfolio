@@ -1,5 +1,6 @@
 "use client";
 
+import AboutMe from "@/components/aboutMe/AboutMe";
 import Hero from "@/components/hero/Hero";
 import Laptop from "@/components/laptop/Laptop";
 import ArrowDownIcon from "@/components/ui/icons/ArrowDownIcon";
@@ -50,11 +51,14 @@ export default function Home() {
       </AnimatePresence>
 
       <Hero />
+
       <div className="mx-auto max-w-screen-xl px-4">
         <Laptop />
       </div>
 
-      <div className="h-[1000px]"></div>
+      <div className="mx-auto max-w-screen-xl px-4">
+        <AboutMe />
+      </div>
     </main>
   );
 }

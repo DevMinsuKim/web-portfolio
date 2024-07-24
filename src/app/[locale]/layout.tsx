@@ -20,7 +20,7 @@ export default function SubLayout({
     ChannelService.loadScript();
 
     ChannelService.boot({
-      pluginKey: "***REMOVED***", // fill your plugin key
+      pluginKey: "***REMOVED***",
     });
   }, []);
 

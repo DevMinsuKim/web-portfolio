@@ -28,13 +28,13 @@ const menu: { id: Theme; icon: (color: string) => JSX.Element }[] = [
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const scopedT = useScopedI18n("ThmeSwitcher");
+  const scopedT = useScopedI18n("thmeSwitcher");
 
   const getColor = (
     resolvedTheme: string | undefined,
     theme: string | undefined,
     id: string,
-    mounted: boolean
+    mounted: boolean,
   ) => {
     if (!mounted) {
       return "opacity-60";

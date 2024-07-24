@@ -14,7 +14,7 @@ import InfoIcon from "../ui/icons/InfoIcon";
 export default function Laptop() {
   const { isMobile } = useDeviceStore();
 
-  const scopedT = useScopedI18n("Laptop");
+  const scopedT = useScopedI18n("laptop");
 
   const [macOpen, setMacOpen] = useState(false);
 

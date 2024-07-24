@@ -1,5 +1,5 @@
 export default {
-  ThmeSwitcher: {
+  thmeSwitcher: {
     light: "Light",
     dark: "Dark",
     system: "System",
@@ -12,7 +12,7 @@ export default {
     on: "Custom Cursor Enabled",
     off: "Custom Cursor Disabled",
   },
-  Hero: {
+  hero: {
     introHeader: "3rd Year Frontend Developer",
     name: "Minsu Kim",
     introFooter: "",
@@ -22,10 +22,13 @@ export default {
     channelTalk:
       "You can also contact us via ChannelTalk at the bottom right corner!",
   },
-  Laptop: {
+  laptop: {
     pc: "You can interact with the content on the laptop screen,\n rotate it left and right, and open or close the screen.",
     mobile:
       "You can interact with the content on the laptop screen and open or close the screen.",
     info: "The rotation feature is available on PC!",
+  },
+  aboutMe: {
+    aboutMe: "AboutMe",
   },
 } as const;

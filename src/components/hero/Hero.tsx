@@ -12,7 +12,7 @@ import InfoIcon from "../ui/icons/InfoIcon";
 
 export default function Hero() {
   const locale = useCurrentLocale();
-  const scopedT = useScopedI18n("Hero");
+  const scopedT = useScopedI18n("hero");
 
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
