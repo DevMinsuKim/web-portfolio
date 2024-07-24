@@ -20,7 +20,7 @@ export default function SubLayout({
     ChannelService.loadScript();
 
     ChannelService.boot({
-      pluginKey: "***REMOVED***",
+      pluginKey: process.env.NEXT_PUBLIC_CHANNEL_KEY ?? "",
     });
   }, []);
 
