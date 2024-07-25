@@ -4,6 +4,7 @@ import useCursorStore from "@/store/cursorStore";
 import useDeviceStore from "@/store/deviceStore";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import Rotate3DIncon from "../ui/icons/Rotate3DIncon";
 
 export default function AnimatedCursor() {
   const { isMobile, checkDevice } = useDeviceStore();

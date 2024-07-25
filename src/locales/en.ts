@@ -17,16 +17,17 @@ export default {
     name: "Minsu Kim",
     introFooter: "",
     introDescription:
-      "I have dreamed of becoming a developer since I was a middle school student, and now I have achieved that dream as a third-year developer. However, I strive to continuously grow and develop, always moving toward greater goals without settling for my current state.",
+      "I have dreamed of becoming a developer since middle school, and now, as a developer with three years of experience, I have achieved that dream. However, I do not settle for my current state. I strive to continuously grow and improve, aiming for even greater goals.",
     contactMe: "Contact Me",
     channelTalk:
-      "You can also contact us via ChannelTalk at the bottom right corner!",
+      "You can also contact us through the Channel Talk in the bottom right corner!",
   },
   laptop: {
-    pc: "You can interact with the content on the laptop screen,\n rotate it left and right, and open or close the screen.",
+    pc: "You can interact with the internal content of your laptop screen,\n and you can rotate left and right or open and close the screen.",
     mobile:
-      "You can interact with the content on the laptop screen and open or close the screen.",
+      "You can interact with the internal content of your laptop screen,\n and you can also open and close the screen.",
     info: "The rotation feature is available on PC!",
+    loading: "Please wait\nloading the model...",
   },
   aboutMe: {
     aboutMe: "AboutMe",

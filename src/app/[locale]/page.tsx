@@ -3,8 +3,10 @@
 import AboutMe from "@/components/aboutMe/AboutMe";
 import Hero from "@/components/hero/Hero";
 import Laptop from "@/components/laptop/Laptop";
+import Project from "@/components/project/Project";
 import ArrowDownIcon from "@/components/ui/icons/ArrowDownIcon";
 import ArrowUpIcon from "@/components/ui/icons/ArrowUpIcon";
+import WorkExperience from "@/components/workExperience/WorkExperience";
 import useDeviceStore from "@/store/deviceStore";
 import { useScrollStore } from "@/store/scrollStore";
 import { AnimatePresence, motion } from "framer-motion";
@@ -52,15 +54,19 @@ export default function Home() {
 
       <Hero />
 
-      <div className="mx-auto max-w-screen-xl px-4">
-        <Laptop />
-      </div>
+      <Laptop />
 
       <div className="mx-auto max-w-screen-xl px-4">
         <AboutMe />
       </div>
 
-      <div className="h-[2000px]"></div>
+      <div className="mx-auto max-w-screen-xl px-4">
+        <WorkExperience />
+      </div>
+
+      <div className="mx-auto max-w-screen-xl px-4">
+        <Project />
+      </div>
     </main>
   );
 }

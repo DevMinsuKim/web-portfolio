@@ -27,7 +27,7 @@ const TypingAnimation = forwardRef<TypingAnimationRef, Props>(
         const timeout = setTimeout(() => {
           setDisplayedText((prev) => prev + text[index]);
           setIndex((prev) => prev + 1);
-        }, 100);
+        }, 150);
         return () => clearTimeout(timeout);
       }
     }, [index, text]);

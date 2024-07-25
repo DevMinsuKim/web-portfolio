@@ -3,6 +3,8 @@ import { Html, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useRef, useState } from "react";
 import { Interpolation, a as three } from "@react-spring/three";
+import useCursorStore from "@/store/cursorStore";
+import useDeviceStore from "@/store/deviceStore";
 
 type Props = {
   open: boolean;
@@ -15,6 +17,7 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
   const { nodes, materials } = useGLTF("/models/mac.glb") as any;
 
   const [hovered, setHovered] = useState(false);
+  const { isMobile } = useDeviceStore();
 
   useEffect(() => {
     document.body.style.cursor = hovered ? "pointer" : "auto";
@@ -25,27 +28,29 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    if (group.current) {
-      group.current.rotation.x = THREE.MathUtils.lerp(
-        group.current.rotation.x,
-        open ? Math.cos(t / 10) / 10 + 0.25 : 0,
-        0.1,
-      );
-      group.current.rotation.y = THREE.MathUtils.lerp(
-        group.current.rotation.y,
-        open ? Math.sin(t / 10) / 4 : 0,
-        0.1,
-      );
-      group.current.rotation.z = THREE.MathUtils.lerp(
-        group.current.rotation.z,
-        open ? Math.sin(t / 10) / 10 : 0,
-        0.1,
-      );
-      group.current.position.y = THREE.MathUtils.lerp(
-        group.current.position.y,
-        open ? (-2 + Math.sin(t)) / 3 : -4.3,
-        0.1,
-      );
+    if (!isMobile) {
+      if (group.current) {
+        group.current.rotation.x = THREE.MathUtils.lerp(
+          group.current.rotation.x,
+          open ? Math.cos(t / 10) / 10 + 0.25 : 0,
+          0.1,
+        );
+        group.current.rotation.y = THREE.MathUtils.lerp(
+          group.current.rotation.y,
+          open ? Math.sin(t / 10) / 4 : 0,
+          0.1,
+        );
+        group.current.rotation.z = THREE.MathUtils.lerp(
+          group.current.rotation.z,
+          open ? Math.sin(t / 10) / 10 : 0,
+          0.1,
+        );
+        // group.current.position.y = THREE.MathUtils.lerp(
+        //   group.current.position.y,
+        //   open ? (-2 + Math.sin(t)) / 3 : -4.3,
+        //   0.1,
+        // );
+      }
     }
   });
 
@@ -55,6 +60,7 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
       {...props}
       onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
       onPointerOut={() => setHovered(false)}
+      dispose={null}
     >
       <three.group rotation-x={hinge} position={[0, -0.04, 0.41]}>
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
@@ -74,7 +80,7 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
               className="h-[216px] w-[334px]"
               zIndexRange={[10, 0]}
               rotation-x={-Math.PI / 2}
-              position={[0, 0.04, -0.09]}
+              position={[0, 0.05, -0.09]}
               transform
               occlude
             >
