@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import Image from "next/image";
+import useScrollDirection from "@/hook/useScrollDirection";
+import { viewUpAnimation } from "@/styles/viewUpAnimation";
+import { viewRightAnimation } from "@/styles/viewRightAnimation";
 
 const data = [
   {
@@ -18,31 +21,31 @@ const data = [
 ];
 
 export default function Project() {
+  const scrollDirection = useScrollDirection();
+
   const sectionRef = useRef(null);
-  const setctionInView = useInView(sectionRef, { amount: 0.2 });
+
+  const setctionInView = useInView(sectionRef, {
+    once: scrollDirection === "down",
+  });
+
+  const divInView = useInView(sectionRef, {
+    amount: 0.3,
+    once: scrollDirection === "down",
+  });
 
   return (
-    <section className="mt-64" ref={sectionRef}>
+    <section className="pt-64" ref={sectionRef}>
       <p
-        className="text-5xl font-bold sm:text-6xl lg:text-7xl"
-        style={{
-          transform: setctionInView ? "none" : "translateY(200px)",
-          opacity: setctionInView ? 1 : 0,
-          transition:
-            "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s, opacity 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
-        }}
+        className="text-3xl font-bold sm:text-4xl lg:text-5xl"
+        style={viewRightAnimation(setctionInView)}
       >
         프로젝트
       </p>
 
       <div
         className="mt-20 grid grid-cols-2 items-center justify-center gap-10"
-        style={{
-          transform: setctionInView ? "none" : "translateY(200px)",
-          opacity: setctionInView ? 1 : 0,
-          transition:
-            "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s, opacity 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
-        }}
+        style={viewUpAnimation(divInView)}
       >
         {data.map((item, index) => (
           <motion.div
@@ -51,12 +54,7 @@ export default function Project() {
             whileHover={{ scale: 1.02 }}
           >
             <div className="relative h-48 w-full">
-              <Image
-                src={item.cover}
-                alt={`${item.cover} Image`}
-                fill
-                objectFit="cover"
-              />
+              <Image src={item.cover} alt={`${item.cover} Image`} fill />
             </div>
 
             <div className="px-8 py-4">

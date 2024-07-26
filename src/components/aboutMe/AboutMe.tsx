@@ -27,7 +27,7 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
     <motion.div
       ref={divRef}
       key={index}
-      className={`flex h-[40svh] w-full flex-col justify-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
+      className={`flex h-[50svh] items-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
       style={{
         opacity: initialOpacity,
       }}
@@ -67,7 +67,7 @@ export default function AboutMe() {
           {scopedT("title")}
         </p>
       </div>
-      <div className="flex h-full flex-col justify-center">
+      <div className="flex flex-col">
         {messages.map((item, index) => (
           <MessageBox key={index} item={scopedT(item)} index={index} />
         ))}

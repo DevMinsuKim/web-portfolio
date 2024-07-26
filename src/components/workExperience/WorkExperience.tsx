@@ -6,6 +6,7 @@ import ArrowRightIcon from "../ui/icons/ArrowRightIcon";
 import { useScopedI18n } from "@/locales/client";
 import useScrollDirection from "@/hook/useScrollDirection";
 import { viewUpAnimation } from "@/styles/viewUpAnimation";
+import { viewRightAnimation } from "@/styles/viewRightAnimation";
 
 const data = [
   {
@@ -29,21 +30,27 @@ export default function WorkExperience() {
 
   const sectionRef = useRef(null);
   const setctionInView = useInView(sectionRef, {
-    amount: 0.2,
+    once: scrollDirection === "down",
+  });
+
+  const divInView = useInView(sectionRef, {
+    amount: 0.3,
     once: scrollDirection === "down",
   });
 
   return (
-    <section
-      className="mt-44 sm:mt-96"
-      ref={sectionRef}
-      style={viewUpAnimation(setctionInView)}
-    >
-      <p className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+    <section className="mt-44 sm:mt-96" ref={sectionRef}>
+      <p
+        className="text-3xl font-bold sm:text-4xl lg:text-5xl"
+        style={viewRightAnimation(setctionInView)}
+      >
         {scopedT("title")}
       </p>
 
-      <div className="mt-14 grid grid-cols-1 items-center justify-center gap-3 sm:mt-20 sm:grid-cols-2 lg:gap-10">
+      <div
+        className="mt-14 grid grid-cols-1 items-center justify-center gap-3 sm:mt-20 sm:grid-cols-2 lg:gap-10"
+        style={viewUpAnimation(divInView)}
+      >
         {data.map((item, index) => (
           <motion.div
             key={index}

@@ -6,6 +6,7 @@ import I18nProvider from "@/providers/I18nProvider";
 import { ReactElement, useEffect } from "react";
 import * as ChannelService from "@channel.io/channel-web-sdk-loader";
 import { useScrollListener } from "@/store/scrollStore";
+import { useScroll, useSpring } from "framer-motion";
 
 export default function SubLayout({
   children,

@@ -67,6 +67,8 @@ export default function Home() {
       <div className="mx-auto max-w-screen-xl px-4">
         <Project />
       </div>
+
+      <div className="h-[2000px]"></div>
     </main>
   );
 }
