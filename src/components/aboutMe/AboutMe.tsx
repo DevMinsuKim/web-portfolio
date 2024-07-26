@@ -1,20 +1,14 @@
 "use client";
 
+import useScrollDirection from "@/hook/useScrollDirection";
 import { useScopedI18n } from "@/locales/client";
+import { viewRightAnimation } from "@/styles/viewRightAnimation";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
 const messages: Array<
-  | "frontendExperience"
-  | "smoothCollaboration"
-  | "interestInDevelopment"
-  | "focusOnUserExperience"
-> = [
-  "frontendExperience",
-  "smoothCollaboration",
-  "interestInDevelopment",
-  "focusOnUserExperience",
-];
+  "description" | "description1" | "description2" | "description3"
+> = ["description", "description1", "description2", "description3"];
 
 const MessageBox = ({ item, index }: { item: string; index: number }) => {
   const divRef = useRef(null);
@@ -33,7 +27,7 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
     <motion.div
       ref={divRef}
       key={index}
-      className={`flex h-[50svh] flex-col items-center justify-center text-center text-lg sm:text-2xl lg:text-3xl`}
+      className={`flex h-[40svh] w-full flex-col justify-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
       style={{
         opacity: initialOpacity,
       }}
@@ -56,24 +50,21 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
 };
 
 export default function AboutMe() {
-  const sectionRef = useRef(null);
-  const setctionInView = useInView(sectionRef, { amount: 0.05 });
+  const scrollDirection = useScrollDirection();
 
   const scopedT = useScopedI18n("aboutMe");
 
+  const sectionRef = useRef(null);
+  const setctionInView = useInView(sectionRef, {
+    amount: 0.05,
+    once: scrollDirection === "down",
+  });
+
   return (
-    <section className="mt-64" ref={sectionRef}>
-      <div
-        className="sticky top-28"
-        style={{
-          transform: setctionInView ? "none" : "translateX(-200px)",
-          opacity: setctionInView ? 1 : 0,
-          transition:
-            "transform 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s, opacity 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
-        }}
-      >
-        <p className="text-5xl font-bold sm:text-6xl lg:text-7xl">
-          {scopedT("aboutMe")}
+    <section className="mt-20 sm:mt-24 lg:mt-32" ref={sectionRef}>
+      <div className="sticky top-28" style={viewRightAnimation(setctionInView)}>
+        <p className="text-3xl font-bold sm:text-4xl lg:text-5xl">
+          {scopedT("title")}
         </p>
       </div>
       <div className="flex h-full flex-col justify-center">
