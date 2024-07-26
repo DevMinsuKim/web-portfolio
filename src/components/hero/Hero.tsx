@@ -120,12 +120,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mt-5 flex w-full items-center justify-center">
-          <div className="flex flex-col items-center gap-y-4 rounded-3xl border bg-base-100 p-6 shadow dark:border-none dark:bg-base-200">
-            <EmailIcon className="h-7 w-7" />
-          </div>
-        </div>
-
         <div className="mt-10 flex w-full items-center justify-center">
           <div className="flex flex-col items-center gap-y-4 rounded-3xl border bg-base-100 p-6 shadow dark:border-none dark:bg-base-200">
             <button className="btn btn-ghost w-full bg-primary text-white hover:bg-primary/80">
