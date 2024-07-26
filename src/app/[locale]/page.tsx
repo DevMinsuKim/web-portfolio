@@ -4,6 +4,7 @@ import AboutMe from "@/components/aboutMe/AboutMe";
 import Hero from "@/components/hero/Hero";
 import Laptop from "@/components/laptop/Laptop";
 import Project from "@/components/project/Project";
+import Skill from "@/components/skill/Skill";
 import ArrowDownIcon from "@/components/ui/icons/ArrowDownIcon";
 import ArrowUpIcon from "@/components/ui/icons/ArrowUpIcon";
 import WorkExperience from "@/components/workExperience/WorkExperience";
@@ -66,6 +67,10 @@ export default function Home() {
 
       <div className="mx-auto max-w-screen-xl px-4">
         <Project />
+      </div>
+
+      <div className="mx-auto max-w-screen-xl px-4">
+        <Skill />
       </div>
 
       <div className="h-[2000px]"></div>

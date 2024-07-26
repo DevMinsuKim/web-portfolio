@@ -40,7 +40,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex h-[calc(100svh)] min-h-[700px] flex-col items-center justify-center sm:min-h-[800px]">
+    <section className="relative flex h-[calc(100svh)] min-h-[1000px] flex-col items-center justify-center pt-16 sm:min-h-[800px]">
       <div className="absolute inset-0 min-w-[320px] bg-gradient-to-t from-primary/20 to-base-200 dark:from-[#12112F] dark:to-base-100" />
 
       <div
@@ -120,6 +120,12 @@ export default function Hero() {
           </div>
         </div>
 
+        <div className="mt-5 flex w-full items-center justify-center">
+          <div className="flex flex-col items-center gap-y-4 rounded-3xl border bg-base-100 p-6 shadow dark:border-none dark:bg-base-200">
+            <EmailIcon className="h-7 w-7" />
+          </div>
+        </div>
+
         <div className="mt-10 flex w-full items-center justify-center">
           <div className="flex flex-col items-center gap-y-4 rounded-3xl border bg-base-100 p-6 shadow dark:border-none dark:bg-base-200">
             <button className="btn btn-ghost w-full bg-primary text-white hover:bg-primary/80">
@@ -127,7 +133,7 @@ export default function Hero() {
               <p>{scopedT("contactMe")}</p>
             </button>
 
-            <div className="flex items-center justify-center rounded-2xl border p-2 text-center shadow dark:border-none dark:bg-base-100">
+            <div className="dark:bg-base-400 flex items-center justify-center rounded-2xl border p-2 text-center shadow dark:border-none">
               <InfoIcon className="mr-2 h-7 w-7 flex-shrink-0 rounded-full border shadow dark:border-none dark:bg-base-200" />
               <p className="mr-1 text-xs font-bold sm:text-sm">
                 {scopedT("channelTalk")}
@@ -135,13 +141,13 @@ export default function Hero() {
             </div>
 
             <div className="grid grid-cols-3 gap-4">
-              <button className="btn flex items-center justify-center bg-base-100">
+              <button className="justify-cente1 bg-base-400 btn flex items-center hover:bg-base-content/20">
                 <GithubIcon className="h-7 w-7" />
               </button>
-              <button className="btn flex items-center justify-center bg-base-100">
+              <button className="bg-base-400 btn flex items-center justify-center hover:bg-base-content/20">
                 <LinkdeinIcon className="h-7 w-7" />
               </button>
-              <button className="btn flex items-center justify-center bg-base-100">
+              <button className="bg-base-400 btn flex items-center justify-center hover:bg-base-content/20">
                 <YouTubeIcon className="h-7 w-7" />
               </button>
             </div>

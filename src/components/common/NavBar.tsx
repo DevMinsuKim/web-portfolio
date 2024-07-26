@@ -48,7 +48,7 @@ export default function NavBar() {
         className={`${isScrolled && "top-3"} fixed z-40 w-full px-4`}
       >
         <div
-          className={`mx-auto max-w-screen-xl ${isScrolled && "rounded-xl border bg-base-100/90 px-3 shadow-md dark:border-none dark:bg-base-200/90"}`}
+          className={`mx-auto max-w-screen-xl ${isScrolled && "border-base-border shadow-base-shadow rounded-xl border bg-base-100/95 px-3 shadow-md dark:bg-base-300/95"}`}
         >
           <div className="navbar hidden p-0 md:flex">
             <div className="navbar-start">

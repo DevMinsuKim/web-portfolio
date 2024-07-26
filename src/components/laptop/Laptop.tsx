@@ -91,7 +91,7 @@ export default function Laptop() {
       </div>
 
       <div className="mx-auto max-w-screen-xl px-4">
-        <div className="z-10 flex flex-col items-center rounded-3xl border bg-base-100 px-6 py-4 shadow dark:border-none dark:bg-base-300">
+        <div className="shadow-base-shadow border-base-border z-10 flex flex-col items-center rounded-3xl border bg-base-100 px-6 py-4 shadow dark:bg-base-300">
           <Rotate3DIncon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9" />
           <div className="mt-3 text-center text-xs font-bold sm:text-sm md:text-base">
             {isMobile

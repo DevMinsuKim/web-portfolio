@@ -54,7 +54,7 @@ export default function WorkExperience() {
         {data.map((item, index) => (
           <motion.div
             key={index}
-            className="relative flex cursor-pointer flex-col rounded-2xl border px-8 py-4 shadow dark:border-none dark:bg-base-300"
+            className="border-base-border shadow-base-shadow relative flex cursor-pointer flex-col rounded-2xl border px-8 py-4 shadow dark:bg-base-300"
             whileHover={{ scale: 1.02 }}
           >
             <div>{item.logo}</div>
