@@ -8,13 +8,31 @@ import { viewRightAnimation } from "@/styles/viewRightAnimation";
 const data = [
   {
     cover: "/images/test.jpg",
-    title: "카이",
-    description: "test",
+    title: "웹 포트폴리오",
+    description: "현재 보시는 프로젝트는 멋진 프로젝트입니다!",
     date: "2021.08 ~ 2024.1",
   },
   {
     cover: "/images/test.jpg",
-    title: "다돌",
+    title: "클로버픽",
+    description: "test123",
+    date: "2021.04 ~ 2021.07",
+  },
+  {
+    cover: "",
+    title: "퍼즐",
+    description: "test123",
+    date: "2021.04 ~ 2021.07",
+  },
+  {
+    cover: "",
+    title: "카드북",
+    description: "test123",
+    date: "2021.04 ~ 2021.07",
+  },
+  {
+    cover: "/images/test.jpg",
+    title: "Wooden Wars",
     description: "test123",
     date: "2021.04 ~ 2021.07",
   },
@@ -35,7 +53,7 @@ export default function Project() {
   });
 
   return (
-    <section className="pt-64" ref={sectionRef}>
+    <section className="mt-32 sm:mt-48" ref={sectionRef}>
       <p
         className="text-3xl font-bold sm:text-4xl lg:text-5xl"
         style={viewRightAnimation(setctionInView)}
@@ -44,7 +62,7 @@ export default function Project() {
       </p>
 
       <div
-        className="mt-20 grid grid-cols-2 items-center justify-center gap-10"
+        className="mt-20 grid grid-cols-3 items-center justify-center gap-10"
         style={viewUpAnimation(divInView)}
       >
         {data.map((item, index) => (
@@ -54,14 +72,24 @@ export default function Project() {
             whileHover={{ scale: 1.02 }}
           >
             <div className="relative h-48 w-full">
-              <Image src={item.cover} alt={`${item.cover} Image`} fill />
+              {item.cover && (
+                <Image src={item.cover} alt={`${item.cover} Image`} fill />
+              )}
             </div>
 
-            <div className="px-8 py-4">
-              <p className="self-end text-3xl font-bold">{item.title}</p>
-              <p className="self-end text-xl">{item.description}</p>
-              <p className="self-end text-xl">{item.date}</p>
-            </div>
+            {item.cover ? (
+              <div className="px-8 py-4">
+                <p className="self-end text-3xl font-bold">{item.title}</p>
+                <p className="self-end text-xl">{item.description}</p>
+                <p className="self-end text-xl">{item.date}</p>
+              </div>
+            ) : (
+              <div className="px-8 py-4">
+                <p className="self-end text-3xl font-bold">{item.title}</p>
+                <p className="self-end text-xl">{item.description}</p>
+                <p className="self-end text-xl">{item.date}</p>
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
