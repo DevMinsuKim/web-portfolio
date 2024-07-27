@@ -88,7 +88,7 @@ export default function Skill() {
             {item.categoryItem.map((subItem, subIndex) => (
               <motion.div
                 key={subIndex}
-                className="border-base-border shadow-base-shadow flex cursor-pointer flex-col rounded-2xl border shadow dark:bg-base-300"
+                className="flex cursor-pointer flex-col rounded-2xl border border-base-border shadow shadow-base-shadow dark:bg-base-300"
                 whileHover={{ scale: 1.02 }}
               >
                 <div>{subItem.logo}</div>

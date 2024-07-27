@@ -89,7 +89,7 @@ export default function MobileNavBar() {
             animate={{ clipPath: "inset(0% 0% 0% 0%)", opacity: 1 }}
             exit={{ clipPath: "inset(0% 0% 0% 100%)", opacity: 0 }}
             transition={{ tension: 220, friction: 30 }}
-            className="fixed right-0 top-0 h-screen max-w-[320px] rounded-l-3xl bg-base-100 px-4 shadow-xl dark:bg-base-200 md:hidden"
+            className="fixed right-0 top-0 h-screen max-w-[20rem] rounded-l-3xl bg-base-100 px-4 shadow-xl dark:bg-base-200 md:hidden"
           >
             <div className="mt-2 flex justify-end">
               <button

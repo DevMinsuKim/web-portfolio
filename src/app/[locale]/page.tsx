@@ -1,6 +1,8 @@
 "use client";
 
 import AboutMe from "@/components/aboutMe/AboutMe";
+import Activity from "@/components/activity/Activity";
+import Contact from "@/components/contact/Contacet";
 import Hero from "@/components/hero/Hero";
 import Laptop from "@/components/laptop/Laptop";
 import Project from "@/components/project/Project";
@@ -73,7 +75,13 @@ export default function Home() {
         <Skill />
       </div>
 
-      <div className="h-[2000px]"></div>
+      <div className="mx-auto max-w-screen-xl px-4">
+        <Activity />
+      </div>
+
+      <Contact />
+
+      {/* <div className="h-[2000px]"></div> */}
     </main>
   );
 }

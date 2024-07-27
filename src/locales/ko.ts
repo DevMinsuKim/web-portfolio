@@ -18,7 +18,7 @@ export default {
     introFooter: "입니다.",
     introDescription:
       "중학생 시절부터 개발자를 꿈꿔왔고, 현재는 3년 차 개발자로서 그 꿈을 이루었지만 현 모습에 안주하지 않고 끊임없이 성장하고 발전하며 더 큰 목표를 향해 나아가고자 합니다.",
-    contactMe: "메일 문의하기",
+    contactMe: "문의하기",
     channelTalk: "우측 하단의 채널톡을 통해서도 문의 가능합니다!",
   },
   laptop: {
@@ -46,5 +46,9 @@ export default {
     position: "개발 팀 - 인턴",
     companyName1: "카이",
     position1: "개발 팀 - 사원",
+  },
+  contact: {
+    contactMe: "문의하기",
+    test: "우측 하단의 채널톡을\n이용한 문의도 가능합니다!",
   },
 } as const;

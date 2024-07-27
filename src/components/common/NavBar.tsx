@@ -25,7 +25,7 @@ export default function NavBar() {
 
   useEffect(() => {
     controls.start({
-      top: isScrolled ? "12px" : "0px",
+      top: isScrolled ? "0.75rem" : "0rem",
       transition: { tension: 220, friction: 20 },
     });
   }, [isScrolled, controls]);

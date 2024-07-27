@@ -48,4 +48,8 @@ export default {
     companyName1: "KAI",
     position1: "Development Team - Employee",
   },
+  contact: {
+    contactMe: "Contact Me",
+    test: "우측 하단의 채널톡을 <br /> 이용해 문의 가능합니다!",
+  },
 } as const;

@@ -40,13 +40,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex h-[calc(100svh)] min-h-[1000px] flex-col items-center justify-center pt-16 sm:min-h-[800px]">
-      <div className="absolute inset-0 min-w-[320px] bg-gradient-to-t from-primary/20 to-base-200 dark:from-[#12112F] dark:to-base-100" />
+    <section className="relative flex h-[calc(100svh)] min-h-[62.5rem] flex-col items-center justify-center pt-16 sm:min-h-[50rem]">
+      <div className="absolute inset-0 min-w-[20rem] bg-gradient-to-t from-primary/20 to-base-200 dark:from-[#12112F] dark:to-base-100" />
 
       <div
         style={{
           position: "absolute",
-          minWidth: "320px",
+          minWidth: "20rem",
           bottom: 0,
           left: 0,
           width: "100%",
@@ -56,11 +56,11 @@ export default function Hero() {
         }}
       >
         <svg
-          className="h-[80px] sm:h-[250px]"
+          className="h-[5rem] sm:h-[15.625rem]"
           style={{
             position: "relative",
             display: "block",
-            width: "calc(170% + 1.3px)",
+            width: "calc(170% + 0.081rem)",
           }}
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ export default function Hero() {
                     ref={typingAnimationRef}
                   />
                   <button
-                    className={`${!isPageLoaded ? "hidden" : ""} absolute right-[-5px] top-[-10px] rounded-full bg-base-content p-1 text-base-100`}
+                    className={`${!isPageLoaded ? "hidden" : ""} absolute right-[-0.313rem] top-[-0.625rem] rounded-full bg-base-content p-1 text-base-100`}
                     onClick={handleReset}
                   >
                     <ReplayIcon className="h-4 w-4" />
@@ -110,13 +110,9 @@ export default function Hero() {
               )}{" "}
               {locale === "ko" && scopedT("introFooter")}
             </div>
-            <div className="mt-10 max-w-[600px] text-base md:max-w-[720px] md:text-lg">
-              {scopedT("introDescription")
-                .split("\n")
-                .map((line, idx) => (
-                  <p key={idx}>{line}</p>
-                ))}
-            </div>
+            <p className="mt-10 max-w-[37.5rem] text-base md:max-w-[45rem] md:text-lg">
+              {scopedT("introDescription")}
+            </p>
           </div>
         </div>
 
@@ -127,7 +123,7 @@ export default function Hero() {
               <p>{scopedT("contactMe")}</p>
             </button>
 
-            <div className="dark:bg-base-400 flex items-center justify-center rounded-2xl border p-2 text-center shadow dark:border-none">
+            <div className="flex items-center justify-center rounded-2xl border p-2 text-center shadow dark:border-none dark:bg-base-400">
               <InfoIcon className="mr-2 h-7 w-7 flex-shrink-0 rounded-full border shadow dark:border-none dark:bg-base-200" />
               <p className="mr-1 text-xs font-bold sm:text-sm">
                 {scopedT("channelTalk")}
@@ -135,13 +131,13 @@ export default function Hero() {
             </div>
 
             <div className="grid grid-cols-3 gap-4">
-              <button className="justify-cente1 bg-base-400 btn flex items-center hover:bg-base-content/20">
+              <button className="justify-cente1 btn flex items-center bg-base-400 hover:bg-base-content/20">
                 <GithubIcon className="h-7 w-7" />
               </button>
-              <button className="bg-base-400 btn flex items-center justify-center hover:bg-base-content/20">
+              <button className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20">
                 <LinkdeinIcon className="h-7 w-7" />
               </button>
-              <button className="bg-base-400 btn flex items-center justify-center hover:bg-base-content/20">
+              <button className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20">
                 <YouTubeIcon className="h-7 w-7" />
               </button>
             </div>

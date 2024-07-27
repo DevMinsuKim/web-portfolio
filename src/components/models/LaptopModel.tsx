@@ -77,7 +77,7 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
             geometry={nodes["Cube008_2"].geometry}
           >
             <Html
-              className="h-[216px] w-[334px]"
+              className="h-[13.5rem] w-[20.875rem]"
               zIndexRange={[10, 0]}
               rotation-x={-Math.PI / 2}
               position={[0, 0.05, -0.09]}
