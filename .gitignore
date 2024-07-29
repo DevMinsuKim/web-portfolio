@@ -39,3 +39,5 @@ next-env.d.ts
 # Bun lockfile
 bun.lockb
 
+
+certificates
