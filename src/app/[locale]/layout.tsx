@@ -6,6 +6,7 @@ import I18nProvider from "@/providers/I18nProvider";
 import NavBar from "@/components/common/NavBar";
 import AnimatedCursor from "@/components/common/AnimatedCursor";
 import Initializer from "@/components/common/Initializer";
+import { ModalProvider } from "@/providers/ModalProvider";
 
 const pretendard = localFont({
   src: "../../fonts/PretendardVariable.woff2",
@@ -33,11 +34,13 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <I18nProvider params={params}>
-            <Initializer />
-            <NavBar />
+            <ModalProvider>
+              <Initializer />
+              <NavBar />
 
-            {children}
-            <AnimatedCursor />
+              {children}
+              <AnimatedCursor />
+            </ModalProvider>
           </I18nProvider>
         </ThemeProvider>
       </body>

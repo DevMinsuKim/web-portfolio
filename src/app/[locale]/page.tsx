@@ -2,7 +2,7 @@
 
 import AboutMe from "@/components/aboutMe/AboutMe";
 import Activity from "@/components/activity/Activity";
-import Contact from "@/components/contact/Contacet";
+import Contact from "@/components/contact/Contact";
 import Hero from "@/components/hero/Hero";
 import Laptop from "@/components/laptop/Laptop";
 import Project from "@/components/project/Project";
@@ -57,9 +57,9 @@ export default function Home() {
 
       <Hero />
 
-      <Laptop />
+      {/* <Laptop /> */}
 
-      <div className="mx-auto max-w-screen-xl px-4">
+      {/* <div className="mx-auto max-w-screen-xl px-4">
         <AboutMe />
       </div>
 
@@ -77,7 +77,7 @@ export default function Home() {
 
       <div className="mx-auto max-w-screen-xl px-4">
         <Activity />
-      </div>
+      </div> */}
 
       <Contact />
 

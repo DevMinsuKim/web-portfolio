@@ -41,7 +41,7 @@ export default function Hero() {
 
   return (
     <section className="relative flex h-[calc(100svh)] min-h-[62.5rem] flex-col items-center justify-center pt-16 sm:min-h-[50rem]">
-      <div className="absolute inset-0 min-w-[20rem] bg-gradient-to-t from-primary/20 to-base-200 dark:from-[#12112F] dark:to-base-100" />
+      <div className="absolute inset-0 min-w-[20rem] bg-gradient-to-t from-primary/20 to-base-200 dark:from-[#161430] dark:to-base-100" />
 
       <div
         style={{
