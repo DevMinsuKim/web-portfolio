@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @layer utilities {
   .custom-tooltip {
     @apply rounded-lg bg-base-200 font-medium text-base-content shadow-lg !important;

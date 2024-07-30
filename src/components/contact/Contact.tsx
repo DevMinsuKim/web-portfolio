@@ -289,7 +289,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="btn btn-ghost mb-36 mt-5 bg-primary text-white hover:bg-primary/80 disabled:bg-primary/50 disabled:text-opacity-50 md:mb-0"
+              className="btn btn-ghost mt-5 bg-primary text-white hover:bg-primary/80 disabled:bg-primary/50 disabled:text-opacity-50"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
@@ -301,6 +301,26 @@ export default function Contact() {
                 </>
               )}
             </button>
+
+            <p className="white mb-36 text-center text-xs md:mb-0">
+              {t("protectedBy")}
+              <a
+                className="font-bold"
+                href="https://policies.google.com/privacy"
+                target="_blank"
+              >
+                {t("privacyPolicy")}
+              </a>
+              {t("and")}
+              <a
+                className="font-bold"
+                href="https://policies.google.com/terms"
+                target="_blank"
+              >
+                {t("termsOfService")}
+              </a>
+              {t("apply")}
+            </p>
           </form>
 
           <div className="ml-4 hidden w-full flex-col gap-y-4 border-l-4 border-base-100 pl-4 md:flex md:basis-[50%] lg:basis-[25%]">

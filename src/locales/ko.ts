@@ -70,6 +70,11 @@ export default {
     subjectMaxLength: "제목은 최대 254자까지 입력 가능합니다.",
     contentRequired: "내용은 필수 입력 항목입니다.",
     contentMaxLength: "내용은 최대 2000자까지 입력 가능합니다.",
+    protectedBy: "이 사이트는 reCAPTCHA에 의해 보호되며 \nGoogle ",
+    privacyPolicy: "개인정보 보호정책",
+    and: " 및 ",
+    termsOfService: "서비스 약관",
+    apply: "이 적용됩니다.",
   },
   error: {
     apology: "이용에 불편을 드려 죄송합니다.",

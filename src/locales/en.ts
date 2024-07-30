@@ -71,6 +71,11 @@ export default {
     subjectMaxLength: "The subject can be up to 254 characters long.",
     contentRequired: "Content is a required field.",
     contentMaxLength: "Content can be up to 2000 characters long.",
+    protectedBy: "This site is protected by reCAPTCHA and the Google\n",
+    privacyPolicy: "Privacy Policy",
+    and: " and ",
+    termsOfService: "Terms of Service",
+    apply: " apply.",
   },
   error: {
     apology: "Error",
