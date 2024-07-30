@@ -78,12 +78,18 @@ export default {
     apply: " apply.",
   },
   error: {
-    apology: "Error",
+    apology: "Something went wrong!",
     tryAgainLater: "Please try again later.",
     againLater: "Please try again later.",
     retry: "Retry",
     confirm: "Confirm",
     emailCopyFailed: "An error occurred while copying the email address.",
     emailSendFailed: "An error occurred while sending the email.",
+  },
+  notFound: {
+    title: "Page not found.",
+    description:
+      "The page you are looking for might be removed or temporarily unavailable.\nPlease check the URL and try again.",
+    homeButton: "Go back to home",
   },
 } as const;

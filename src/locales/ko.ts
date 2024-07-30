@@ -64,7 +64,7 @@ export default {
     content: "내용 (최대 2000자)",
     enterContent: "내용을 입력해 주세요.",
     sendEmail: "이메일 보내기",
-    validEmail: "유효한 이메일 주소를 입력해주세요.",
+    validEmail: "유효한 이메일 주소를 입력해 주세요.",
     emailMaxLength: "이메일 주소는 최대 254자까지 입력 가능합니다.",
     subjectRequired: "제목은 필수 입력 항목입니다.",
     subjectMaxLength: "제목은 최대 254자까지 입력 가능합니다.",
@@ -85,5 +85,11 @@ export default {
     confirm: "확인",
     emailCopyFailed: "이메일 주소 복사 중 오류가 발생했습니다.",
     emailSendFailed: "이메일 보내는 중 오류가 발생했습니다.",
+  },
+  notFound: {
+    title: "찾으시는 페이지가 없습니다.",
+    description:
+      "찾고 있는 페이지가 제거되었거나 일시적으로 사용할 수 없습니다.\n입력하신 페이지의 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.",
+    homeButton: "홈으로 돌아가기",
   },
 } as const;

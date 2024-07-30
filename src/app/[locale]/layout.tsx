@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang={params.locale} suppressHydrationWarning>
       <body
-        className={`${pretendard.variable} ${params.locale === "ko" && "break-all"} min-w-[20rem] whitespace-pre-wrap font-pretendard`}
+        className={`${pretendard.variable} ${params.locale === "ko" && "break-keep"} min-w-[20rem] whitespace-pre-wrap font-pretendard`}
       >
         <ThemeProvider>
           <I18nProvider params={params}>

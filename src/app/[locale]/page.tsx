@@ -56,9 +56,7 @@ export default function Home() {
       </AnimatePresence>
 
       <Hero />
-
       {/* <Laptop /> */}
-
       {/* <div className="mx-auto max-w-screen-xl px-4">
         <AboutMe />
       </div>
@@ -78,9 +76,7 @@ export default function Home() {
       <div className="mx-auto max-w-screen-xl px-4">
         <Activity />
       </div> */}
-
       <Contact />
-
       {/* <div className="h-[2000px]"></div> */}
     </main>
   );
