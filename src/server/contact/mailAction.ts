@@ -3,10 +3,30 @@
 import * as Sentry from "@sentry/nextjs";
 import { mailSchema, TypeMailSchema } from "@/schema/mailSchema";
 import nodemailer from "nodemailer";
-import { z } from "zod";
 import { getScopedI18n } from "@/locales/server";
 
-export async function MailAction({ email, subject, text }: TypeMailSchema) {
+export async function MailAction(
+  { email, subject, text }: TypeMailSchema,
+  token: string,
+) {
+  const response = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `secret=${process.env.RECAPTCH_KEY}&response=${token}`,
+    },
+  );
+
+  const recaptchaData = await response.json();
+
+  if (!recaptchaData.success || recaptchaData.score < 0.5) {
+    Sentry.captureException(recaptchaData);
+    return { success: false };
+  }
+
   const t = await getScopedI18n("contact");
 
   const TansMailSchema = mailSchema(t);

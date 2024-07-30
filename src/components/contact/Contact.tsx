@@ -16,12 +16,14 @@ import * as Sentry from "@sentry/nextjs";
 import { errorMessage } from "../utils/errorMessage";
 import { MailAction } from "@/server/contact/mailAction";
 import { mailSchema, TypeMailSchema } from "@/schema/mailSchema";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Contact() {
   const t = useScopedI18n("contact");
   const errorT = useScopedI18n("error");
-
   const TansMailSchema = mailSchema(t);
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const {
     register,
@@ -46,7 +48,20 @@ export default function Contact() {
   const text = watch("text", "");
 
   const sendMail: SubmitHandler<TypeMailSchema> = async (data) => {
-    const response = await MailAction(data);
+    if (!executeRecaptcha) {
+      Sentry.captureException("executeRecaptcha 함수에서 문제 발생.");
+      const { title, description, btnText } = errorMessage("2", errorT);
+      showModal({
+        title: title,
+        description: description,
+        btnText: btnText,
+      });
+      return;
+    }
+
+    const token = await executeRecaptcha("sendEmail");
+
+    const response = await MailAction(data, token);
     if (response.success) {
       reset();
       showModal({

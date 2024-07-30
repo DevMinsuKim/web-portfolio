@@ -7,6 +7,7 @@ import NavBar from "@/components/common/NavBar";
 import AnimatedCursor from "@/components/common/AnimatedCursor";
 import Initializer from "@/components/common/Initializer";
 import { ModalProvider } from "@/providers/ModalProvider";
+import { ReCaptchaProivder } from "@/providers/ReCaptchaProivder";
 
 const pretendard = localFont({
   src: "../../fonts/PretendardVariable.woff2",
@@ -34,13 +35,15 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <I18nProvider params={params}>
-            <ModalProvider>
-              <Initializer />
-              <NavBar />
+            <ReCaptchaProivder>
+              <ModalProvider>
+                <Initializer />
+                <NavBar />
 
-              {children}
-              <AnimatedCursor />
-            </ModalProvider>
+                {children}
+                <AnimatedCursor />
+              </ModalProvider>
+            </ReCaptchaProivder>
           </I18nProvider>
         </ThemeProvider>
       </body>
