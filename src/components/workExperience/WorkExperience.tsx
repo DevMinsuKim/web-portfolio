@@ -29,7 +29,7 @@ export default function WorkExperience() {
   const scopedT = useScopedI18n("workExperience");
 
   const sectionRef = useRef(null);
-  const setctionInView = useInView(sectionRef, {
+  const sectionInView = useInView(sectionRef, {
     once: scrollDirection === "down",
   });
 
@@ -42,7 +42,7 @@ export default function WorkExperience() {
     <section className="mt-44 sm:mt-96" ref={sectionRef}>
       <p
         className="text-3xl font-bold sm:text-4xl lg:text-5xl"
-        style={viewRightAnimation(setctionInView)}
+        style={viewRightAnimation(sectionInView)}
       >
         {scopedT("title")}
       </p>
@@ -54,7 +54,7 @@ export default function WorkExperience() {
         {data.map((item, index) => (
           <motion.div
             key={index}
-            className="border-base-border shadow-base-shadow relative flex cursor-pointer flex-col rounded-2xl border px-8 py-4 shadow dark:bg-base-300"
+            className="relative flex cursor-pointer flex-col rounded-2xl border border-base-border px-8 py-4 shadow shadow-base-shadow dark:bg-base-300"
             whileHover={{ scale: 1.02 }}
           >
             <div>{item.logo}</div>

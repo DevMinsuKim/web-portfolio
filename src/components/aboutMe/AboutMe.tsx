@@ -55,14 +55,14 @@ export default function AboutMe() {
   const scopedT = useScopedI18n("aboutMe");
 
   const sectionRef = useRef(null);
-  const setctionInView = useInView(sectionRef, {
+  const sectionInView = useInView(sectionRef, {
     amount: 0.05,
     once: scrollDirection === "down",
   });
 
   return (
     <section className="mt-20 sm:mt-24 lg:mt-32" ref={sectionRef}>
-      <div className="sticky top-28" style={viewRightAnimation(setctionInView)}>
+      <div className="sticky top-28" style={viewRightAnimation(sectionInView)}>
         <p className="text-3xl font-bold sm:text-4xl lg:text-5xl">
           {scopedT("title")}
         </p>

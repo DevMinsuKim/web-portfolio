@@ -17,6 +17,7 @@ import { errorMessage } from "../utils/errorMessage";
 import { MailAction } from "@/server/contact/mailAction";
 import { mailSchema, TypeMailSchema } from "@/schema/mailSchema";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import Link from "next/link";
 
 export default function Contact() {
   const t = useScopedI18n("contact");
@@ -180,32 +181,29 @@ export default function Contact() {
             </button>
 
             <div className="mt-4 flex justify-between">
-              <div>
-                <button className="btn flex items-center justify-center rounded-full bg-base-100 dark:hover:bg-base-content/20">
-                  <a href={process.env.NEXT_PUBLIC_GITHUB_URL} target="_blank">
-                    <GithubIcon className="h-7 w-7" />
-                  </a>
-                </button>
-              </div>
+              <Link
+                className="btn rounded-full bg-base-100 dark:hover:bg-base-content/20"
+                href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
+                target="_blank"
+              >
+                <GithubIcon className="h-7 w-7" />
+              </Link>
 
-              <div>
-                <button className="btn flex items-center justify-center rounded-full bg-base-100 hover:bg-info hover:text-white">
-                  <a
-                    href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
-                    target="_blank"
-                  >
-                    <LinkdeinIcon className="h-7 w-7" />
-                  </a>
-                </button>
-              </div>
+              <Link
+                className="btn rounded-full bg-base-100 hover:bg-info/60 hover:text-white"
+                href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
+                target="_blank"
+              >
+                <LinkdeinIcon className="h-7 w-7" />
+              </Link>
 
-              <div>
-                <button className="btn flex items-center justify-center rounded-full bg-base-100 hover:bg-error hover:text-white">
-                  <a href={process.env.NEXT_PUBLIC_YOUTUBE_URL} target="_blank">
-                    <YouTubeIcon className="h-7 w-7" />
-                  </a>
-                </button>
-              </div>
+              <Link
+                className="btn rounded-full bg-base-100 hover:bg-error/60 hover:text-white"
+                href={process.env.NEXT_PUBLIC_YOUTUBE_URL ?? ""}
+                target="_blank"
+              >
+                <YouTubeIcon className="h-7 w-7" />
+              </Link>
             </div>
           </div>
         </div>
@@ -304,21 +302,21 @@ export default function Contact() {
 
             <p className="white mb-36 text-center text-xs md:mb-0">
               {t("protectedBy")}
-              <a
+              <Link
                 className="font-bold"
                 href="https://policies.google.com/privacy"
                 target="_blank"
               >
                 {t("privacyPolicy")}
-              </a>
+              </Link>
               {t("and")}
-              <a
+              <Link
                 className="font-bold"
                 href="https://policies.google.com/terms"
                 target="_blank"
               >
                 {t("termsOfService")}
-              </a>
+              </Link>
               {t("apply")}
             </p>
           </form>
@@ -339,29 +337,37 @@ export default function Contact() {
 
             <div>
               <p className="pb-1 font-bold">GitHub</p>
-              <button className="justify-cente1 btn flex items-center rounded-full bg-base-100 dark:hover:bg-base-content/20">
-                <a href={process.env.NEXT_PUBLIC_GITHUB_URL} target="_blank">
-                  <GithubIcon className="h-7 w-7" />
-                </a>
-              </button>
+
+              <Link
+                className="btn rounded-full bg-base-100 dark:hover:bg-base-content/20"
+                href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
+                target="_blank"
+              >
+                <GithubIcon className="h-7 w-7" />
+              </Link>
             </div>
 
             <div>
               <p className="pb-1 font-bold">Linkedin</p>
-              <button className="btn flex items-center justify-center rounded-full bg-base-100 hover:bg-info hover:text-white">
-                <a href={process.env.NEXT_PUBLIC_LINKEDIN_URL} target="_blank">
-                  <LinkdeinIcon className="h-7 w-7" />
-                </a>
-              </button>
+
+              <Link
+                className="btn rounded-full bg-base-100 hover:bg-info/60 hover:text-white"
+                href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
+                target="_blank"
+              >
+                <LinkdeinIcon className="h-7 w-7" />
+              </Link>
             </div>
 
             <div>
               <p className="pb-1 font-bold">YouTube</p>
-              <button className="btn flex items-center justify-center rounded-full bg-base-100 hover:bg-error hover:text-white">
-                <a href={process.env.NEXT_PUBLIC_YOUTUBE_URL} target="_blank">
-                  <YouTubeIcon className="h-7 w-7" />
-                </a>
-              </button>
+              <Link
+                className="btn rounded-full bg-base-100 hover:bg-error/60 hover:text-white"
+                href={process.env.NEXT_PUBLIC_YOUTUBE_URL ?? ""}
+                target="_blank"
+              >
+                <YouTubeIcon className="h-7 w-7" />
+              </Link>
             </div>
 
             <div className="mt-auto">

@@ -43,7 +43,7 @@ export default function Project() {
 
   const sectionRef = useRef(null);
 
-  const setctionInView = useInView(sectionRef, {
+  const sectionInView = useInView(sectionRef, {
     once: scrollDirection === "down",
   });
 
@@ -56,7 +56,7 @@ export default function Project() {
     <section className="mt-32 sm:mt-48" ref={sectionRef}>
       <p
         className="text-3xl font-bold sm:text-4xl lg:text-5xl"
-        style={viewRightAnimation(setctionInView)}
+        style={viewRightAnimation(sectionInView)}
       >
         프로젝트
       </p>
@@ -68,7 +68,7 @@ export default function Project() {
         {data.map((item, index) => (
           <motion.div
             key={index}
-            className="border-base-border shadow-base-shadow flex cursor-pointer flex-col overflow-hidden rounded-2xl border shadow dark:bg-base-300"
+            className="flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-base-border shadow shadow-base-shadow dark:bg-base-300"
             whileHover={{ scale: 1.02 }}
           >
             <div className="relative h-48 w-full">

@@ -60,7 +60,7 @@ export default function Skill() {
   // const scopedT = useScopedI18n("workExperience");
 
   const sectionRef = useRef(null);
-  const setctionInView = useInView(sectionRef, {
+  const sectionInView = useInView(sectionRef, {
     once: scrollDirection === "down",
   });
 
@@ -73,7 +73,7 @@ export default function Skill() {
     <section className="mt-44 sm:mt-96" ref={sectionRef}>
       <p
         className="text-3xl font-bold sm:text-4xl lg:text-5xl"
-        style={viewRightAnimation(setctionInView)}
+        style={viewRightAnimation(sectionInView)}
       >
         기술 스택
       </p>
