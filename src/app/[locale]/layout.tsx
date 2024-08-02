@@ -8,6 +8,7 @@ import AnimatedCursor from "@/components/common/AnimatedCursor";
 import Initializer from "@/components/common/Initializer";
 import { ModalProvider } from "@/providers/ModalProvider";
 import { ReCaptchaProivder } from "@/providers/ReCaptchaProivder";
+import SmoothScroll from "@/components/common/SmoothScroll";
 
 const pretendard = localFont({
   src: "../../fonts/PretendardVariable.woff2",
@@ -37,11 +38,13 @@ export default function RootLayout({
           <I18nProvider params={params}>
             <ReCaptchaProivder>
               <ModalProvider>
-                <Initializer />
-                <NavBar />
+                <SmoothScroll>
+                  <Initializer />
+                  {/* <NavBar /> */}
 
-                {children}
-                <AnimatedCursor />
+                  {children}
+                  {/* <AnimatedCursor /> */}
+                </SmoothScroll>
               </ModalProvider>
             </ReCaptchaProivder>
           </I18nProvider>
