@@ -11,40 +11,57 @@ import {
   useProgress,
 } from "@react-three/drei";
 import { useSpring } from "@react-spring/three";
-import { motion, useInView } from "framer-motion";
-import Rotate3DIncon from "../ui/icons/Rotate3DIncon";
+import { gsap } from "gsap";
 import { useScopedI18n } from "@/locales/client";
 import useDeviceStore from "@/store/deviceStore";
 import InfoIcon from "../ui/icons/InfoIcon";
+import Rotate3DIcon from "../ui/icons/Rotate3DIncon";
 
 export default function Laptop() {
   const { isMobile } = useDeviceStore();
-
   const scopedT = useScopedI18n("laptop");
-
   const [macOpen, setMacOpen] = useState(false);
-
   const props = useSpring({ open: Number(macOpen) });
-
-  const laptopRef = useRef(null);
-  const laptopIsInView = useInView(laptopRef, { amount: 0.75, once: true });
+  const laptopRef = useRef<HTMLDivElement>(null);
+  const laptopIsInView = useRef(false);
 
   useEffect(() => {
-    setMacOpen(laptopIsInView);
-  }, [laptopIsInView]);
+    const handleScroll = () => {
+      if (laptopRef.current) {
+        const top = laptopRef.current.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight * 0.75) {
+          laptopIsInView.current = true;
+          setMacOpen(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (laptopIsInView.current) {
+      gsap.to(".progress-bar", { width: "100%", duration: 0.5 });
+    }
+  }, []);
 
   const ModelLoader = () => {
     const { progress } = useProgress();
+    useEffect(() => {
+      gsap.to(".progress-bar", { width: `${progress}%`, duration: 0.5 });
+    }, [progress]);
+
     return (
       <Html center className="flex flex-col gap-y-6">
-        <motion.div className="h-3 w-52 animate-pulse overflow-hidden rounded-full bg-base-300 dark:bg-white/15">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
-            className="h-full bg-primary"
-            transition={{ duration: 0.5 }}
-          />
-        </motion.div>
+        <div className="h-3 w-52 animate-pulse overflow-hidden rounded-full bg-base-300 dark:bg-white/15">
+          <div className="progress-bar h-full bg-primary"></div>
+        </div>
         <p className="text-center">{scopedT("loading")}</p>
       </Html>
     );
@@ -86,7 +103,7 @@ export default function Laptop() {
 
       <div className="mx-auto max-w-screen-xl px-4">
         <div className="z-10 flex flex-col items-center rounded-3xl border border-base-border bg-base-100 px-6 py-4 shadow shadow-base-shadow dark:bg-base-300">
-          <Rotate3DIncon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9" />
+          <Rotate3DIcon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9" />
           <p className="mt-3 text-center text-xs font-bold sm:text-sm md:text-base">
             {isMobile ? scopedT("mobile") : scopedT("pc")}
           </p>

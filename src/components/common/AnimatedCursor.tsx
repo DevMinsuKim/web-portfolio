@@ -4,7 +4,6 @@ import useCursorStore from "@/store/cursorStore";
 import useDeviceStore from "@/store/deviceStore";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import Rotate3DIncon from "../ui/icons/Rotate3DIncon";
 
 export default function AnimatedCursor() {
   const { isMobile } = useDeviceStore();

@@ -20,7 +20,7 @@ export default {
       "I have dreamed of becoming a developer since middle school, and now, as a developer with three years of experience, I have achieved that dream. However, I do not settle for my current state. I strive to continuously grow and improve, aiming for even greater goals.",
     contactMe: "Contact Me",
     channelTalk:
-      "You can also contact us through the Channel Talk in the bottom right corner!",
+      "Please use the channel talk at the bottom right\n or contact us by email.",
   },
   laptop: {
     pc: "You can interact with the internal content of your laptop screen,\n and you can rotate left and right or open and close the screen.",

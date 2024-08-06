@@ -30,6 +30,8 @@ export default function NavBar() {
   }, [isScrolled]);
 
   useEffect(() => {
+    gsap.set(".scroll-progress", { scaleX: 0, opacity: 1 });
+
     const handleScroll = () => {
       const scrollProgress =
         window.scrollY / (document.body.scrollHeight - window.innerHeight);
@@ -49,7 +51,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div className="scroll-progress fixed left-0 right-0 top-0 z-40 h-1 origin-left bg-primary" />
+      <div className="scroll-progress fixed left-0 right-0 top-0 z-40 h-1 origin-left bg-primary opacity-0" />
       <header
         className={`navbar fixed z-40 w-full px-4 ${isScrolled && "top-3"}`}
       >

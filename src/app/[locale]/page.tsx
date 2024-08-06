@@ -12,12 +12,17 @@ import ArrowUpIcon from "@/components/ui/icons/ArrowUpIcon";
 import WorkExperience from "@/components/workExperience/WorkExperience";
 import useDeviceStore from "@/store/deviceStore";
 import { useScrollStore } from "@/store/scrollStore";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 
 export default function Home() {
   const { isMobile, isTablet } = useDeviceStore();
   const { isScrolled } = useScrollStore();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
   const scrollToBottom = () => {
     window.scrollTo({
@@ -35,28 +40,30 @@ export default function Home() {
 
   return (
     <main>
-      <button
-        className={`${isMobile && !isTablet && "bottom-[4.4rem] right-[0.95rem] h-[2.75rem] min-h-0 w-[2.75rem] rounded-[1.1rem] p-0"} btn fixed bottom-24 right-6 z-20 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl`}
-        onClick={() => (isScrolled ? scrollToTop() : scrollToBottom())}
-      >
-        {isScrolled ? (
-          <ArrowUpIcon
-            className={`${isMobile && !isTablet && "h-[1.2rem] w-[1.2rem]"} h-6 w-6`}
-          />
-        ) : (
-          <ArrowDownIcon
-            className={`${isMobile && !isTablet && "h-[1.2rem] w-[1.2rem]"} h-6 w-6`}
-          />
-        )}
-      </button>
+      {!isLoading && (
+        <button
+          className={`${isMobile && !isTablet && "bottom-[4.4rem] right-[0.95rem] h-[2.75rem] min-h-0 w-[2.75rem] rounded-[1.1rem] p-0"} btn fixed bottom-24 right-6 z-20 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl`}
+          onClick={() => (isScrolled ? scrollToTop() : scrollToBottom())}
+        >
+          {isScrolled ? (
+            <ArrowUpIcon
+              className={`${isMobile && !isTablet && "h-[1.2rem] w-[1.2rem]"} h-6 w-6`}
+            />
+          ) : (
+            <ArrowDownIcon
+              className={`${isMobile && !isTablet && "h-[1.2rem] w-[1.2rem]"} h-6 w-6`}
+            />
+          )}
+        </button>
+      )}
 
       <Hero />
-      {/* <Laptop /> */}
-      {/* <div className="mx-auto max-w-screen-xl px-4">
+      <Laptop />
+      <div className="mx-auto max-w-screen-xl px-4">
         <AboutMe />
       </div>
 
-      <div className="mx-auto max-w-screen-xl px-4">
+      {/* <div className="mx-auto max-w-screen-xl px-4">
         <WorkExperience />
       </div>
 

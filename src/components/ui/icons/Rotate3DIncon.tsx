@@ -4,6 +4,6 @@ type Props = {
   className?: string;
 };
 
-export default function Rotate3DIncon({ className }: Props) {
+export default function Rotate3DIcon({ className }: Props) {
   return <LuRotate3D className={className} />;
 }
