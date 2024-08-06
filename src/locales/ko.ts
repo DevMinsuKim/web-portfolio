@@ -92,4 +92,9 @@ export default {
       "찾고 있는 페이지가 제거되었거나 일시적으로 사용할 수 없습니다.\n입력하신 페이지의 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.",
     homeButton: "홈으로 돌아가기",
   },
+  activity: {
+    education: "교육",
+    activities: "활동",
+    certificates: "자격증",
+  },
 } as const;

@@ -92,4 +92,9 @@ export default {
       "The page you are looking for might be removed or temporarily unavailable.\nPlease check the URL and try again.",
     homeButton: "Go back to home",
   },
+  activity: {
+    education: "Education",
+    activities: "Activities",
+    certificates: "Certificates",
+  },
 } as const;

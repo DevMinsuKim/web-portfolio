@@ -5,7 +5,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
 import MobileNavBar from "./MobileNavBar";
-import { motion, useAnimation, useScroll, useSpring } from "framer-motion";
+import { gsap } from "gsap";
 import useCursorStore from "@/store/cursorStore";
 import CursorArrowIcon from "../ui/icons/CursorArrowIcon";
 import { Tooltip } from "react-tooltip";
@@ -21,36 +21,42 @@ export default function NavBar() {
 
   const scopedT = useScopedI18n("customCursorButton");
 
-  const controls = useAnimation();
+  useEffect(() => {
+    gsap.to(".navbar", {
+      top: isScrolled ? "0.75rem" : "0rem",
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  }, [isScrolled]);
 
   useEffect(() => {
-    controls.start({
-      top: isScrolled ? "0.75rem" : "0rem",
-      transition: { tension: 220, friction: 20 },
-    });
-  }, [isScrolled, controls]);
+    const handleScroll = () => {
+      const scrollProgress =
+        window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      gsap.to(".scroll-progress", {
+        scaleX: scrollProgress,
+        ease: "power2.out",
+        duration: 0.1,
+      });
+    };
 
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      <motion.div
-        className="fixed left-0 right-0 top-0 z-40 h-1 origin-left bg-primary"
-        style={{ scaleX }}
-      />
-      <motion.header
-        animate={controls}
-        className={`${isScrolled && "top-3"} fixed z-40 w-full px-4`}
+      <div className="scroll-progress fixed left-0 right-0 top-0 z-40 h-1 origin-left bg-primary" />
+      <header
+        className={`navbar fixed z-40 w-full px-4 ${isScrolled && "top-3"}`}
       >
         <div
-          className={`mx-auto max-w-screen-xl ${isScrolled && "border-base-border shadow-base-shadow rounded-xl border bg-base-100/95 px-3 shadow-md dark:bg-base-300/95"}`}
+          className={`mx-auto w-full max-w-screen-xl ${isScrolled && "rounded-xl border border-base-border bg-base-100/95 px-3 shadow-md shadow-base-shadow dark:bg-base-300/95"}`}
         >
-          <div className="navbar hidden p-0 md:flex">
+          <nav className="navbar hidden p-0 md:flex">
             <div className="navbar-start">
               <LanguageSwitcher />
             </div>
@@ -81,11 +87,11 @@ export default function NavBar() {
 
               <ThemeSwitcher />
             </div>
-          </div>
+          </nav>
 
           <MobileNavBar />
         </div>
-      </motion.header>
+      </header>
     </>
   );
 }

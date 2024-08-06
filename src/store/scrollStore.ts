@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { create } from "zustand";
 
 interface scrollState {
@@ -14,7 +14,7 @@ export const useScrollStore = create<scrollState>((set) => ({
 export const useScrollListener = () => {
   const { setIsScrolled } = useScrollStore();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsScrolled(true);

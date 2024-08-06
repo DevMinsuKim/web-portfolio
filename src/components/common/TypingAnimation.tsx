@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { useEffect, useState, useImperativeHandle, forwardRef } from "react";
+import { gsap } from "gsap";
 
 type Props = {
   text: string;
@@ -32,16 +32,19 @@ const TypingAnimation = forwardRef<TypingAnimationRef, Props>(
       }
     }, [index, text]);
 
+    useEffect(() => {
+      gsap.fromTo(
+        ".typing-animation",
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+      );
+    }, []);
+
     return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className={className}
-      >
+      <div className={`typing-animation ${className}`}>
         {displayedText}
         {index < text.length && <span>|</span>}
-      </motion.div>
+      </div>
     );
   },
 );

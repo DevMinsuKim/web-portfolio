@@ -3,20 +3,22 @@
 import { useScrollListener } from "@/store/scrollStore";
 import { useEffect } from "react";
 import * as ChannelService from "@channel.io/channel-web-sdk-loader";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import useDeviceStore from "@/store/deviceStore";
 
 export default function Initializer() {
-  // useEffect(() => {
-  // useScrollListener();
+  const { checkDevice } = useDeviceStore();
+  useScrollListener();
 
-  //   ChannelService.loadScript();
+  useEffect(() => {
+    checkDevice();
 
-  //   ChannelService.boot({
-  //     pluginKey: process.env.NEXT_PUBLIC_CHANNEL_KEY ?? "",
-  //   });
-  // }, []);
+    ChannelService.loadScript();
+
+    ChannelService.boot({
+      pluginKey: process.env.NEXT_PUBLIC_CHANNEL_KEY ?? "",
+      zIndex: 20,
+    });
+  }, [checkDevice]);
 
   return null;
 }
