@@ -2,8 +2,6 @@
 import React, { PropsWithChildren, useEffect, useRef } from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Lenis from "@studio-freight/lenis/types";
 
 interface LenisRef {
@@ -12,10 +10,6 @@ interface LenisRef {
 
 export default function SmoothScroll({ children }: PropsWithChildren) {
   const lenisRef = useRef<LenisRef>(null);
-
-  if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger, useGSAP);
-  }
 
   useEffect(() => {
     const update = (time: number) => {

@@ -17,10 +17,10 @@ export default {
     name: "Minsu Kim",
     introFooter: "",
     introDescription:
-      "I have dreamed of becoming a developer since middle school, and now, as a developer with three years of experience, I have achieved that dream. However, I do not settle for my current state. I strive to continuously grow and improve, aiming for even greater goals.",
+      "Since middle school, I have dreamed of becoming a developer. Now, as a 3rd year developer, I have achieved that dream, but I do not settle for the present. I continuously strive to grow and improve, aiming for bigger goals.",
     contactMe: "Contact Me",
     channelTalk:
-      "Please use the channel talk at the bottom right\n or contact us by email.",
+      "Please use the channel talk at the bottom right or contact us by email.",
   },
   laptop: {
     pc: "You can interact with the internal content of your laptop screen,\n and you can rotate left and right or open and close the screen.",
@@ -37,8 +37,6 @@ export default {
       "Based on my experience in operating services, I am capable of <strong>smooth collaboration</strong> with backend developers and designers.",
     description2:
       "I developed an <strong>interest in development</strong> when I set up a Minecraft server and modified plugins in middle school, enjoying watching users have fun. In high school, I ran a security and development club and participated in various development projects, achieving <strong>awards and recognitions</strong>.",
-    description3:
-      "I prioritize <strong>user experience</strong> to make services more convenient and memorable for users, continuously learning and gaining experience to contribute to <strong>business growth</strong> and sharing this knowledge.",
   },
   workExperience: {
     viewDetails: "View Details",

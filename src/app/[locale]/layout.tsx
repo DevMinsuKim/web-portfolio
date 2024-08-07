@@ -18,8 +18,8 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "김민수 | 최신 웹 기술을 활용한 프론트엔드 개발 포트폴리오",
-  description: "현재 포트폴리오는 프론트엔드 개발 여정을 보여줍니다.",
+  title: "김민수 | 포트폴리오",
+  description: "프론트엔드 개발 여정",
 };
 
 export default function RootLayout({
@@ -38,13 +38,13 @@ export default function RootLayout({
           <I18nProvider params={params}>
             <ReCaptchaProivder>
               <ModalProvider>
-                <SmoothScroll>
-                  <Initializer />
-                  <NavBar />
+                {/* <SmoothScroll> */}
+                <Initializer />
+                <NavBar />
 
-                  {children}
-                  <AnimatedCursor />
-                </SmoothScroll>
+                {children}
+                <AnimatedCursor />
+                {/* </SmoothScroll> */}
               </ModalProvider>
             </ReCaptchaProivder>
           </I18nProvider>

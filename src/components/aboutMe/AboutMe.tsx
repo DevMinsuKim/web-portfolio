@@ -1,68 +1,82 @@
 "use client";
 
-import useScrollDirection from "@/hook/useScrollDirection";
 import { useScopedI18n } from "@/locales/client";
 import { viewRightAnimation } from "@/styles/viewRightAnimation";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
-const messages: Array<
-  "description" | "description1" | "description2" | "description3"
-> = ["description", "description1", "description2", "description3"];
+const messages: Array<"description" | "description1" | "description2"> = [
+  "description",
+  "description1",
+  "description2",
+];
 
 const MessageBox = ({ item, index }: { item: string; index: number }) => {
-  const divRef = useRef(null);
-  const pRef = useRef(null);
+  const divRef = useRef<HTMLDivElement>(null);
+  const pRef = useRef<HTMLParagraphElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: pRef,
-  });
+  useGSAP(
+    () => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: pRef.current,
+          start: "top 90%",
+          end: "top 10%",
+          scrub: true,
+          markers: true,
+        },
+      });
 
-  const initialOpacity = useTransform(scrollYProgress, [0.8, 0.95], [1, 0]);
-  const fadeOutOpacity = useTransform(scrollYProgress, [0.1, 0.25], [0, 1]);
+      timeline
+        .fromTo(
+          pRef.current,
+          { y: 100, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 0.8 },
+        )
+        .to(pRef.current, { y: -100, autoAlpha: 0, duration: 0.8 });
+    },
 
-  const parts = item.split(/(<strong>|<\/strong>)/);
+    { scope: divRef },
+  );
 
   return (
-    <motion.div
+    <div
       ref={divRef}
       key={index}
-      className={`flex h-[50svh] items-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
-      style={{
-        opacity: initialOpacity,
-      }}
+      className={`my-96 flex items-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
     >
-      <motion.p ref={pRef} style={{ opacity: fadeOutOpacity }}>
-        {parts.map((part, index) => {
-          if (part === "<strong>") {
-            return <strong key={index}>{parts[index + 1]}</strong>;
-          } else if (part === "</strong>") {
-            return null;
-          } else if (index > 0 && parts[index - 1] === "<strong>") {
-            return null;
-          } else {
-            return <span key={index}>{part}</span>;
-          }
-        })}
-      </motion.p>
-    </motion.div>
+      <p ref={pRef}>{item}</p>
+    </div>
   );
 };
 
 export default function AboutMe() {
-  const scrollDirection = useScrollDirection();
-
   const scopedT = useScopedI18n("aboutMe");
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  const sectionRef = useRef(null);
-  const sectionInView = useInView(sectionRef, {
-    amount: 0.05,
-    once: scrollDirection === "down",
-  });
+  useGSAP(
+    () => {
+      gsap.from(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 90%",
+          end: "5% 70%",
+          scrub: true,
+          markers: false,
+        },
+        y: 100,
+        autoAlpha: 0,
+        duration: 0.8,
+      });
+    },
+
+    { scope: sectionRef },
+  );
 
   return (
     <section className="mt-20 sm:mt-24 lg:mt-32" ref={sectionRef}>
-      <div className="sticky top-28" style={viewRightAnimation(sectionInView)}>
+      <div className="sticky top-28" style={viewRightAnimation(true)}>
         <p className="text-3xl font-bold sm:text-4xl lg:text-5xl">
           {scopedT("title")}
         </p>

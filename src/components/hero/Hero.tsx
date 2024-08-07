@@ -40,7 +40,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex h-[calc(100svh)] min-h-[62.5rem] flex-col items-center justify-center pt-16 sm:min-h-[50rem]">
+    <section className="relative flex h-[calc(100svh)] flex-col items-center justify-center pt-16">
       <div className="absolute inset-0 min-w-[20rem] bg-gradient-to-t from-primary/20 to-base-200 dark:from-[#161430] dark:to-base-100" />
 
       <div
@@ -56,7 +56,7 @@ export default function Hero() {
         }}
       >
         <svg
-          className="h-[5rem] sm:h-[15.625rem]"
+          className="h-[5rem] md:h-[15.625rem]"
           style={{
             position: "relative",
             display: "block",
@@ -84,8 +84,8 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="z-10 mx-auto max-w-screen-xl px-4">
-        <div className="relative z-10 flex items-center justify-center">
+      <div className="z-10 mx-auto max-w-[20rem] px-4 md:max-w-screen-xl">
+        <div className="flex items-center justify-center">
           <div className="flex flex-col items-center text-center">
             <div className="text-3xl md:text-4xl lg:text-5xl">
               {scopedT("introHeader")}{" "}
@@ -125,7 +125,7 @@ export default function Hero() {
 
             <div className="flex items-center justify-center rounded-2xl border p-2 text-center shadow dark:border-none dark:bg-base-400">
               <InfoIcon className="mr-2 h-7 w-7 flex-shrink-0 rounded-full border shadow dark:border-none dark:bg-base-200" />
-              <p className="mr-1 text-xs font-bold sm:text-sm">
+              <p className="mr-1 text-xs font-bold md:text-sm">
                 {scopedT("channelTalk")}
               </p>
             </div>

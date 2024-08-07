@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { memo, Suspense, useEffect, useRef, useState } from "react";
 import LaptopModel from "../models/LaptopModel";
 import {
   ContactShadows,
@@ -16,6 +16,7 @@ import { useScopedI18n } from "@/locales/client";
 import useDeviceStore from "@/store/deviceStore";
 import InfoIcon from "../ui/icons/InfoIcon";
 import Rotate3DIcon from "../ui/icons/Rotate3DIncon";
+import { useGSAP } from "@gsap/react";
 
 export default function Laptop() {
   const { isMobile } = useDeviceStore();
@@ -51,8 +52,9 @@ export default function Laptop() {
     }
   }, []);
 
-  const ModelLoader = () => {
+  const ModelLoader = memo(() => {
     const { progress } = useProgress();
+
     useEffect(() => {
       gsap.to(".progress-bar", { width: `${progress}%`, duration: 0.5 });
     }, [progress]);
@@ -65,7 +67,9 @@ export default function Laptop() {
         <p className="text-center">{scopedT("loading")}</p>
       </Html>
     );
-  };
+  });
+
+  ModelLoader.displayName = "ModelLoader";
 
   return (
     <section ref={laptopRef}>

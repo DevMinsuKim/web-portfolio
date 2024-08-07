@@ -73,6 +73,7 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
             geometry={nodes["Cube008_1"].geometry}
           />
           <mesh
+            material={materials["matte.001"]}
             // material={materials["screen.001"]}
             geometry={nodes["Cube008_2"].geometry}
           >
