@@ -19,6 +19,16 @@ const config: Config = {
         "base-400": "oklch(var(--base-400) / <alpha-value>)",
         "base-500": "oklch(var(--base-500) / <alpha-value>)",
       },
+
+      animation: {
+        "infinite-scroll": "infinite-scroll 5s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   daisyui: {

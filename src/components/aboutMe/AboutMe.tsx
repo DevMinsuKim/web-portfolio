@@ -1,7 +1,6 @@
 "use client";
 
 import { useScopedI18n } from "@/locales/client";
-import { viewRightAnimation } from "@/styles/viewRightAnimation";
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,7 +13,7 @@ const messages: Array<"description" | "description1" | "description2"> = [
 
 const MessageBox = ({ item, index }: { item: string; index: number }) => {
   const divRef = useRef<HTMLDivElement>(null);
-  const pRef = useRef<HTMLParagraphElement>(null);
+  const pRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -24,7 +23,6 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
           start: "top 90%",
           end: "top 10%",
           scrub: true,
-          markers: true,
         },
       });
 
@@ -44,7 +42,7 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
     <div
       ref={divRef}
       key={index}
-      className={`my-96 flex items-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
+      className={`flex h-[60svh] items-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
     >
       <p ref={pRef}>{item}</p>
     </div>
@@ -54,18 +52,18 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
 export default function AboutMe() {
   const scopedT = useScopedI18n("aboutMe");
   const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      gsap.from(sectionRef.current, {
+      gsap.from(titleRef.current, {
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: titleRef.current,
           start: "top 90%",
           end: "5% 70%",
           scrub: true,
-          markers: false,
         },
-        y: 100,
+        x: -100,
         autoAlpha: 0,
         duration: 0.8,
       });
@@ -76,7 +74,7 @@ export default function AboutMe() {
 
   return (
     <section className="mt-20 sm:mt-24 lg:mt-32" ref={sectionRef}>
-      <div className="sticky top-28" style={viewRightAnimation(true)}>
+      <div ref={titleRef} className="sticky top-28">
         <p className="text-3xl font-bold sm:text-4xl lg:text-5xl">
           {scopedT("title")}
         </p>

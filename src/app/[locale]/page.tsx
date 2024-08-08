@@ -58,12 +58,14 @@ export default function Home() {
       )}
 
       <Hero />
-      <Laptop />
-      {/* <div className="mx-auto max-w-screen-xl px-4">
-        <AboutMe />
-      </div> */}
 
-      {/* <div className="mx-auto max-w-screen-xl px-4">
+      {/* <Laptop /> */}
+
+      <div className="mx-auto max-w-screen-xl px-4">
+        <AboutMe />
+      </div>
+
+      <div className="mx-auto max-w-screen-xl px-4">
         <WorkExperience />
       </div>
 
@@ -73,7 +75,7 @@ export default function Home() {
 
       <div className="mx-auto max-w-screen-xl px-4">
         <Skill />
-      </div> */}
+      </div>
 
       {/* <Activity /> */}
 

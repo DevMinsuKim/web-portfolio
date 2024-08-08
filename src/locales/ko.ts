@@ -41,7 +41,7 @@ export default {
     viewDetails: "자세히 보기",
     title: "경력",
     companyName: "다돌",
-    position: "개발 팀 - 인턴",
+    position: "개발 팀 - 사원",
     companyName1: "카이",
     position1: "개발 팀 - 사원",
   },

@@ -1,12 +1,9 @@
 import React, { useRef } from "react";
 import KaiLogo from "../ui/icons/KaiLogo";
 import DadolLogo from "../ui/icons/DadolLogo";
-import { motion, useInView } from "framer-motion";
-import ArrowRightIcon from "../ui/icons/ArrowRightIcon";
 import { useScopedI18n } from "@/locales/client";
-import useScrollDirection from "@/hook/useScrollDirection";
-import { viewUpAnimation } from "@/styles/viewUpAnimation";
-import { viewRightAnimation } from "@/styles/viewRightAnimation";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const data = [
   {
@@ -24,43 +21,55 @@ const data = [
 ];
 
 export default function WorkExperience() {
-  const scrollDirection = useScrollDirection();
-
   const scopedT = useScopedI18n("workExperience");
 
-  const sectionRef = useRef(null);
-  const sectionInView = useInView(sectionRef, {
-    once: scrollDirection === "down",
-  });
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
 
-  const divInView = useInView(sectionRef, {
-    amount: 0.3,
-    once: scrollDirection === "down",
-  });
+  useGSAP(
+    () => {
+      gsap.from(titleRef.current, {
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%",
+          end: "5% 70%",
+          scrub: true,
+        },
+        x: -100,
+        autoAlpha: 0,
+        duration: 0.8,
+      });
+
+      gsap.from(".item", {
+        scrollTrigger: {
+          trigger: ".item",
+          start: "top 90%",
+          end: "5% 70%",
+          scrub: true,
+        },
+        autoAlpha: 0,
+        duration: 0.8,
+      });
+    },
+
+    { scope: sectionRef },
+  );
 
   return (
-    <section className="mt-44 sm:mt-96" ref={sectionRef}>
-      <p
-        className="text-3xl font-bold sm:text-4xl lg:text-5xl"
-        style={viewRightAnimation(sectionInView)}
-      >
+    <section className="mt-44 md:mt-96" ref={sectionRef}>
+      <p ref={titleRef} className="text-3xl font-bold md:text-4xl lg:text-5xl">
         {scopedT("title")}
       </p>
 
-      <div
-        className="mt-14 grid grid-cols-1 items-center justify-center gap-3 sm:mt-20 sm:grid-cols-2 lg:gap-10"
-        style={viewUpAnimation(divInView)}
-      >
+      <div className="mt-14 grid grid-cols-1 items-center justify-center gap-3 md:mt-20 md:grid-cols-2 lg:gap-10">
         {data.map((item, index) => (
-          <motion.div
+          <div
             key={index}
-            className="relative flex cursor-pointer flex-col rounded-2xl border border-base-border px-8 py-4 shadow shadow-base-shadow dark:bg-base-300"
-            whileHover={{ scale: 1.02 }}
+            className="item relative flex transform cursor-pointer flex-col rounded-2xl border border-base-border px-8 py-4 shadow shadow-base-shadow transition-transform duration-300 hover:scale-[1.01] dark:bg-base-300"
           >
             <div>{item.logo}</div>
             <div className="absolute right-8 flex items-center gap-1 rounded-full border bg-base-100 py-2 pl-3 pr-2 shadow dark:border-none">
               <p className="text-xs sm:text-sm">{scopedT("viewDetails")}</p>
-              <ArrowRightIcon className="h-3 w-3 sm:h-4 sm:w-4" />
             </div>
 
             <p className="mb-2 self-end text-2xl font-bold lg:text-3xl">
@@ -72,7 +81,7 @@ export default function WorkExperience() {
             <p className="self-end text-base sm:text-lg lg:text-xl">
               {item.date}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

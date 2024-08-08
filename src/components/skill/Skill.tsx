@@ -1,102 +1,68 @@
-import React, { useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import YouTubeIcon from "../ui/icons/YouTubeIcon";
-import useScrollDirection from "@/hook/useScrollDirection";
-import { motion, useInView } from "framer-motion";
-import { viewRightAnimation } from "@/styles/viewRightAnimation";
-import { viewUpAnimation } from "@/styles/viewUpAnimation";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const data = [
   {
-    category: "프론트엔드",
-    categoryItem: [
-      {
-        logo: (
-          <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />
-        ),
-        title: "YouTube",
-      },
-      {
-        logo: (
-          <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />
-        ),
-        title: "YouTube",
-      },
-      {
-        logo: (
-          <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />
-        ),
-        title: "YouTube",
-      },
-    ],
+    logo: <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />,
+    title: "YouTube1",
   },
   {
-    category: "백엔드",
-    categoryItem: [
-      {
-        logo: (
-          <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />
-        ),
-        title: "React",
-      },
-      {
-        logo: (
-          <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />
-        ),
-        title: "React",
-      },
-      {
-        logo: (
-          <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />
-        ),
-        title: "React",
-      },
-    ],
+    logo: <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />,
+    title: "YouTube2",
+  },
+  {
+    logo: <YouTubeIcon className="h-20 w-20 rounded-xl fill-base-content" />,
+    title: "YouTube3",
   },
 ];
 
 export default function Skill() {
-  const scrollDirection = useScrollDirection();
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-  // const scopedT = useScopedI18n("workExperience");
+  useGSAP(
+    () => {
+      gsap.from(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 90%",
+          end: "5% 70%",
+          scrub: true,
+          markers: false,
+        },
+        autoAlpha: 0,
+        duration: 0.8,
+      });
+    },
 
-  const sectionRef = useRef(null);
-  const sectionInView = useInView(sectionRef, {
-    once: scrollDirection === "down",
-  });
-
-  const divInView = useInView(sectionRef, {
-    amount: 0.3,
-    once: scrollDirection === "down",
-  });
+    { scope: sectionRef },
+  );
 
   return (
     <section className="mt-44 sm:mt-96" ref={sectionRef}>
-      <p
-        className="text-3xl font-bold sm:text-4xl lg:text-5xl"
-        style={viewRightAnimation(sectionInView)}
-      >
+      <p className="text-center text-3xl font-bold sm:text-4xl lg:text-5xl">
         기술 스택
       </p>
 
-      <div
-        className="mt-14 grid grid-cols-1 items-center justify-center gap-3 sm:mt-20 sm:grid-cols-2 lg:gap-10"
-        style={viewUpAnimation(divInView)}
-      >
-        {data.map((item, index) => (
-          <div key={index}>
-            <div>{item.category}</div>
-            {item.categoryItem.map((subItem, subIndex) => (
-              <motion.div
-                key={subIndex}
-                className="flex cursor-pointer flex-col rounded-2xl border border-base-border shadow shadow-base-shadow dark:bg-base-300"
-                whileHover={{ scale: 1.02 }}
+      <div className="mt-6 flex flex-col items-center">
+        <div className="flex max-w-[50%] flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+          {data.map((subItem, subIndex) => (
+            <Fragment key={subIndex}>
+              <ul className="animate-infinite-scroll flex transform cursor-pointer flex-col rounded-2xl border border-base-border shadow shadow-base-shadow transition-transform duration-300 dark:bg-base-300 [&_img]:max-w-none [&_li]:mx-8">
+                <li>{subItem.logo}</li>
+                <li>{subItem.title}</li>
+              </ul>
+              <ul
+                aria-hidden="true"
+                className="animate-infinite-scroll dark:bg-base-30 [&_img]:max-w-none0 flex transform cursor-pointer flex-col rounded-2xl border border-base-border shadow shadow-base-shadow transition-transform duration-300 [&_li]:mx-8"
               >
-                <div>{subItem.logo}</div>
-                <div>{subItem.title}</div>
-              </motion.div>
-            ))}
-          </div>
-        ))}
+                <li>{subItem.logo}</li>
+                <li>{subItem.title}</li>
+              </ul>
+            </Fragment>
+          ))}
+        </div>
       </div>
     </section>
   );
