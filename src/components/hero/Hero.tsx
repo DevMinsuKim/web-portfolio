@@ -10,6 +10,7 @@ import LinkdeinIcon from "../ui/icons/LinkdeinIcon";
 import YouTubeIcon from "../ui/icons/YouTubeIcon";
 import InfoIcon from "../ui/icons/InfoIcon";
 import { useContactScrollStore } from "@/store/contactScrollStore";
+import Link from "next/link";
 
 export default function Hero() {
   const locale = useCurrentLocale();
@@ -84,7 +85,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="z-10 mx-auto max-w-[20rem] px-4 md:max-w-screen-xl">
+      <div className="z-10 mx-auto px-4 md:max-w-screen-xl">
         <div className="flex items-center justify-center">
           <div className="flex flex-col items-center text-center">
             <div className="text-3xl md:text-4xl lg:text-5xl">
@@ -133,16 +134,21 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
-              <button className="justify-cente1 btn flex items-center bg-base-400 hover:bg-base-content/20">
+            <div className="flex gap-4">
+              <Link
+                className="justify-cente1 btn flex items-center bg-base-400 hover:bg-base-content/20"
+                href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
+                target="_blank"
+              >
                 <GithubIcon className="h-7 w-7" />
-              </button>
-              <button className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20">
+              </Link>
+              <Link
+                className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20"
+                href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
+                target="_blank"
+              >
                 <LinkdeinIcon className="h-7 w-7" />
-              </button>
-              <button className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20">
-                <YouTubeIcon className="h-7 w-7" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

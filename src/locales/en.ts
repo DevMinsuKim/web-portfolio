@@ -21,10 +21,10 @@ export default {
     name: "Minsu Kim",
     introFooter: "",
     introDescription:
-      "Since middle school, I have dreamed of becoming a developer. Now, as a 3rd year developer, I have achieved that dream, but I do not settle for the present. I continuously strive to grow and improve, aiming for bigger goals.",
+      "I've dreamed of becoming a developer since middle school. Now, as a 3rd-year developer, I’ve realized that dream. However, I’m not content with staying where I am. I constantly strive for growth and improvement, always aiming for bigger goals.",
     contactMe: "Contact Me",
     channelTalk:
-      "Please use the channel talk at the bottom right or contact us by email.",
+      "Please use the channel talk at the bottom right corner or reach out via email.",
   },
   laptop: {
     pc: "You can interact with the internal content of your laptop screen,\n and you can rotate left and right or open and close the screen.",
