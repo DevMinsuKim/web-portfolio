@@ -1,12 +1,18 @@
-import createMiddleware from "next-intl/middleware";
-import { locales, localePrefix } from "./navigation";
+import { createI18nMiddleware } from "next-international/middleware";
+import { NextRequest } from "next/server";
 
-export default createMiddleware({
+const I18nMiddleware = createI18nMiddleware({
+  locales: ["en", "ko"],
   defaultLocale: "en",
-  localePrefix,
-  locales,
+  urlMappingStrategy: "rewrite",
 });
 
+export function middleware(request: NextRequest) {
+  return I18nMiddleware(request);
+}
+
 export const config = {
-  matcher: ["/", "/(ko|en)/:path*"],
+  matcher: [
+    "/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt|monitoring).*)",
+  ],
 };

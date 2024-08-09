@@ -2,30 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-primary: #5b58e6;
-  --color-background: #fffbff;
-  --color-foreground: #1c1b1f;
-  --color-surface: #f3f6fc;
+.grecaptcha-badge {
+  visibility: hidden;
 }
 
-.dark {
-  --color-primary: #5b58e6;
-  --color-background: #1c1b1f;
-  --color-foreground: #e5e1e6;
-  --color-surface: #2d2f31;
+html.lenis,
+html.lenis body {
+  height: auto;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-  padding: 0;
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@layer utilities {
+  .custom-tooltip {
+    @apply rounded-lg bg-base-200 font-medium text-base-content shadow-lg !important;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
 }
