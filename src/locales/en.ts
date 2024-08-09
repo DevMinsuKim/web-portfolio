@@ -1,4 +1,8 @@
 export default {
+  metadata: {
+    title: "Minsu Kim | Portfolio",
+    description: "Frontend Developer Minsu Kim's Portfolio Website",
+  },
   thmeSwitcher: {
     light: "Light",
     dark: "Dark",

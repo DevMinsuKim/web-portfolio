@@ -1,4 +1,8 @@
 export default {
+  metadata: {
+    title: "김민수 | 포트폴리오",
+    description: "프론트엔드 개발자 김민수 포트폴리오 사이트",
+  },
   thmeSwitcher: {
     light: "밝은 테마",
     dark: "어두운 테마",

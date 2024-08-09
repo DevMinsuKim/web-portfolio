@@ -9,6 +9,7 @@ import Initializer from "@/components/common/Initializer";
 import { ModalProvider } from "@/providers/ModalProvider";
 import { ReCaptchaProivder } from "@/providers/ReCaptchaProivder";
 import SmoothScroll from "@/components/common/SmoothScroll";
+import { getScopedI18n } from "@/locales/server";
 
 const pretendard = localFont({
   src: "../../fonts/PretendardVariable.woff2",
@@ -17,10 +18,19 @@ const pretendard = localFont({
   variable: "--font-pretendard",
 });
 
-export const metadata: Metadata = {
-  title: "김민수 | 포트폴리오",
-  description: "프론트엔드 개발 여정",
-};
+// export const metadata: Metadata = {
+//   title: "김민수 | 포트폴리오",
+//   description: "프론트엔드 개발자 김민수 포트폴리오 사이트",
+// };
+
+export async function generateMetadata() {
+  const t = await getScopedI18n("metadata");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function RootLayout({
   params,
