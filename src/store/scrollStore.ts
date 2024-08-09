@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { create } from "zustand";
 
-interface scrollState {
+interface IScrollState {
   isScrolled: boolean;
   setIsScrolled: (isScrolled: boolean) => void;
 }
 
-export const useScrollStore = create<scrollState>((set) => ({
+export const useScrollStore = create<IScrollState>((set) => ({
   isScrolled: false,
   setIsScrolled: (isScrolled) => set({ isScrolled }),
 }));

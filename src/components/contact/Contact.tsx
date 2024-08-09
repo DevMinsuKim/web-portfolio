@@ -18,11 +18,13 @@ import { MailAction } from "@/server/contact/mailAction";
 import { mailSchema, TypeMailSchema } from "@/schema/mailSchema";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Link from "next/link";
+import { useContactScrollStore } from "@/store/contactScrollStore";
 
 export default function Contact() {
   const t = useScopedI18n("contact");
   const errorT = useScopedI18n("error");
   const TansMailSchema = mailSchema(t);
+  const { setTargetRef } = useContactScrollStore();
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -114,7 +116,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative">
+    <section className="relative mt-44 sm:mt-96" ref={setTargetRef}>
       <div className="absolute inset-0 min-w-[20rem] bg-primary/10 dark:bg-[#161430]" />
       <div className="absolute inset-0 min-w-[20rem] bg-[url(/images/grid_pattern.svg)] opacity-10 dark:opacity-15">
         <div className="absolute inset-0 bg-gradient-to-t from-primary" />

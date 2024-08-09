@@ -13,7 +13,6 @@ import WorkExperience from "@/components/workExperience/WorkExperience";
 import useDeviceStore from "@/store/deviceStore";
 import { useScrollStore } from "@/store/scrollStore";
 import { useEffect, useState } from "react";
-import gsap from "gsap";
 
 export default function Home() {
   const { isMobile, isTablet } = useDeviceStore();
@@ -77,7 +76,9 @@ export default function Home() {
         <Skill />
       </div>
 
-      {/* <Activity /> */}
+      <div className="mx-auto max-w-screen-xl px-4">
+        <Activity />
+      </div>
 
       <Contact />
     </main>

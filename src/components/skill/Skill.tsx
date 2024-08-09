@@ -40,13 +40,13 @@ export default function Skill() {
   );
 
   return (
-    <section className="mt-44 sm:mt-96" ref={sectionRef}>
+    <section className="mt-44 overflow-hidden sm:mt-96" ref={sectionRef}>
       <p className="text-center text-3xl font-bold sm:text-4xl lg:text-5xl">
         기술 스택
       </p>
 
       <div className="mt-6 flex flex-col items-center">
-        <div className="flex max-w-[50%] flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+        <div className="flex max-w-[100%] flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] md:max-w-[50%]">
           {data.map((subItem, subIndex) => (
             <Fragment key={subIndex}>
               <ul className="animate-infinite-scroll flex transform cursor-pointer flex-col rounded-2xl border border-base-border shadow shadow-base-shadow transition-transform duration-300 dark:bg-base-300 [&_img]:max-w-none [&_li]:mx-8">

@@ -1,12 +1,12 @@
 import { create } from "zustand";
 
-interface DeviceState {
+interface IDeviceState {
   isMobile: boolean;
   isTablet: boolean;
   checkDevice: () => void;
 }
 
-const useDeviceStore = create<DeviceState>((set) => ({
+const useDeviceStore = create<IDeviceState>((set) => ({
   isMobile: false,
   isTablet: false,
   checkDevice: () => {

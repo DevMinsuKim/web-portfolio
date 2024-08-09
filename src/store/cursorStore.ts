@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface CursorStore {
+interface ICursorStore {
   isCustomCursor: boolean;
   toggleCustomCursor: () => void;
 }
 
-const useCursorStore = create<CursorStore>((set) => ({
+const useCursorStore = create<ICursorStore>((set) => ({
   isCustomCursor: false,
   toggleCustomCursor: () =>
     set((state) => ({ isCustomCursor: !state.isCustomCursor })),

@@ -9,14 +9,15 @@ import GithubIcon from "../ui/icons/GithubIcon";
 import LinkdeinIcon from "../ui/icons/LinkdeinIcon";
 import YouTubeIcon from "../ui/icons/YouTubeIcon";
 import InfoIcon from "../ui/icons/InfoIcon";
+import { useContactScrollStore } from "@/store/contactScrollStore";
 
 export default function Hero() {
   const locale = useCurrentLocale();
   const scopedT = useScopedI18n("hero");
-
+  const { targetRef } = useContactScrollStore();
   const [isPageLoaded, setIsPageLoaded] = useState(false);
-
   const typingAnimationRef = useRef<TypingAnimationRef>(null);
+
   const handleReset = () => {
     typingAnimationRef.current?.reset();
   };
@@ -38,6 +39,20 @@ export default function Hero() {
       };
     }
   }, []);
+
+  const handleTabClick = () => {
+    const offset = window.innerHeight / 2;
+    const elementPosition = targetRef?.getBoundingClientRect().top;
+
+    if (elementPosition !== undefined) {
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section className="relative flex h-[calc(100svh)] flex-col items-center justify-center pt-16">
@@ -118,7 +133,10 @@ export default function Hero() {
 
         <div className="mt-10 flex w-full items-center justify-center">
           <div className="flex flex-col items-center gap-y-4 rounded-3xl border bg-base-100 p-6 shadow dark:border-none dark:bg-base-200">
-            <button className="btn btn-ghost w-full bg-primary text-white hover:bg-primary/80">
+            <button
+              className="btn btn-ghost w-full bg-primary text-white hover:bg-primary/80"
+              onClick={() => handleTabClick()}
+            >
               <EmailIcon className="h-7 w-7" />
               <p>{scopedT("contactMe")}</p>
             </button>
