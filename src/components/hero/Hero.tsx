@@ -23,21 +23,7 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    const handleDOMContentLoaded = () => {
-      setIsPageLoaded(true);
-    };
-
-    if (document.readyState === "complete") {
-      handleDOMContentLoaded();
-    } else {
-      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
-      return () => {
-        document.removeEventListener(
-          "DOMContentLoaded",
-          handleDOMContentLoaded,
-        );
-      };
-    }
+    setIsPageLoaded(true);
   }, []);
 
   const handleTabClick = () => {
