@@ -18,6 +18,24 @@ const activityData = [
         attachUrl:
           "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
       },
+      {
+        title: "드림코딩",
+        description:
+          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
+        date: "2023.04 ~ 2023.08",
+        attachTitle: "수료증",
+        attachUrl:
+          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+      },
+      {
+        title: "드림코딩",
+        description:
+          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
+        date: "2023.04 ~ 2023.08",
+        attachTitle: "수료증",
+        attachUrl:
+          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+      },
     ],
   },
   {
@@ -109,8 +127,8 @@ export default function Activity() {
           gsap.from(ref, {
             scrollTrigger: {
               trigger: ref,
-              start: "top 60%",
-              end: "bottom 50%",
+              start: "-25% 50%",
+              end: "-25%% 50%",
               scrub: true,
               markers: true,
               onEnter: () => setActiveTab(index),

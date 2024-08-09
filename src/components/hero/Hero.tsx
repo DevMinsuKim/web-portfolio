@@ -41,7 +41,7 @@ export default function Hero() {
   }, []);
 
   const handleTabClick = () => {
-    const offset = window.innerHeight / 2;
+    const offset = window.innerHeight / 10;
     const elementPosition = targetRef?.getBoundingClientRect().top;
 
     if (elementPosition !== undefined) {
@@ -49,7 +49,6 @@ export default function Hero() {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth",
       });
     }
   };
