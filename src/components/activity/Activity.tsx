@@ -11,17 +11,17 @@ const activityData = [
     content: [
       {
         title: "contentTitle1" as "contentTitle1",
-        description: "",
+        description: "blank" as "blank",
         date: "2023.04 - 2023.08",
       },
       {
         title: "contentTitle2" as "contentTitle2",
-        description: "",
+        description: "blank" as "blank",
         date: "2020.09 - 2021.02",
       },
       {
         title: "contentTitle3" as "contentTitle3",
-        description: "",
+        description: "blank" as "blank",
         date: "2018.03 - 2021.05",
       },
       {
@@ -56,12 +56,12 @@ const activityData = [
     content: [
       {
         title: "contentTitle8" as "contentTitle8",
-        description: "",
+        description: "blank" as "blank",
         date: "2024.06",
       },
       {
         title: "contentTitle9" as "contentTitle9",
-        description: "",
+        description: "blank" as "blank",
         date: "2019.12",
       },
     ],
@@ -154,10 +154,8 @@ export default function Activity() {
                 >
                   <p className="mb-2 text-xl font-bold">{t(content.title)}</p>
                   <p>{content.date}</p>
-                  {content.description && content.description !== "" && (
-                    <p className="mt-1 text-lg">
-                      {t(content.description as keyof typeof activity)}
-                    </p>
+                  {content.description && (
+                    <p className="mt-1 text-lg">{t(content.description)}</p>
                   )}
                 </div>
               ))}
