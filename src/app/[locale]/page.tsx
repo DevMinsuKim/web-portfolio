@@ -58,7 +58,7 @@ export default function Home() {
 
       <Hero />
 
-      {/* <Laptop /> */}
+      <Laptop />
 
       <div className="mx-auto max-w-screen-xl px-4">
         <AboutMe />
