@@ -15,14 +15,14 @@ export default function LanguageSwitcher() {
     <div className="flex items-center">
       {/* <LanguageIcon className={`h-5 w-5`} /> */}
       <button
-        className={`${getColor("ko")} btn btn-ghost text-base px-2`}
+        className={`${getColor("ko")} btn btn-ghost px-2 text-base`}
         onClick={() => changeLocale("ko")}
       >
         한국어
       </button>
       <p className="mx-1">|</p>
       <button
-        className={`${getColor("en")} btn btn-ghost text-base px-2`}
+        className={`${getColor("en")} btn btn-ghost px-2 text-base`}
         onClick={() => changeLocale("en")}
       >
         English

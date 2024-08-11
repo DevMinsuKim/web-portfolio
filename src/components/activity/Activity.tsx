@@ -10,31 +10,24 @@ const activityData = [
     title: "education" as "education",
     content: [
       {
-        title: "드림코딩",
-        description:
-          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
-        date: "2023.04 ~ 2023.08",
-        attachTitle: "수료증",
-        attachUrl:
-          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+        title: "contentTitle1" as "contentTitle1",
+        description: "",
+        date: "2023.04 - 2023.08",
       },
       {
-        title: "드림코딩",
-        description:
-          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
-        date: "2023.04 ~ 2023.08",
-        attachTitle: "수료증",
-        attachUrl:
-          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+        title: "contentTitle2" as "contentTitle2",
+        description: "",
+        date: "2020.09 - 2021.02",
       },
       {
-        title: "드림코딩",
-        description:
-          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
-        date: "2023.04 ~ 2023.08",
-        attachTitle: "수료증",
-        attachUrl:
-          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+        title: "contentTitle3" as "contentTitle3",
+        description: "",
+        date: "2018.03 - 2021.05",
+      },
+      {
+        title: "contentTitle4" as "contentTitle4",
+        description: "contentDescription1" as "contentDescription1",
+        date: "2015.03 ~ 2018.02",
       },
     ],
   },
@@ -42,31 +35,19 @@ const activityData = [
     title: "activities" as "activities",
     content: [
       {
-        title: "대한민국 육군 병장 만기 전역",
-        description:
-          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
-        date: "2019.01 ~ 2020.08",
-        attachTitle: "수료증",
-        attachUrl:
-          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+        title: "contentTitle5" as "contentTitle5",
+        description: "contentDescription2" as "contentDescription2",
+        date: "2019.01 - 2020.08",
       },
       {
-        title: "대한민국 육군 병장 만기 전역",
-        description:
-          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
-        date: "2019.01 ~ 2020.08",
-        attachTitle: "수료증",
-        attachUrl:
-          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+        title: "contentTitle6" as "contentTitle6",
+        description: "contentDescription3" as "contentDescription3",
+        date: "2017.07",
       },
       {
-        title: "대한민국 육군 병장 만기 전역",
-        description:
-          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
-        date: "2019.01 ~ 2020.08",
-        attachTitle: "수료증",
-        attachUrl:
-          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+        title: "contentTitle7" as "contentTitle7",
+        description: "contentDescription3" as "contentDescription3",
+        date: "2016.10",
       },
     ],
   },
@@ -74,13 +55,14 @@ const activityData = [
     title: "certificates" as "certificates",
     content: [
       {
-        title: "정보처리기사 필기 합격",
-        description:
-          "정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다\n정보처리기사 최종 합격을 위해 현재 실기 시험을 준비 중입니다",
+        title: "contentTitle8" as "contentTitle8",
+        description: "",
         date: "2024.06",
-        attachTitle: "수료증",
-        attachUrl:
-          "https://drive.google.com/file/d/1EMXbavvz2RY_0n09I39Bh1MWViEP5Pnx/view?usp=sharing",
+      },
+      {
+        title: "contentTitle9" as "contentTitle9",
+        description: "",
+        date: "2019.12",
       },
     ],
   },
@@ -94,7 +76,7 @@ export default function Activity() {
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleTabClick = (index: number) => {
-    const offset = window.innerHeight / 2;
+    const offset = window.innerHeight / 2.5;
     const elementPosition =
       itemRefs.current[index]?.getBoundingClientRect().top;
     if (elementPosition !== undefined) {
@@ -126,11 +108,10 @@ export default function Activity() {
           gsap.from(ref, {
             scrollTrigger: {
               trigger: ref,
-              start: "-25% 50%",
-              end: "-25%% 50%",
+              start: "top 50%",
+              end: "bottom 50%",
               scrub: true,
-              onEnter: () => setActiveTab(index),
-              onEnterBack: () => setActiveTab(index),
+              onToggle: () => setActiveTab(index),
             },
           });
         }
@@ -171,18 +152,12 @@ export default function Activity() {
                   key={contentIndex}
                   className="mt-1 border-b border-base-content/30 pb-2"
                 >
-                  <p className="mb-6 text-xl font-bold">{content.title}</p>
-                  <p className="my-2">{content.date}</p>
-                  <p className="mb-1 text-lg">{`☉ ${content.description}`}</p>
-                  {content.attachTitle && (
-                    <Link
-                      href={content.attachUrl}
-                      target="_blank"
-                      className="btn btn-sm mb-1 mt-1 min-h-0 rounded-full border border-base-border bg-base-100 shadow shadow-base-shadow dark:bg-base-300 hover:dark:bg-base-content/20"
-                    >
-                      <p>{content.attachTitle}</p>
-                      <DownloadIcon className="h-5 w-5" />
-                    </Link>
+                  <p className="mb-2 text-xl font-bold">{t(content.title)}</p>
+                  <p>{content.date}</p>
+                  {content.description && content.description !== "" && (
+                    <p className="mt-1 text-lg">
+                      {t(content.description as keyof typeof activity)}
+                    </p>
                   )}
                 </div>
               ))}

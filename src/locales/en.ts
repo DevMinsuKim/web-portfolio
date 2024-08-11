@@ -21,34 +21,46 @@ export default {
     name: "Minsu Kim",
     introFooter: "",
     introDescription:
-      "Since middle school, I have dreamed of becoming a developer. Now, as a 3rd year developer, I have achieved that dream, but I do not settle for the present. I continuously strive to grow and improve, aiming for bigger goals.",
+      "I've dreamed of becoming a developer since middle school. Now, as a 3rd-year developer, I’ve realized that dream. However, I’m not content with staying where I am. I constantly strive for growth and improvement, always aiming for bigger goals.",
     contactMe: "Contact Me",
     channelTalk:
-      "Please use the channel talk at the bottom right or contact us by email.",
+      "Please use the channel talk at the bottom right corner or reach out via email.",
   },
   laptop: {
-    pc: "You can interact with the internal content of your laptop screen,\n and you can rotate left and right or open and close the screen.",
+    pc: "You can interact with the content on the laptop screen,\n and you can rotate it left and right or open and close the screen.",
     mobile:
-      "You can interact with the internal content of your laptop screen,\n and you can also open and close the screen.",
+      "You can interact with the content on the laptop screen,\n and you can also open and close the screen.",
     info: "The rotation feature is available on PC!",
-    loading: "Please wait\nloading the model...",
+    loading: "Please wait,\nloading the model...",
+    profile: "View Profile",
   },
   aboutMe: {
-    title: "AboutMe",
+    title: "About Me",
     description:
-      "I have <strong>frontend development experience</strong> utilizing React, Next.js, and React Native, as well as experience in REST API design, database schema design, server setup, and <strong>service operation</strong>.",
+      "As a 3rd-year Frontend Developer, I have worked on various projects using React, TypeScript, Next.js, and React Native. I also have experience with some backend technologies, including designing REST APIs, DB schemas, and working with AWS and Vercel.",
     description1:
-      "Based on my experience in operating services, I am capable of <strong>smooth collaboration</strong> with backend developers and designers.",
+      "In middle school, I developed an interest in programming by modifying Minecraft plugins. Later, I ran a development club and won awards in IT competitions twice, including an Encouragement Award at the Power Hacking Contest.",
     description2:
-      "I developed an <strong>interest in development</strong> when I set up a Minecraft server and modified plugins in middle school, enjoying watching users have fun. In high school, I ran a security and development club and participated in various development projects, achieving <strong>awards and recognitions</strong>.",
+      "I aim to contribute to improving User Experience (UX) and Developer Experience (DX) through collaboration with diverse teams.",
   },
   workExperience: {
     viewDetails: "View Details",
-    title: "WorkExperience",
+    title: "Work Experiences",
     companyName: "DADOL",
-    position: "Development Team - Intern",
+    position: "Development Team - Associate",
     companyName1: "KAI",
-    position1: "Development Team - Employee",
+    position1: "Development Team - Associate",
+  },
+  project: {
+    title: "Projects",
+    webPortfolio: "Web Portfolio",
+    cloverPick: "CloverPick",
+    webDate: "2024.07 ~ 2024.08",
+    cloverDate: "2024.05 ~ In Progress",
+  },
+  skill: {
+    title: "Tech Stacks",
+    viewDetails: "View Details",
   },
   contact: {
     contactMe: "Contact Me",
@@ -98,5 +110,24 @@ export default {
     education: "Education",
     activities: "Activities",
     certificates: "Certificates",
+    contentTitle1: "Dream Coding | Completed Frontend Course",
+    contentTitle2: "Code States | Completed Software Program Training",
+    contentTitle3:
+      "Woosong University | IT Convergence Department, Computer Information & Security Major (Dropout)",
+    contentTitle4:
+      "Sunchang High School | Graduated from Natural Sciences Track",
+    contentDescription1:
+      "☉ Served as president of the computer club and won two awards in IT-related competitions\n☉ Gained experience developing the Wooden Wars project (2D mobile game) using Unity",
+    contentTitle5:
+      "Honorably Discharged as a Sergeant from the Republic of Korea Army",
+    contentDescription2:
+      "☉ Served as a Network Operations/Maintenance Specialist and obtained an Industrial Engineer Information Processing certification during service",
+    contentTitle6: "Power Hacking 2016 Competition - Encouragement Award",
+    contentDescription3:
+      "☉ Won the award while serving as president of the computer club in high school",
+    contentTitle7: "Excellence Award in Major-Related Study Group (SG)",
+    contentTitle8:
+      "Passed the Industrial Engineer Information Processing Written Exam",
+    contentTitle9: "Obtained Craftsman Information Processing Certification",
   },
 } as const;

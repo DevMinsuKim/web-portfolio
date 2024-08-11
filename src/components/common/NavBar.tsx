@@ -19,7 +19,7 @@ export default function NavBar() {
   const { isMobile } = useDeviceStore();
   const { isCustomCursor, toggleCustomCursor } = useCursorStore();
 
-  const scopedT = useScopedI18n("customCursorButton");
+  const t = useScopedI18n("customCursorButton");
 
   useEffect(() => {
     gsap.to(".navbar", {
@@ -76,9 +76,7 @@ export default function NavBar() {
                     onClick={() => toggleCustomCursor()}
                     className="btn btn-ghost px-2"
                     data-tooltip-id="tooltip"
-                    data-tooltip-content={
-                      isCustomCursor ? scopedT("on") : scopedT("off")
-                    }
+                    data-tooltip-content={isCustomCursor ? t("on") : t("off")}
                   >
                     <CursorArrowIcon className="h-6 w-6" />
                   </button>

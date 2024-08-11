@@ -31,15 +31,16 @@ export default {
       "노트북 화면의 내부 콘텐츠와 상호작용 할 수 있으며,\n화면을 열고 닫는 모션도 가능합니다.",
     info: "회전 기능은 PC에서 사용 가능합니다!",
     loading: "잠시만 기다려 주세요\n모델을 로드 중입니다...",
+    profile: "프로필 바로가기",
   },
   aboutMe: {
     title: "소개",
     description:
-      "3년 차 프론트엔드 개발자로서 React, TypeScript, Next.js, React Native 등을 활용한 다양한 프로젝트 경험이 있습니다.\n 또한 REST API, 데이터베이스 설계, Vercel 배포 등 백엔드 기술도 일부 다룹니다.",
+      "3년 차 프론트엔드 개발자로서 React, TypeScript, Next.js, React Native를 활용한 다양한 프로젝트를 수행했으며, REST API와 DB 스키마 설계, AWS, Vercel 등 백엔드 기술도 일부 다룰 수 있습니다.",
     description1:
-      "중학생 시절 마인크래프트 게임 플러그인을 수정하면서 개발에 흥미를 가지게 되었고, 이후 개발 동아리를 운영하며 IT 대회에서 수상한 경험이 있습니다.",
+      "중학생 시절, 마인크래프트 플러그인 수정을 통해 개발에 흥미를 느꼈고, 이후 개발 동아리를 운영하며 Power Hacking 경진대회 장려상을 포함한 IT 대회에서 2회 수상한 경험이 있습니다.",
     description2:
-      "이러한 경험을 바탕으로 다양한 팀과의 원활한 협업을 통해 사용자 경험(UX) 및 개발자 경험(DX) 향상에 기여하고자 합니다.",
+      "다양한 팀과 협업을 하며 사용자 경험(UX) 및 개발자 경험(DX) 향상에 기여하고자 합니다.",
   },
   workExperience: {
     viewDetails: "자세히 보기",
@@ -48,6 +49,17 @@ export default {
     position: "개발 팀 - 사원",
     companyName1: "카이",
     position1: "개발 팀 - 사원",
+  },
+  project: {
+    title: "프로젝트",
+    webPortfolio: "웹 포트폴리오",
+    cloverPick: "클로버픽",
+    webDate: "2024.07 ~ 2024.08",
+    cloverDate: "2024.05 ~ 현재 진행 중",
+  },
+  skill: {
+    title: "기술 스택",
+    viewDetails: "자세히 보기",
   },
   contact: {
     contactMe: "문의하기",
@@ -98,5 +110,20 @@ export default {
     education: "교육",
     activities: "활동",
     certificates: "자격증",
+    contentTitle1: "드림코딩 | 프론트엔드 강의 수료",
+    contentTitle2: "코드스테이츠 | 소프트웨어 과정 교육 수료",
+    contentTitle3: "우송대학교 | IT융합학부 컴퓨터정보·보안전공 중퇴 ",
+    contentTitle4: "순창고등학교 | 자연계 졸업",
+    contentDescription1:
+      "☉ 컴퓨터 동아리 회장으로 활동하며 IT 관련 대회에서 2회 수상\n☉ Unity를 활용한 Wooden Wars 프로젝트(2D 모바일 게임) 제작 경험",
+    contentTitle5: "대한민국 육군 병장 만기 전역",
+    contentDescription2:
+      "☉ 네트워크운용/정비병으로 군 복무 중 정보처리기능사 자격증 취득",
+    contentTitle6: "Power Hacking 2016 경진대회 장려상 수상",
+    contentDescription3:
+      "☉ 고등학생 시절, 컴퓨터 동아리 회장으로 활동하며 수상",
+    contentTitle7: "전공연계SG(StudyGroup) 우수상 수상",
+    contentTitle8: "정보처리기사 필기 합격",
+    contentTitle9: "정보처리기능사 취득",
   },
 } as const;

@@ -42,7 +42,7 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
     <div
       ref={divRef}
       key={index}
-      className={`flex h-[60svh] items-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
+      className={`flex h-[40svh] items-end self-center text-center text-lg sm:max-w-[80%] sm:text-2xl lg:text-3xl`}
     >
       <p ref={pRef}>{item}</p>
     </div>
@@ -50,7 +50,7 @@ const MessageBox = ({ item, index }: { item: string; index: number }) => {
 };
 
 export default function AboutMe() {
-  const scopedT = useScopedI18n("aboutMe");
+  const t = useScopedI18n("aboutMe");
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -62,6 +62,7 @@ export default function AboutMe() {
           start: "top 90%",
           end: "5% 70%",
           scrub: true,
+          markers: false,
         },
         x: -100,
         autoAlpha: 0,
@@ -73,15 +74,15 @@ export default function AboutMe() {
   );
 
   return (
-    <section className="mt-20 sm:mt-24 lg:mt-32" ref={sectionRef}>
+    <section className="mt-20 lg:mt-32" ref={sectionRef}>
       <div ref={titleRef} className="sticky top-28">
         <p className="text-3xl font-bold sm:text-4xl lg:text-5xl">
-          {scopedT("title")}
+          {t("title")}
         </p>
       </div>
       <div className="flex flex-col">
         {messages.map((item, index) => (
-          <MessageBox key={index} item={scopedT(item)} index={index} />
+          <MessageBox key={index} item={t(item)} index={index} />
         ))}
       </div>
     </section>

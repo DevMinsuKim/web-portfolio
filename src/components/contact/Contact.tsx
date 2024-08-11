@@ -182,7 +182,7 @@ export default function Contact() {
               <p>{process.env.NEXT_PUBLIC_EMAIL}</p>
             </button>
 
-            <div className="mt-4 flex justify-between">
+            <div className="mt-4 flex justify-center gap-4">
               <Link
                 className="btn rounded-full bg-base-100 dark:hover:bg-base-content/20"
                 href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
@@ -197,14 +197,6 @@ export default function Contact() {
                 target="_blank"
               >
                 <LinkdeinIcon className="h-7 w-7" />
-              </Link>
-
-              <Link
-                className="btn rounded-full bg-base-100 hover:bg-error/60 hover:text-white"
-                href={process.env.NEXT_PUBLIC_YOUTUBE_URL ?? ""}
-                target="_blank"
-              >
-                <YouTubeIcon className="h-7 w-7" />
               </Link>
             </div>
           </div>
@@ -358,17 +350,6 @@ export default function Contact() {
                 target="_blank"
               >
                 <LinkdeinIcon className="h-7 w-7" />
-              </Link>
-            </div>
-
-            <div>
-              <p className="pb-1 font-bold">YouTube</p>
-              <Link
-                className="btn rounded-full bg-base-100 hover:bg-error/60 hover:text-white"
-                href={process.env.NEXT_PUBLIC_YOUTUBE_URL ?? ""}
-                target="_blank"
-              >
-                <YouTubeIcon className="h-7 w-7" />
               </Link>
             </div>
 

@@ -28,7 +28,7 @@ const menu: { id: Theme; icon: (color: string) => JSX.Element }[] = [
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const scopedT = useScopedI18n("thmeSwitcher");
+  const t = useScopedI18n("thmeSwitcher");
 
   const getColor = (
     resolvedTheme: string | undefined,
@@ -62,11 +62,11 @@ export function ThemeSwitcher() {
           className="flex"
           key={id}
           data-tooltip-id="tooltip"
-          data-tooltip-content={scopedT(id)}
+          data-tooltip-content={t(id)}
         >
           <button
             className="btn btn-ghost px-2"
-            aria-label={scopedT(id)}
+            aria-label={t(id)}
             onClick={() => {
               setTheme(id);
             }}

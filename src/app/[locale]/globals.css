@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.badge-base iframe {
+  width: 100% !important; /* 너비를 부모 요소에 맞게 조정 */
+  height: 13.5rem !important; /* 높이를 자동 조정 */
+  background-color: black;
+}
+
 .grecaptcha-badge {
   visibility: hidden;
 }

@@ -16,7 +16,7 @@ export default function MobileNavBar() {
   const { isMobile } = useDeviceStore();
   const { isCustomCursor, toggleCustomCursor } = useCursorStore();
 
-  const scopedT = useScopedI18n("customCursorToogle");
+  const t = useScopedI18n("customCursorToogle");
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -121,7 +121,7 @@ export default function MobileNavBar() {
         {!isMobile && (
           <div className="mt-6 rounded-xl bg-base-200/50 p-2 dark:bg-black/40">
             <div className="flex flex-col gap-y-2 p-2">
-              {isCustomCursor ? scopedT("off") : scopedT("on")}
+              {isCustomCursor ? t("off") : t("on")}
               <input
                 type="checkbox"
                 className="toggle toggle-primary"

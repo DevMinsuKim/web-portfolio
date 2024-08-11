@@ -4,6 +4,8 @@ import DadolLogo from "../ui/icons/DadolLogo";
 import { useScopedI18n } from "@/locales/client";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
+import { table } from "console";
 
 const data = [
   {
@@ -21,7 +23,7 @@ const data = [
 ];
 
 export default function WorkExperience() {
-  const scopedT = useScopedI18n("workExperience");
+  const t = useScopedI18n("workExperience");
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -58,30 +60,28 @@ export default function WorkExperience() {
   return (
     <section className="mt-44 md:mt-96" ref={sectionRef}>
       <p ref={titleRef} className="text-3xl font-bold md:text-4xl lg:text-5xl">
-        {scopedT("title")}
+        {t("title")}
       </p>
 
       <div className="mt-14 grid grid-cols-1 items-center justify-center gap-3 md:mt-20 md:grid-cols-2 lg:gap-10">
         {data.map((item, index) => (
-          <div
+          <Link
+            href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
+            target="_blank"
             key={index}
             className="item relative flex transform cursor-pointer flex-col rounded-2xl border border-base-border px-8 py-4 shadow shadow-base-shadow transition-transform duration-300 hover:scale-[1.01] dark:bg-base-300"
           >
             <div>{item.logo}</div>
             <div className="absolute right-8 flex items-center gap-1 rounded-full border bg-base-100 py-2 pl-3 pr-2 shadow dark:border-none">
-              <p className="text-xs sm:text-sm">{scopedT("viewDetails")}</p>
+              <p className="text-xs sm:text-sm">{t("viewDetails")}</p>
             </div>
 
-            <p className="mb-2 self-end text-2xl font-bold lg:text-3xl">
-              {scopedT(item.companyName)}
+            <p className="mb-2 self-end text-2xl font-bold">
+              {t(item.companyName)}
             </p>
-            <p className="self-end text-base sm:text-lg lg:text-xl">
-              {scopedT(item.position)}
-            </p>
-            <p className="self-end text-base sm:text-lg lg:text-xl">
-              {item.date}
-            </p>
-          </div>
+            <p className="self-end text-base">{t(item.position)}</p>
+            <p className="self-end text-base">{item.date}</p>
+          </Link>
         ))}
       </div>
     </section>

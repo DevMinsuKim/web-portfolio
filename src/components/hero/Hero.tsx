@@ -10,10 +10,11 @@ import LinkdeinIcon from "../ui/icons/LinkdeinIcon";
 import YouTubeIcon from "../ui/icons/YouTubeIcon";
 import InfoIcon from "../ui/icons/InfoIcon";
 import { useContactScrollStore } from "@/store/contactScrollStore";
+import Link from "next/link";
 
 export default function Hero() {
   const locale = useCurrentLocale();
-  const scopedT = useScopedI18n("hero");
+  const t = useScopedI18n("hero");
   const { targetRef } = useContactScrollStore();
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   const typingAnimationRef = useRef<TypingAnimationRef>(null);
@@ -23,21 +24,7 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    const handleDOMContentLoaded = () => {
-      setIsPageLoaded(true);
-    };
-
-    if (document.readyState === "complete") {
-      handleDOMContentLoaded();
-    } else {
-      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
-      return () => {
-        document.removeEventListener(
-          "DOMContentLoaded",
-          handleDOMContentLoaded,
-        );
-      };
-    }
+    setIsPageLoaded(true);
   }, []);
 
   const handleTabClick = () => {
@@ -98,15 +85,15 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="z-10 mx-auto max-w-[20rem] px-4 md:max-w-screen-xl">
+      <div className="z-10 mx-auto px-4 md:max-w-screen-xl">
         <div className="flex items-center justify-center">
           <div className="flex flex-col items-center text-center">
             <div className="text-3xl md:text-4xl lg:text-5xl">
-              {scopedT("introHeader")}{" "}
+              {t("introHeader")}{" "}
               {isPageLoaded ? (
                 <span className="relative">
                   <TypingAnimation
-                    text={scopedT("name")}
+                    text={t("name")}
                     className="my-2 inline-block rounded-l-3xl rounded-br-3xl bg-base-content p-2 text-3xl font-extrabold text-base-100 md:text-4xl lg:text-5xl"
                     ref={typingAnimationRef}
                   />
@@ -119,13 +106,13 @@ export default function Hero() {
                 </span>
               ) : (
                 <strong className="my-2 inline-block rounded-3xl bg-base-content p-2 text-3xl font-extrabold text-base-100 md:text-4xl lg:text-5xl">
-                  {scopedT("name")}
+                  {t("name")}
                 </strong>
               )}{" "}
-              {locale === "ko" && scopedT("introFooter")}
+              {locale === "ko" && t("introFooter")}
             </div>
             <p className="mt-10 max-w-[37.5rem] text-base md:max-w-[45rem] md:text-lg">
-              {scopedT("introDescription")}
+              {t("introDescription")}
             </p>
           </div>
         </div>
@@ -137,26 +124,31 @@ export default function Hero() {
               onClick={() => handleTabClick()}
             >
               <EmailIcon className="h-7 w-7" />
-              <p>{scopedT("contactMe")}</p>
+              <p>{t("contactMe")}</p>
             </button>
 
             <div className="flex items-center justify-center rounded-2xl border p-2 text-center shadow dark:border-none dark:bg-base-400">
               <InfoIcon className="mr-2 h-7 w-7 flex-shrink-0 rounded-full border shadow dark:border-none dark:bg-base-200" />
               <p className="mr-1 text-xs font-bold md:text-sm">
-                {scopedT("channelTalk")}
+                {t("channelTalk")}
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
-              <button className="justify-cente1 btn flex items-center bg-base-400 hover:bg-base-content/20">
+            <div className="flex gap-4">
+              <Link
+                className="justify-cente1 btn flex items-center bg-base-400 hover:bg-base-content/20"
+                href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
+                target="_blank"
+              >
                 <GithubIcon className="h-7 w-7" />
-              </button>
-              <button className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20">
+              </Link>
+              <Link
+                className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20"
+                href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
+                target="_blank"
+              >
                 <LinkdeinIcon className="h-7 w-7" />
-              </button>
-              <button className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20">
-                <YouTubeIcon className="h-7 w-7" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
