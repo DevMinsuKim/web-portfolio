@@ -129,5 +129,6 @@ export default {
     contentTitle8:
       "Passed the Industrial Engineer Information Processing Written Exam",
     contentTitle9: "Obtained Craftsman Information Processing Certification",
+    blank: "",
   },
 } as const;

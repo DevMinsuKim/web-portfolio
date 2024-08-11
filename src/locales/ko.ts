@@ -125,5 +125,6 @@ export default {
     contentTitle7: "전공연계SG(StudyGroup) 우수상 수상",
     contentTitle8: "정보처리기사 필기 합격",
     contentTitle9: "정보처리기능사 취득",
+    blank: "",
   },
 } as const;
