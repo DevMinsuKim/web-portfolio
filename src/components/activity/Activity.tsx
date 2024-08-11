@@ -108,8 +108,8 @@ export default function Activity() {
           gsap.from(ref, {
             scrollTrigger: {
               trigger: ref,
-              start: "top 50%",
-              end: "bottom 50%",
+              start: "-25% 50%",
+              end: "90% 50%",
               scrub: true,
               onToggle: () => setActiveTab(index),
             },
@@ -154,7 +154,7 @@ export default function Activity() {
                 >
                   <p className="mb-2 text-xl font-bold">{t(content.title)}</p>
                   <p>{content.date}</p>
-                  {content.description && (
+                  {content.description != "blank" && (
                     <p className="mt-1 text-lg">{t(content.description)}</p>
                   )}
                 </div>
