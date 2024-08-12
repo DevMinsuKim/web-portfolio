@@ -100,6 +100,7 @@ export default function Hero() {
                   <button
                     className={`${!isPageLoaded ? "hidden" : ""} absolute right-[-0.313rem] top-[-0.625rem] rounded-full bg-base-content p-1 text-base-100`}
                     onClick={handleReset}
+                    aria-label="Name Animation Reset Button"
                   >
                     <ReplayIcon className="h-4 w-4" />
                   </button>
@@ -139,6 +140,7 @@ export default function Hero() {
                 className="justify-cente1 btn flex items-center bg-base-400 hover:bg-base-content/20"
                 href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
                 target="_blank"
+                aria-label="Github Link"
               >
                 <GithubIcon className="h-7 w-7" />
               </Link>
@@ -146,6 +148,7 @@ export default function Hero() {
                 className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20"
                 href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
                 target="_blank"
+                aria-label="Linkdein Link"
               >
                 <LinkdeinIcon className="h-7 w-7" />
               </Link>

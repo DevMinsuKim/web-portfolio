@@ -187,6 +187,7 @@ export default function Contact() {
                 className="btn rounded-full bg-base-100 dark:hover:bg-base-content/20"
                 href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
                 target="_blank"
+                aria-label="Github Link"
               >
                 <GithubIcon className="h-7 w-7" />
               </Link>
@@ -195,6 +196,7 @@ export default function Contact() {
                 className="btn rounded-full bg-base-100 hover:bg-info/60 hover:text-white"
                 href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
                 target="_blank"
+                aria-label="Linkdein Link"
               >
                 <LinkdeinIcon className="h-7 w-7" />
               </Link>
@@ -300,6 +302,7 @@ export default function Contact() {
                 className="font-bold"
                 href="https://policies.google.com/privacy"
                 target="_blank"
+                aria-label="PrivacyPolicy Link"
               >
                 {t("privacyPolicy")}
               </Link>
@@ -308,6 +311,7 @@ export default function Contact() {
                 className="font-bold"
                 href="https://policies.google.com/terms"
                 target="_blank"
+                aria-label="TrivacyPolicy Link"
               >
                 {t("termsOfService")}
               </Link>
@@ -336,6 +340,7 @@ export default function Contact() {
                 className="btn rounded-full bg-base-100 dark:hover:bg-base-content/20"
                 href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
                 target="_blank"
+                aria-label="Github Link"
               >
                 <GithubIcon className="h-7 w-7" />
               </Link>
@@ -348,6 +353,7 @@ export default function Contact() {
                 className="btn rounded-full bg-base-100 hover:bg-info/60 hover:text-white"
                 href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
                 target="_blank"
+                aria-label="Linkdein Link"
               >
                 <LinkdeinIcon className="h-7 w-7" />
               </Link>

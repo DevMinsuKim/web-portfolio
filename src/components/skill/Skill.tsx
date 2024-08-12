@@ -58,8 +58,9 @@ export default function Skill() {
       <div className="my-4 flex justify-center">
         <Link
           className="rounded-3xl border border-base-border bg-base-100 px-6 py-4 text-base font-bold shadow shadow-base-shadow hover:bg-base-200 dark:bg-base-300 dark:hover:bg-base-400 md:text-2xl"
-          href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
+          href={process.env.NEXT_PUBLIC_GITHUB_URL ?? ""}
           target="_blank"
+          aria-label="viewDetails"
         >
           {t("viewDetails")}
         </Link>

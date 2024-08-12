@@ -106,6 +106,7 @@ export default function LaptopModel({ open, hinge, ...props }: Props) {
                   <Link
                     href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
                     target="_blank"
+                    aria-label="Linkedin Link"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

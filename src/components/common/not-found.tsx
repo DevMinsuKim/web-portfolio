@@ -14,7 +14,9 @@ export default function NotFound() {
       <p className="my-8 max-w-[320px] md:max-w-none">{t("description")}</p>
       <div className="flex flex-col gap-4 md:flex-row">
         <button className="btn rounded-full border border-base-border bg-base-100 shadow shadow-base-shadow dark:bg-base-300 dark:hover:bg-base-content/20">
-          <Link href={"/"}> {t("homeButton")}</Link>
+          <Link href={"/"} aria-label="Home">
+            {t("homeButton")}
+          </Link>
         </button>
       </div>
     </div>

@@ -69,12 +69,17 @@ export default function MobileNavBar() {
     <>
       <div className="navbar flex p-0 md:hidden">
         <div className="flex-1">
-          <Link className="btn btn-ghost w-40 px-1" href={"/"}>
+          <Link
+            className="btn btn-ghost w-40 px-1"
+            href={"/"}
+            aria-label="Logo"
+          >
             <LogoIcon />
           </Link>
         </div>
         <div className="flex-none">
           <button
+            aria-label="toggleMenu"
             className="btn btn-ghost px-1"
             onClick={() => {
               toggleMenu();
@@ -86,7 +91,8 @@ export default function MobileNavBar() {
       </div>
 
       {isMenuOpen && (
-        <div
+        <button
+          aria-label="toggleMenu"
           className="fixed inset-0 bg-black/5 dark:bg-black/50"
           onClick={() => {
             toggleMenu();
@@ -103,6 +109,7 @@ export default function MobileNavBar() {
       >
         <div className="mt-2 flex justify-end">
           <button
+            aria-label="toggleMenu"
             className="btn btn-ghost px-1"
             onClick={() => {
               toggleMenu();

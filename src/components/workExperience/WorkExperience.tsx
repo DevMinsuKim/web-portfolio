@@ -66,6 +66,7 @@ export default function WorkExperience() {
       <div className="mt-14 grid grid-cols-1 items-center justify-center gap-3 md:mt-20 md:grid-cols-2 lg:gap-10">
         {data.map((item, index) => (
           <Link
+            aria-label={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
             href={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
             target="_blank"
             key={index}
