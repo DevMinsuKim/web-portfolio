@@ -43,6 +43,7 @@ export default function Home() {
         <button
           className={`${isMobile && !isTablet && "bottom-[4.4rem] right-[0.95rem] h-[2.75rem] min-h-0 w-[2.75rem] rounded-[1.1rem] p-0"} btn fixed bottom-24 right-6 z-20 flex h-14 w-14 items-center justify-center rounded-3xl border-2 bg-base-100 shadow-xl`}
           onClick={() => (isScrolled ? scrollToTop() : scrollToBottom())}
+          aria-label="Scroll Up Down Button"
         >
           {isScrolled ? (
             <ArrowUpIcon

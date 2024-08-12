@@ -64,7 +64,7 @@ export default function NavBar() {
             </div>
 
             <div className="navbar-center">
-              <Link className="btn btn-ghost w-60" href={"/"}>
+              <Link className="btn btn-ghost w-60" href={"/"} aria-label="Logo">
                 <LogoIcon />
               </Link>
             </div>
@@ -77,6 +77,7 @@ export default function NavBar() {
                     className="btn btn-ghost px-2"
                     data-tooltip-id="tooltip"
                     data-tooltip-content={isCustomCursor ? t("on") : t("off")}
+                    aria-label="ToggleCustomCursor Button"
                   >
                     <CursorArrowIcon className="h-6 w-6" />
                   </button>

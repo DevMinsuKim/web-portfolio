@@ -85,6 +85,7 @@ export default function Project() {
       <div className="item mt-20 grid grid-cols-1 items-center justify-center gap-10 md:grid-cols-2 lg:grid-cols-3">
         {data.map((item, index) => (
           <Link
+            aria-label={item.url ?? ""}
             href={item.url ?? ""}
             target="_blank"
             key={index}
