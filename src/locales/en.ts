@@ -37,7 +37,7 @@ export default {
   aboutMe: {
     title: "About Me",
     description:
-      "As a 3rd-year Frontend Developer, I have worked on various projects using React, TypeScript, Next.js, and React Native. I also have experience with some backend technologies, including designing REST APIs, DB schemas, and working with AWS and Vercel.",
+      "I have worked on various projects utilizing React, TypeScript, Next.js, and React Native. Additionally, I have experience with backend technologies, including designing REST APIs, database schemas, and working with AWS and Vercel.",
     description1:
       "In middle school, I developed an interest in programming by modifying Minecraft plugins. Later, I ran a development club and won awards in IT competitions twice, including an Encouragement Award at the Power Hacking Contest.",
     description2:
@@ -57,6 +57,8 @@ export default {
     cloverPick: "CloverPick",
     webDate: "2024.07 ~ 2024.08",
     cloverDate: "2024.05 ~ In Progress",
+    woodenWars: "Wooden Wars",
+    woodenWarsData: "2016.01 ~ 2016.12",
   },
   skill: {
     title: "Tech Stacks",

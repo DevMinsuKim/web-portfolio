@@ -7,10 +7,10 @@ import ReplayIcon from "../ui/icons/ReplayIcon";
 import EmailIcon from "../ui/icons/EmailIcon";
 import GithubIcon from "../ui/icons/GithubIcon";
 import LinkdeinIcon from "../ui/icons/LinkdeinIcon";
-import YouTubeIcon from "../ui/icons/YouTubeIcon";
 import InfoIcon from "../ui/icons/InfoIcon";
 import { useContactScrollStore } from "@/store/contactScrollStore";
 import Link from "next/link";
+import TistoryIcon from "../ui/icons/TistoryIcon";
 
 export default function Hero() {
   const locale = useCurrentLocale();
@@ -151,6 +151,14 @@ export default function Hero() {
                 aria-label="Linkdein Link"
               >
                 <LinkdeinIcon className="h-7 w-7" />
+              </Link>
+              <Link
+                className="btn flex items-center justify-center bg-base-400 hover:bg-base-content/20"
+                href={process.env.NEXT_PUBLIC_TISTORY_URL ?? ""}
+                target="_blank"
+                aria-label="Tistory Link"
+              >
+                <TistoryIcon className="h-6 w-6" />
               </Link>
             </div>
           </div>

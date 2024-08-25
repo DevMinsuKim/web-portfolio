@@ -18,26 +18,12 @@ const data = [
     date: "cloverDate" as "cloverDate",
     url: process.env.NEXT_PUBLIC_CLOVER_PICK_URL,
   },
-  // {
-  //   cover: "",
-  //   title: "퍼즐",
-  //   description: "test123",
-  //   date: "2021.04 ~ 2021.07",
-  //   url: "",
-  // },
-  // {
-  //   cover: "",
-  //   title: "카드북",
-  //   description: "test123",
-  //   date: "2021.04 ~ 2021.07",
-  //   url: "",
-  // },
-  // {
-  //   cover: "/images/test.jpg",
-  //   title: "Wooden Wars",
-  //   date: "2021.04 ~ 2021.07",
-  //   url: process.env.NEXT_PUBLIC_WOODEN_WARS_URL,
-  // },
+  {
+    cover: "/images/wooden_wars_cover.png",
+    title: "woodenWars" as "woodenWars",
+    date: "woodenWarsData" as "woodenWarsData",
+    url: process.env.NEXT_PUBLIC_WOODEN_WARS_URL,
+  },
 ];
 
 export default function Project() {
