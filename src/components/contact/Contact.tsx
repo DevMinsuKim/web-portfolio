@@ -8,7 +8,6 @@ import { useState } from "react";
 import SendIcon from "../ui/icons/SendIcon";
 import GithubIcon from "../ui/icons/GithubIcon";
 import LinkdeinIcon from "../ui/icons/LinkdeinIcon";
-import YouTubeIcon from "../ui/icons/YouTubeIcon";
 import Footer from "../common/Footer";
 import { useModal } from "@/providers/ModalProvider";
 import CopyIcon from "../ui/icons/CopyIcon";
@@ -19,6 +18,7 @@ import { mailSchema, TypeMailSchema } from "@/schema/mailSchema";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Link from "next/link";
 import { useContactScrollStore } from "@/store/contactScrollStore";
+import TistoryIcon from "../ui/icons/TistoryIcon";
 
 export default function Contact() {
   const t = useScopedI18n("contact");
@@ -200,6 +200,15 @@ export default function Contact() {
               >
                 <LinkdeinIcon className="h-7 w-7" />
               </Link>
+
+              <Link
+                className="btn rounded-full bg-base-100 hover:bg-[#ea580c] hover:text-white"
+                href={process.env.NEXT_PUBLIC_TISTORY_URL ?? ""}
+                target="_blank"
+                aria-label="Tistory Link"
+              >
+                <TistoryIcon className="h-6 w-6" />
+              </Link>
             </div>
           </div>
         </div>
@@ -356,6 +365,19 @@ export default function Contact() {
                 aria-label="Linkdein Link"
               >
                 <LinkdeinIcon className="h-7 w-7" />
+              </Link>
+            </div>
+
+            <div>
+              <p className="pb-1 font-bold">Tistory</p>
+
+              <Link
+                className="btn rounded-full bg-base-100 hover:bg-[#ea580c] hover:text-white"
+                href={process.env.NEXT_PUBLIC_TISTORY_URL ?? ""}
+                target="_blank"
+                aria-label="Tistory Link"
+              >
+                <TistoryIcon className="h-6 w-6" />
               </Link>
             </div>
 

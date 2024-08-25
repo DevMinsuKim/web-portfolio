@@ -36,7 +36,7 @@ export default {
   aboutMe: {
     title: "소개",
     description:
-      "3년 차 프론트엔드 개발자로서 React, TypeScript, Next.js, React Native를 활용한 다양한 프로젝트를 수행했으며, REST API와 DB 스키마 설계, AWS, Vercel 등 백엔드 기술도 일부 다룰 수 있습니다.",
+      "React, TypeScript, Next.js, React Native를 활용한 다양한 프로젝트를 수행했으며, REST API와 DB 스키마 설계, AWS, Vercel 등 백엔드 기술도 일부 다룰 수 있습니다.",
     description1:
       "중학생 시절, 마인크래프트 플러그인 수정을 통해 개발에 흥미를 느꼈고, 이후 개발 동아리를 운영하며 Power Hacking 경진대회 장려상을 포함한 IT 대회에서 2회 수상한 경험이 있습니다.",
     description2:
@@ -56,6 +56,8 @@ export default {
     cloverPick: "클로버픽",
     webDate: "2024.07 ~ 2024.08",
     cloverDate: "2024.05 ~ 현재 진행 중",
+    woodenWars: "Wooden Wars",
+    woodenWarsData: "2016.01 ~ 2016.12",
   },
   skill: {
     title: "기술 스택",
