@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import WhoflexLogo from "../ui/icons/WhoflexLogo";
 import KaiLogo from "../ui/icons/KaiLogo";
 import DadolLogo from "../ui/icons/DadolLogo";
 import { useScopedI18n } from "@/locales/client";
@@ -8,6 +9,12 @@ import Link from "next/link";
 import { table } from "console";
 
 const data = [
+  {
+    logo: <WhoflexLogo className="rounded-xl fill-base-content" />,
+    companyName: "companyName2" as "companyName2",
+    position: "position2" as "position2",
+    date: "date" as "date",
+  },
   {
     logo: <KaiLogo className="h-20 w-20 rounded-xl fill-base-content" />,
     companyName: "companyName1" as "companyName1",
@@ -63,7 +70,7 @@ export default function WorkExperience() {
         {t("title")}
       </p>
 
-      <div className="mt-14 grid grid-cols-1 items-center justify-center gap-3 md:mt-20 md:grid-cols-2 lg:gap-10">
+      <div className="mt-14 grid grid-cols-1 items-center justify-center gap-3 md:mt-20 md:grid-cols-3 lg:gap-10">
         {data.map((item, index) => (
           <Link
             aria-label={process.env.NEXT_PUBLIC_LINKEDIN_URL ?? ""}
@@ -72,7 +79,9 @@ export default function WorkExperience() {
             key={index}
             className="item relative flex transform cursor-pointer flex-col rounded-2xl border border-base-border px-8 py-4 shadow shadow-base-shadow transition-transform duration-300 hover:scale-[1.01] dark:bg-base-300"
           >
-            <div>{item.logo}</div>
+            <div className="flex min-h-20 min-w-20 items-center">
+              {item.logo}
+            </div>
             <div className="absolute right-8 flex items-center gap-1 rounded-full border bg-base-100 py-2 pl-3 pr-2 shadow dark:border-none">
               <p className="text-xs sm:text-sm">{t("viewDetails")}</p>
             </div>
@@ -81,7 +90,7 @@ export default function WorkExperience() {
               {t(item.companyName)}
             </p>
             <p className="self-end text-base">{t(item.position)}</p>
-            <p className="self-end text-base">{item.date}</p>
+            <p className="self-end text-base">{t(item.date as "date")}</p>
           </Link>
         ))}
       </div>

@@ -3,11 +3,7 @@ export default {
     title: "Minsu Kim | Portfolio",
     description: "Frontend Developer Minsu Kim's Portfolio Website",
   },
-  thmeSwitcher: {
-    light: "Light",
-    dark: "Dark",
-    system: "System",
-  },
+  thmeSwitcher: { light: "Light", dark: "Dark", system: "System" },
   customCursorButton: {
     on: "Enable Custom Cursor",
     off: "Disable Custom Cursor",
@@ -17,11 +13,11 @@ export default {
     off: "Custom Cursor Disabled",
   },
   hero: {
-    introHeader: "3rd Year Frontend Developer",
+    introHeader: "4rd Year Frontend Developer",
     name: "Minsu Kim",
     introFooter: "",
     introDescription:
-      "I've dreamed of becoming a developer since middle school. Now, as a 3rd-year developer, I’ve realized that dream. However, I’m not content with staying where I am. I constantly strive for growth and improvement, always aiming for bigger goals.",
+      "For about 4 years, I have worked as a frontend developer, dedicated to improving both UX and DX. Since high school, I have consistently pursued my passion for development through IT competition awards, club activities, and various personal and team projects. I hope to continue contributing to better user experiences and development culture.",
     contactMe: "Contact Me",
     channelTalk:
       "Please use the channel talk at the bottom right corner or reach out via email.",
@@ -37,11 +33,11 @@ export default {
   aboutMe: {
     title: "About Me",
     description:
-      "I have worked on various projects utilizing React, TypeScript, Next.js, and React Native. Additionally, I have experience with backend technologies, including designing REST APIs, database schemas, and working with AWS and Vercel.",
+      "I have gained diverse experience in building design systems, setting up monorepo environments, refactoring client and back office systems, and operating services.",
     description1:
-      "In middle school, I developed an interest in programming by modifying Minecraft plugins. Later, I ran a development club and won awards in IT competitions twice, including an Encouragement Award at the Power Hacking Contest.",
+      "I have always focused on both user experience (UX) and developer experience (DX), striving to build consistent UIs and efficient development processes.\nI have extensive experience collaborating with designers and backend developers, and I find great satisfaction in delivering real value to users.",
     description2:
-      "I aim to contribute to improving User Experience (UX) and Developer Experience (DX) through collaboration with diverse teams.",
+      "Since high school, I have consistently pursued my passion for development through IT competition awards, club activities, and various personal and team projects.\nI hope to continue contributing to better user experiences and a positive development culture.",
   },
   workExperience: {
     viewDetails: "View Details",
@@ -50,6 +46,9 @@ export default {
     position: "Development Team - Associate",
     companyName1: "KAI",
     position1: "Development Team - Associate",
+    companyName2: "WHOFLEX",
+    position2: "Development Team - Associate",
+    date: "2024. 11 ~ Present",
   },
   project: {
     title: "Projects",
@@ -60,10 +59,7 @@ export default {
     woodenWars: "Wooden Wars",
     woodenWarsData: "2016.01 ~ 2016.12",
   },
-  skill: {
-    title: "Tech Stacks",
-    viewDetails: "View Details",
-  },
+  skill: { title: "Tech Stacks", viewDetails: "View Details" },
   contact: {
     contactMe: "Contact Me",
     announcement: "Notice",

@@ -8,20 +8,14 @@ export default {
     dark: "어두운 테마",
     system: "기기 테마 사용",
   },
-  customCursorButton: {
-    on: "커서 스타일 켜기",
-    off: "커서 스타일 끄기",
-  },
-  customCursorToogle: {
-    on: "커서 스타일 켜짐",
-    off: "커서 스타일 꺼짐",
-  },
+  customCursorButton: { on: "커서 스타일 켜기", off: "커서 스타일 끄기" },
+  customCursorToogle: { on: "커서 스타일 켜짐", off: "커서 스타일 꺼짐" },
   hero: {
-    introHeader: "3년 차 프론트엔드 개발자",
+    introHeader: "4년 차 프론트엔드 개발자",
     name: "김민수",
     introFooter: "입니다.",
     introDescription:
-      "중학생 시절부터 개발자를 꿈꿔왔고, 현재는 3년 차 개발자로서 그 꿈을 이루었지만 현 모습에 안주하지 않고 끊임없이 성장하고 발전하며 더 큰 목표를 향해 나아가고자 합니다.",
+      "약 4년간 프론트엔드 개발자로 일하며 UX와 DX 향상에 힘써왔습니다.\n고등학생 시절부터 IT 대회 수상, IT 동아리 활동, 다양한 개인 및 팀 프로젝트를 통해 꾸준히 개발에 열정을 쏟아온 만큼, 앞으로도 더 나은 사용자 경험과 개발 문화를 만들어가는 데 기여하고 싶습니다.",
     contactMe: "문의하기",
     channelTalk: "우측 하단의 채널톡을 이용하시거나 이메일로 문의해 주세요.",
   },
@@ -36,11 +30,11 @@ export default {
   aboutMe: {
     title: "소개",
     description:
-      "React, TypeScript, Next.js, React Native를 활용한 다양한 프로젝트를 수행했으며, REST API와 DB 스키마 설계, AWS, Vercel 등 백엔드 기술도 일부 다룰 수 있습니다.",
+      "디자인 시스템 구축, 모노레포 환경 구성, 클라이언트 및 백오피스 리팩토링, 서비스 운영 등 다양한 경험을 쌓았습니다.",
     description1:
-      "중학생 시절, 마인크래프트 플러그인 수정을 통해 개발에 흥미를 느꼈고, 이후 개발 동아리를 운영하며 Power Hacking 경진대회 장려상을 포함한 IT 대회에서 2회 수상한 경험이 있습니다.",
+      "UX(사용자 경험)와 DX(개발자 경험)를 함께 고민하며, 일관성 있는 UI와 효율적인 개발 프로세스 구축에 집중해왔습니다.\n디자이너·백엔드 개발자와의 협업 경험이 많고, 실질적인 사용자 가치를 만들어내는 것에 보람을 느낍니다.",
     description2:
-      "다양한 팀과 협업을 하며 사용자 경험(UX) 및 개발자 경험(DX) 향상에 기여하고자 합니다.",
+      "고등학생 시절부터 IT 대회 수상, IT 동아리 활동, 다양한 개인 및 팀 프로젝트를 통해 꾸준히 개발에 열정을 쏟아온 만큼\n앞으로도 더 나은 사용자 경험과 개발 문화를 만들어가는 데 기여하고 싶습니다.",
   },
   workExperience: {
     viewDetails: "자세히 보기",
@@ -49,6 +43,9 @@ export default {
     position: "개발 팀 - 사원",
     companyName1: "카이",
     position1: "개발 팀 - 사원",
+    companyName2: "후플렉스",
+    position2: "개발 팀 - 사원",
+    date: "2024. 11 ~ 재직 중",
   },
   project: {
     title: "프로젝트",
@@ -59,10 +56,7 @@ export default {
     woodenWars: "Wooden Wars",
     woodenWarsData: "2016.01 ~ 2016.12",
   },
-  skill: {
-    title: "기술 스택",
-    viewDetails: "자세히 보기",
-  },
+  skill: { title: "기술 스택", viewDetails: "자세히 보기" },
   contact: {
     contactMe: "문의하기",
     announcement: "알려드립니다.",
