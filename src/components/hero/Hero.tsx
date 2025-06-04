@@ -34,14 +34,12 @@ export default function Hero() {
     if (elementPosition !== undefined) {
       const offsetPosition = elementPosition + window.scrollY - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-      });
+      window.scrollTo({ top: offsetPosition });
     }
   };
 
   return (
-    <section className="relative flex h-[calc(100svh)] flex-col items-center justify-center pt-16">
+    <section className="relative flex min-h-screen flex-col items-center justify-center pt-20">
       <div className="absolute inset-0 min-w-[20rem] bg-gradient-to-t from-primary/20 to-base-200 dark:from-[#161430] dark:to-base-100" />
 
       <div
