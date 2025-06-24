@@ -17,7 +17,7 @@ export default {
     name: "Minsu Kim",
     introFooter: "",
     introDescription:
-      "For about 4 years, I have worked as a frontend developer, dedicated to improving both UX and DX. Since high school, I have consistently pursued my passion for development through IT competition awards, club activities, and various personal and team projects. I hope to continue contributing to better user experiences and development culture.",
+      "Over the past four years as a frontend developer, I have continuously worked to improve both user experience (UX) and developer experience (DX).\nI began programming in middle school by modifying Minecraft plugins, and since then, I have gained hands-on experience across the entire development lifecycle — from planning to deployment.\nMoving forward, I hope to contribute as a frontend developer who delivers meaningful value by enhancing both user experience and development culture.",
     contactMe: "Contact Me",
     channelTalk:
       "Please use the channel talk at the bottom right corner or reach out via email.",
@@ -33,11 +33,13 @@ export default {
   aboutMe: {
     title: "About Me",
     description:
-      "I have gained diverse experience in building design systems, setting up monorepo environments, refactoring client and back office systems, and operating services.",
+      "Over the past 3 years and 6 months, I’ve gained broad experience in frontend development, including design system implementation, monorepo architecture, custom video player development, Unity + React Native-based metaverse app development, and AWS infrastructure with Docker-based deployment pipelines.",
     description1:
-      "I have always focused on both user experience (UX) and developer experience (DX), striving to build consistent UIs and efficient development processes.\nI have extensive experience collaborating with designers and backend developers, and I find great satisfaction in delivering real value to users.",
+      "I’ve also worked on projects focused on immersive user experiences and impactful first impressions by building interaction-driven UIs using React Three Fiber, GSAP, and Framer Motion.",
     description2:
-      "Since high school, I have consistently pursued my passion for development through IT competition awards, club activities, and various personal and team projects.\nI hope to continue contributing to better user experiences and a positive development culture.",
+      "I began my development journey in middle school by modifying Minecraft plugins, and since then, I’ve built hands-on experience across the full development lifecycle—from planning to deployment.",
+    description3:
+      "Moving forward, I hope to make meaningful contributions as a frontend developer by improving both user experience and development culture.",
   },
   workExperience: {
     viewDetails: "View Details",
