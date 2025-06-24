@@ -5,11 +5,9 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const messages: Array<"description" | "description1" | "description2"> = [
-  "description",
-  "description1",
-  "description2",
-];
+const messages: Array<
+  "description" | "description1" | "description2" | "description3"
+> = ["description", "description1", "description2", "description3"];
 
 const MessageBox = ({ item, index }: { item: string; index: number }) => {
   const divRef = useRef<HTMLDivElement>(null);
