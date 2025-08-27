@@ -30,7 +30,7 @@ export default {
   aboutMe: {
     title: "소개",
     description:
-      "3년 6개월 동안 디자인 시스템 구축, 모노레포 환경 설계, 동영상 플레이어 커스터마이징, Unity + React Native 기반 메타버스 앱 개발, AWS 인프라 및 Docker 기반 배포 환경 구성까지 폭넓은 경험을 쌓아왔습니다.",
+      "디자인 시스템 구축, 모노레포 환경 설계, 동영상 플레이어 커스터마이징, Unity + React Native 기반 메타버스 앱 개발, AWS 인프라 및 Docker 기반 배포 환경 구성까지 폭넓은 경험을 쌓아왔습니다.",
     description1:
       "React Three Fiber, GSAP, Framer Motion을 활용해 인터랙션 중심의 UI를 구현하며 몰입감 있는 사용자 경험과 첫인상 개선에 집중한 프로젝트 경험도 보유하고 있습니다.",
     description2:

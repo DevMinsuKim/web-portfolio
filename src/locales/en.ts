@@ -33,7 +33,7 @@ export default {
   aboutMe: {
     title: "About Me",
     description:
-      "Over the past 3 years and 6 months, I’ve gained broad experience in frontend development, including design system implementation, monorepo architecture, custom video player development, Unity + React Native-based metaverse app development, and AWS infrastructure with Docker-based deployment pipelines.",
+      "I have gained broad experience ranging from design system implementation and monorepo architecture to custom video player development, Unity + React Native–based metaverse app development, and building AWS infrastructure with Docker-based deployment pipelines.",
     description1:
       "I’ve also worked on projects focused on immersive user experiences and impactful first impressions by building interaction-driven UIs using React Three Fiber, GSAP, and Framer Motion.",
     description2:
